@@ -25,10 +25,6 @@ function recalculatePension() {
    var raiseMultOne = Math.max( (1 + raisePercent)**(scenOneAge - 55), 0);
    var raiseMultTwo = Math.max( (1 + raisePercent)**(scenTwoAge - 55), 0);
    var raiseMultThree = Math.max( (1 + raisePercent)**(scenThreeAge - 55), 0);
-   console.log("RaiseP1:" + raisePerP1);
-   console.log("RaiseP2:" + raisePerP2);
-   console.log("Raise1:" + raiseMultOne);
-   console.log("RaisePer:" + raisePercent);
 
    var scenOnePension = (30000 + ( (scenOneAge - 55) * 3699 )) * raiseMultOne;
    var scenTwoPension = 30000 + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo;
