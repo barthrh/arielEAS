@@ -1,5 +1,11 @@
 function recalculatePension() {
-   console.log("click");
+
+   // Number of payments per year
+   var pensionFrequecy = 1;
+
+   var pensionMax = 60000/pensionFrequecy;
+   var pensionBaseline = 30000/pensionFrequecy;
+   
    var scenOneAge = Number($('#input-ret1-age').val() );
    var scenTwoAge = Number($('#input-ret2-age').val() );
    var scenThreeAge = Number($('#input-ret3-age').val() );
@@ -9,7 +15,6 @@ function recalculatePension() {
        $('#check-reinstated-2yrs').prop("checked") == true) {
       purchaseYears = 2;
    };
-   console.log("Purch:" + purchaseYears);
 
    var reciprocalYears = 0;
    if ($('#check-recip').prop("checked") == true &&
@@ -20,23 +25,21 @@ function recalculatePension() {
    // Figure out impact of salary increase assuming age 55 now
    // Dividing percent by 500 to minimize the impact on total service
    var raisePercent = Number($('#raise-slider-single').val()) / 500;
-   var raisePerP1 = (1 + raisePercent);
-   var raisePerP2 = (scenOneAge - 55);
    var raiseMultOne = Math.max( (1 + raisePercent)**(scenOneAge - 55), 0);
    var raiseMultTwo = Math.max( (1 + raisePercent)**(scenTwoAge - 55), 0);
    var raiseMultThree = Math.max( (1 + raisePercent)**(scenThreeAge - 55), 0);
 
-   var scenOnePension = (30000 + ( (scenOneAge - 55) * 3699 )) * raiseMultOne;
-   var scenTwoPension = 30000 + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo;
-   var scenThreePension = 30000 + ( (scenThreeAge - 55) * 3699 ) * raiseMultThree;
+   var scenOnePension = ( pensionBaseline + ( (scenOneAge - 55) * 3699 ) * raiseMultOne ) / pensionFrequecy;
+   var scenTwoPension = ( pensionBaseline + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo ) / pensionFrequecy;
+   var scenThreePension = ( pensionBaseline + ( (scenThreeAge - 55) * 3699 ) * raiseMultThree ) / pensionFrequecy;
    
-   scenOnePension = Math.min(scenOnePension, 60000);
-   scenTwoPension = Math.min(scenTwoPension, 60000);
-   scenThreePension = Math.min(scenThreePension, 60000);
+   scenOnePension = Math.min(scenOnePension, pensionMax);
+   scenTwoPension = Math.min(scenTwoPension, pensionMax);
+   scenThreePension = Math.min(scenThreePension, pensionMax);
 
-   var scenOneSize = ((scenOnePension - 30000) / 80) - 90;
-   var scenTwoSize = ((scenTwoPension - 30000) / 80) - 90;
-   var scenThreeSize = ((scenThreePension - 30000) / 80) - 90;
+   var scenOneSize = (((scenOnePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
+   var scenTwoSize = (((scenTwoPension - pensionBaseline) * pensionFrequecy) / 80) - 90;
+   var scenThreeSize = (((scenThreePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
    
    var purchHeight = purchaseYears * 5;
    var recipHeight = reciprocalYears * 5;
@@ -66,10 +69,9 @@ function recalculatePension() {
    $('#scen-three-recip-bar').animate({height: recipHeight}, 500);
 
    if ( $('#check-taxation').prop("checked") == true) {
-   var taxOneHeight = (scenOneSize + purchHeight + recipHeight)*.2;
-   var taxTwoHeight = (scenTwoSize + purchHeight + recipHeight)*.2;
-   var taxThreeHeight = (scenThreeSize + purchHeight + recipHeight)*.2;
-   console.log("TaxOne:" + taxOneHeight);
+      var taxOneHeight = (scenOneSize + purchHeight + recipHeight)*.2;
+      var taxTwoHeight = (scenTwoSize + purchHeight + recipHeight)*.2;
+      var taxThreeHeight = (scenThreeSize + purchHeight + recipHeight)*.2;
    } else {
       var taxOneHeight = 0;
       var taxTwoHeight = 0;
@@ -87,8 +89,8 @@ function recalculatePension() {
     maximumSignificantDigits: 3,
     });
 
-   var purchPension = purchaseYears * 3220;
-   var recipPension = reciprocalYears * 3220;
+   var purchPension = purchaseYears * (3220 / pensionFrequecy);
+   var recipPension = reciprocalYears * (3220 / pensionFrequecy);
 
    // Update the labels / captions
    $('#demo-sc1-value').text(dollarFormat.format(scenOnePension + purchPension + recipPension));
@@ -98,15 +100,6 @@ function recalculatePension() {
    $('#demo-sc1-age').text("Retirement age " + scenOneAge);
    $('#demo-sc2-age').text("Retirement age " + scenTwoAge);
    $('#demo-sc3-age').text("Retirement age " + scenThreeAge);
-      
-   console.log(scenOneAttr);
-   console.log(scenOneAge);
-   console.log(scenOnePension);
-   console.log(scenOneSize);
-
-   // *************************
-   // END OF RECALCULATE
-   // *************************
 
 
  };
