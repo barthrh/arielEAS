@@ -69,10 +69,16 @@ function recalculatePension() {
    $('#scen-three-purch-bar').animate({height: purchHeight}, 500);
    $('#scen-three-recip-bar').animate({height: recipHeight}, 500);
 
+   if ( $('#check-taxation').prop("checked") == true) {
    var taxOneHeight = (scenOneSize + purchHeight + recipHeight)*.2;
    var taxTwoHeight = (scenTwoSize + purchHeight + recipHeight)*.2;
    var taxThreeHeight = (scenThreeSize + purchHeight + recipHeight)*.2;
    console.log("TaxOne:" + taxOneHeight);
+   } else {
+      var taxOneHeight = 0;
+      var taxTwoHeight = 0;
+      var taxThreeHeight = 0;
+   };
 
    $('#scen-one-tax-bar').animate({height: taxOneHeight}, 500);
    $('#scen-two-tax-bar').animate({height: taxTwoHeight}, 500);
