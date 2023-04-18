@@ -44,9 +44,9 @@ function recalculatePension() {
    console.log("Max:" + pensionMax);
    console.log("Freq: " + pensionFrequecy);
    
-   var scenOneSize = (((scenOnePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
-   var scenTwoSize = (((scenTwoPension - pensionBaseline) * pensionFrequecy) / 80) - 90;
-   var scenThreeSize = (((scenThreePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
+   var scenOneSize = (((scenOnePension * pensionFrequecy) - (pensionBaseline * pensionFrequecy) ) / 80) - 90;
+   var scenTwoSize = (((scenTwoPension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 90;
+   var scenThreeSize = (((scenThreePension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 90;
    
    var purchHeight = purchaseYears * 5;
    var recipHeight = reciprocalYears * 5;
