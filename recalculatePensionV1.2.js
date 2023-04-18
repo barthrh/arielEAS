@@ -36,13 +36,6 @@ function recalculatePension() {
     scenOnePension = Math.min(scenOnePension, pensionMax);
     scenTwoPension = Math.min(scenTwoPension, pensionMax);
     scenThreePension = Math.min(scenThreePension, pensionMax);
- 
-    console.log("P1:" + scenOnePension);
-    console.log("P2:" + scenTwoPension);
-    console.log("P3:" + scenThreePension);
-    console.log("Mase:" + pensionBaseline);
-    console.log("Max:" + pensionMax);
-    console.log("Freq: " + pensionFrequecy);
     
     var scenOneSize = (((scenOnePension * pensionFrequecy) - (pensionBaseline * pensionFrequecy) ) / 80) - 90;
     var scenTwoSize = (((scenTwoPension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 90;
