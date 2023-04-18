@@ -2,8 +2,7 @@ function recalculatePension() {
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
-   console.log("Freq: " + pensionFrequecy);
-
+   
    var pensionMax = 60000/pensionFrequecy;
    var pensionBaseline = 30000/pensionFrequecy;
    
@@ -41,7 +40,10 @@ function recalculatePension() {
    console.log("P1:" + scenOnePension);
    console.log("P2:" + scenTwoPension);
    console.log("P3:" + scenThreePension);
-    
+   console.log("base:" + pensionBaseline);
+   console.log("max:" + pensionMax);
+   console.log("Freq: " + pensionFrequecy);
+   
    var scenOneSize = (((scenOnePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
    var scenTwoSize = (((scenTwoPension - pensionBaseline) * pensionFrequecy) / 80) - 90;
    var scenThreeSize = (((scenThreePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
