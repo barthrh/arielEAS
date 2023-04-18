@@ -40,8 +40,8 @@ function recalculatePension() {
    console.log("P1:" + scenOnePension);
    console.log("P2:" + scenTwoPension);
    console.log("P3:" + scenThreePension);
-   console.log("base:" + pensionBaseline);
-   console.log("max:" + pensionMax);
+   console.log("Mase:" + pensionBaseline);
+   console.log("Max:" + pensionMax);
    console.log("Freq: " + pensionFrequecy);
    
    var scenOneSize = (((scenOnePension - pensionBaseline) * pensionFrequecy) / 80) - 90;
