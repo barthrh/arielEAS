@@ -82,7 +82,6 @@ function recalculatePension() {
     $('#scen-two-tax-bar').animate({height: taxTwoHeight}, 500);
     $('#scen-three-tax-bar').animate({height: taxThreeHeight}, 500);
  
- 
     let dollarFormat = new Intl.NumberFormat('en-US', {
      style: 'currency',
      currency: 'USD',
