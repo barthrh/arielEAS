@@ -2,6 +2,7 @@ function recalculatePension() {
 
    // v20230418-1241
    // v20230419-0920
+   // v20230419-0935
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
@@ -111,6 +112,24 @@ function recalculatePension() {
    var grossPension2 = scenTwoPension + purchPension + recipPension;
    var grossPension3 = scenThreePension + purchPension + recipPension;
 
+   if ( $('#check-taxation').prop('checked') == true ){
+      var taxFederal1 = grossPension1 * 0.21;
+      var taxFederal2 = grossPension2 * 0.21;
+      var taxFederal3 = grossPension3 * 0.21;
+   
+      var taxState1 = 0;
+      var taxState2 = 0;
+      var taxState3 = 0;
+   
+   } else {
+      var taxFederal1 = "";
+      var taxFederal2 = "";
+      var taxFederal3 = "";
+   
+      var taxState1 = "";
+      var taxState2 = "";
+      var taxState3 = "";
+   }
    var taxFederal1 = grossPension1 * 0.21;
    var taxFederal2 = grossPension2 * 0.21;
    var taxFederal3 = grossPension3 * 0.21;
