@@ -4,6 +4,7 @@ function recalculatePension() {
    // v20230419-0920
    // v20230419-0935
    // v20230419-1008
+   // v20230419-1048
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
@@ -160,6 +161,10 @@ function recalculatePension() {
    $('#pensiontable-recip1').text(dollarFormat.format(recipPension));
    $('#pensiontable-recip2').text(dollarFormat.format(recipPension));
    $('#pensiontable-recip3').text(dollarFormat.format(recipPension));
+
+   $('#pensiontable-gross1').text(dollarFormat.format(grossPension1));
+   $('#pensiontable-gross2').text(dollarFormat.format(grossPension2));
+   $('#pensiontable-gross3').text(dollarFormat.format(grossPension3));
 
    $('#pensiontable-qdro1').text(dollarFormat.format(deducQdro));
    $('#pensiontable-qdro2').text(dollarFormat.format(deducQdro));
