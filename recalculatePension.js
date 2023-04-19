@@ -3,7 +3,7 @@ function recalculatePension() {
    // v20230418-1241
    // v20230419-0920
    // v20230419-0935
-   // v20230419-0959
+   // v20230419-1008
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
@@ -130,12 +130,20 @@ function recalculatePension() {
       $('#pensiontable-taxstate3').text(dollarFormat.format(taxState3));
    
    } else {
-      $('#pensiontable-taxfed1').text(" ");
-      $('#pensiontable-taxfed2').text(" ");
-      $('#pensiontable-taxfed3').text(" ");
-      $('#pensiontable-taxstate1').text(" ");
-      $('#pensiontable-taxstate2').text(" ");
-      $('#pensiontable-taxstate3').text(" ");   
+      var taxFederal1 = 0;
+      var taxFederal2 = 0;
+      var taxFederal3 = 0;
+   
+      var taxState1 = 0;
+      var taxState2 = 0;
+      var taxState3 = 0;
+
+      $('#pensiontable-taxfed1').text("not incl.");
+      $('#pensiontable-taxfed2').text("not incl.");
+      $('#pensiontable-taxfed3').text("not incl.");
+      $('#pensiontable-taxstate1').text("not incl.");
+      $('#pensiontable-taxstate2').text("not incl.");
+      $('#pensiontable-taxstate3').text("not incl.");   
    }
 
    var netPension1 = grossPension1 - deducQdro - deducHw - taxFederal1 - taxState1;
