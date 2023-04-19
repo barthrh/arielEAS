@@ -1,6 +1,7 @@
 function recalculatePension() {
 
    // v20230418-1241
+   // v20230419-0920
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
@@ -103,5 +104,58 @@ function recalculatePension() {
    $('#demo-sc2-age').text("Retirement age " + scenTwoAge);
    $('#demo-sc3-age').text("Retirement age " + scenThreeAge);
 
+   var deducQdro = 3300 / pensionFrequecy;
+   var deducHw = 4200 / pensionFrequecy;
+
+   var grossPension1 = scenOnePension + purchPension + recipPension;
+   var grossPension2 = scenTwoPension + purchPension + recipPension;
+   var grossPension3 = scenThreePension + purchPension + recipPension;
+
+   var taxFederal1 = grossPension1 * 0.21;
+   var taxFederal2 = grossPension2 * 0.21;
+   var taxFederal3 = grossPension3 * 0.21;
+
+   var taxState1 = 0;
+   var taxState2 = 0;
+   var taxState3 = 0;
+
+   var netPension1 = grossPension1 - deducQdro - deducHw - taxFederal1 - taxState1;
+   var netPension2 = grossPension2 - deducQdro - deducHw - taxFederal2 - taxState2;
+   var netPension3 = grossPension3 - deducQdro - deducHw - taxFederal3 - taxState3;
+
+   // Now update the pension values table
+   $('#pensiontable-er1').text(dollarFormat.format(scenOnePension));
+   $('#pensiontable-er2').text(dollarFormat.format(scenTwoPension));
+   $('#pensiontable-er3').text(dollarFormat.format(scenThreePension));
+   $('#pensiontable-serv1').text(dollarFormat.format(purchPension));
+   $('#pensiontable-serv2').text(dollarFormat.format(purchPension));
+   $('#pensiontable-serv3').text(dollarFormat.format(purchPension));
+   $('#pensiontable-recip1').text(dollarFormat.format(recipPension));
+   $('#pensiontable-recip2').text(dollarFormat.format(recipPension));
+   $('#pensiontable-recip3').text(dollarFormat.format(recipPension));
+
+   $('#pensiontable-qdro1').text(dollarFormat.format(deducQdro));
+   $('#pensiontable-qdro2').text(dollarFormat.format(deducQdro));
+   $('#pensiontable-qdro3').text(dollarFormat.format(deducQdro));
+   $('#pensiontable-hw1').text(dollarFormat.format(deducHw));
+   $('#pensiontable-hw2').text(dollarFormat.format(deducHw));
+   $('#pensiontable-hw3').text(dollarFormat.format(deducHw));
+   $('#pensiontable-taxfed1').text(dollarFormat.format(taxFederal1));
+   $('#pensiontable-taxfed2').text(dollarFormat.format(taxFederal2));
+   $('#pensiontable-taxfed3').text(dollarFormat.format(taxFederal3));
+   $('#pensiontable-taxstate1').text(dollarFormat.format(taxState1));
+   $('#pensiontable-taxstate2').text(dollarFormat.format(taxState2));
+   $('#pensiontable-taxstate3').text(dollarFormat.format(taxState3));
+   $('#pensiontable-net1').text(dollarFormat.format(netPension1));
+   $('#pensiontable-net2').text(dollarFormat.format(netPension2));
+   $('#pensiontable-net3').text(dollarFormat.format(netPension3));
+   
+   if (pensionFrequecy == 12) {
+      $('#pensiontable-title').text("Estimated monthly amounts");
+      $('#pensiontable-netlabel').text("Net monthly pension");
+   } else {
+      $('#pensiontable-title').text("Estimated annual amounts");
+      $('#pensiontable-netlabel').text("Net annual pension");
+   }
 
  };
