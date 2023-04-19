@@ -3,6 +3,7 @@ function recalculatePension() {
    // v20230418-1241
    // v20230419-0920
    // v20230419-0935
+   // v20230419-0959
 
    // Number of payments per year
    var pensionFrequecy = localStorage.getItem('pensionFrequency');
@@ -112,7 +113,7 @@ function recalculatePension() {
    var grossPension2 = scenTwoPension + purchPension + recipPension;
    var grossPension3 = scenThreePension + purchPension + recipPension;
 
-   if ( $('#check-taxation').prop('checked') == true ){
+   if ( $('#check-taxation').prop("checked") == true ){
       var taxFederal1 = grossPension1 * 0.21;
       var taxFederal2 = grossPension2 * 0.21;
       var taxFederal3 = grossPension3 * 0.21;
@@ -120,23 +121,22 @@ function recalculatePension() {
       var taxState1 = 0;
       var taxState2 = 0;
       var taxState3 = 0;
+
+      $('#pensiontable-taxfed1').text(dollarFormat.format(taxFederal1));
+      $('#pensiontable-taxfed2').text(dollarFormat.format(taxFederal2));
+      $('#pensiontable-taxfed3').text(dollarFormat.format(taxFederal3));
+      $('#pensiontable-taxstate1').text(dollarFormat.format(taxState1));
+      $('#pensiontable-taxstate2').text(dollarFormat.format(taxState2));
+      $('#pensiontable-taxstate3').text(dollarFormat.format(taxState3));
    
    } else {
-      var taxFederal1 = "";
-      var taxFederal2 = "";
-      var taxFederal3 = "";
-   
-      var taxState1 = "";
-      var taxState2 = "";
-      var taxState3 = "";
+      $('#pensiontable-taxfed1').text(" ");
+      $('#pensiontable-taxfed2').text(" ");
+      $('#pensiontable-taxfed3').text(" ");
+      $('#pensiontable-taxstate1').text(" ");
+      $('#pensiontable-taxstate2').text(" ");
+      $('#pensiontable-taxstate3').text(" ");   
    }
-   var taxFederal1 = grossPension1 * 0.21;
-   var taxFederal2 = grossPension2 * 0.21;
-   var taxFederal3 = grossPension3 * 0.21;
-
-   var taxState1 = 0;
-   var taxState2 = 0;
-   var taxState3 = 0;
 
    var netPension1 = grossPension1 - deducQdro - deducHw - taxFederal1 - taxState1;
    var netPension2 = grossPension2 - deducQdro - deducHw - taxFederal2 - taxState2;
@@ -159,15 +159,10 @@ function recalculatePension() {
    $('#pensiontable-hw1').text(dollarFormat.format(deducHw));
    $('#pensiontable-hw2').text(dollarFormat.format(deducHw));
    $('#pensiontable-hw3').text(dollarFormat.format(deducHw));
-   $('#pensiontable-taxfed1').text(dollarFormat.format(taxFederal1));
-   $('#pensiontable-taxfed2').text(dollarFormat.format(taxFederal2));
-   $('#pensiontable-taxfed3').text(dollarFormat.format(taxFederal3));
-   $('#pensiontable-taxstate1').text(dollarFormat.format(taxState1));
-   $('#pensiontable-taxstate2').text(dollarFormat.format(taxState2));
-   $('#pensiontable-taxstate3').text(dollarFormat.format(taxState3));
    $('#pensiontable-net1').text(dollarFormat.format(netPension1));
    $('#pensiontable-net2').text(dollarFormat.format(netPension2));
    $('#pensiontable-net3').text(dollarFormat.format(netPension3));
+
    
    if (pensionFrequecy == 12) {
       $('#pensiontable-title').text("Estimated monthly amounts");
