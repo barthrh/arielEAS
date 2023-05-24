@@ -22,11 +22,7 @@ function recalculatePension() {
       purchaseYears = 2;
    };
 
-   var reciprocalYears = 0;
-   if ($('#check-recip').prop("checked") == true &&
-       $('#check-recip-teach-4yrs').prop("checked") == true) {
-      reciprocalYears = 4;
-   };
+    govpenYears = 4;  
    
    // Figure out impact of salary increase assuming age 55 now
    // Dividing percent by 500 to minimize the impact on total service
@@ -48,7 +44,7 @@ function recalculatePension() {
    var scenThreeSize = (((scenThreePension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 90;
    
    var purchHeight = purchaseYears * 5;
-   var recipHeight = reciprocalYears * 5;
+   var govpenHeight = govpenYears * 5;
    
    var scenOneAttr = new String(scenOneSize);
    scenOneAttr = scenOneAttr.concat("px");
@@ -68,11 +64,11 @@ function recalculatePension() {
    $('#scen-three-bar').animate({height: scenThreeAttr}, 500);
    
    $('#scen-one-purch-bar').animate({height: purchHeight}, 500);
-   $('#scen-one-recip-bar').animate({height: recipHeight}, 500);
+   $('#scen-one-govpen-bar').animate({height: govpenHeight}, 500);
    $('#scen-two-purch-bar').animate({height: purchHeight}, 500);
-   $('#scen-two-recip-bar').animate({height: recipHeight}, 500);
+   $('#scen-two-govpen-bar').animate({height: govpenHeight}, 500);
    $('#scen-three-purch-bar').animate({height: purchHeight}, 500);
-   $('#scen-three-recip-bar').animate({height: recipHeight}, 500);
+   $('#scen-three-govpen-bar').animate({height: govpenHeight}, 500);
 
 
    let dollarFormat = new Intl.NumberFormat('en-US', {
@@ -82,12 +78,12 @@ function recalculatePension() {
     });
 
    var purchPension = purchaseYears * (3220 / pensionFrequecy);
-   var recipPension = reciprocalYears * (3220 / pensionFrequecy);
+   var govpenPension = govpenYears * (3220 / pensionFrequecy);
 
    // Update the labels / captions
-   $('#demo-sc1-value').text(dollarFormat.format(scenOnePension + purchPension + recipPension));
-   $('#demo-sc2-value').text(dollarFormat.format(scenTwoPension + purchPension + recipPension));
-   $('#demo-sc3-value').text(dollarFormat.format(scenThreePension + purchPension + recipPension));
+   $('#demo-sc1-value').text(dollarFormat.format(scenOnePension + purchPension + govpenPension));
+   $('#demo-sc2-value').text(dollarFormat.format(scenTwoPension + purchPension + govpenPension));
+   $('#demo-sc3-value').text(dollarFormat.format(scenThreePension + purchPension + govpenPension));
    
    $('#demo-sc1-age').text("Retirement age " + scenOneAge);
    $('#demo-sc2-age').text("Retirement age " + scenTwoAge);
@@ -96,9 +92,9 @@ function recalculatePension() {
    var deducQdro = 0;
    var deducHw = 4200 / pensionFrequecy;
 
-   var grossPension1 = scenOnePension + purchPension + recipPension;
-   var grossPension2 = scenTwoPension + purchPension + recipPension;
-   var grossPension3 = scenThreePension + purchPension + recipPension;
+   var grossPension1 = scenOnePension + purchPension + govpenPension;
+   var grossPension2 = scenTwoPension + purchPension + govpenPension;
+   var grossPension3 = scenThreePension + purchPension + govpenPension;
 
    var netPension1 = grossPension1;
    var netPension2 = grossPension2;
@@ -111,9 +107,9 @@ function recalculatePension() {
    $('#pensiontable-serv1').text(dollarFormat.format(purchPension));
    $('#pensiontable-serv2').text(dollarFormat.format(purchPension));
    $('#pensiontable-serv3').text(dollarFormat.format(purchPension));
-   $('#pensiontable-recip1').text(dollarFormat.format(recipPension));
-   $('#pensiontable-recip2').text(dollarFormat.format(recipPension));
-   $('#pensiontable-recip3').text(dollarFormat.format(recipPension));
+   $('#pensiontable-govpen1').text(dollarFormat.format(govpenPension));
+   $('#pensiontable-govpen2').text(dollarFormat.format(govpenPension));
+   $('#pensiontable-govpen3').text(dollarFormat.format(govpenPension));
 
    $('#pensiontable-gross1').text(dollarFormat.format(grossPension1));
    $('#pensiontable-gross2').text(dollarFormat.format(grossPension2));
