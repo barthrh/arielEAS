@@ -9,6 +9,16 @@ function recalculatePension() {
     var scenOneAge = Number($('#input-ret1-age').val() );
     var scenTwoAge = Number($('#input-ret2-age').val() );
     var scenThreeAge = Number($('#input-ret3-age').val() );
+
+    if ($('#ret3-checkbox').prop("checked") == true) {
+        $('#chart-scen3-bar').animate({height: 'show'}, 0);
+        $('#chart-scen3-separator').animate({height: 'show'}, 0);
+        $('#chart-scen3-title').animate({height: 'show'}, 0);
+    } else {
+        $('#chart-scen3-bar').animate({height: 'hide'}, 0);
+        $('#chart-scen3-separator').animate({height: 'hide'}, 0);
+        $('#chart-scen3-title').animate({height: 'hide'}, 0);
+    }
    
     var purchaseYears = 0;
     if ($('#check-purchase').prop("checked") == true &&
