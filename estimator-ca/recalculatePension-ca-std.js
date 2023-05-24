@@ -15,8 +15,10 @@ function recalculatePension() {
         $('#check-reinstated-2yrs').prop("checked") == true) {
         purchaseYears = 2;
         $('#legend-purchase').animate({height: 'show'}, 0);
+        $('#table-purchase').animate({height: 'show'}, 0);
     } else {
         $('#legend-purchase').animate({height: 'hide'}, 0);  
+        $('#table-purchase').animate({height: 'hide'}, 0);  
     };
 
     govpenYears = 4;  
