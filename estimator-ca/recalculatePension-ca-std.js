@@ -14,9 +14,9 @@ function recalculatePension() {
     if ($('#check-purchase').prop("checked") == true &&
         $('#check-reinstated-2yrs').prop("checked") == true) {
         purchaseYears = 2;
-        $('legend-purchase').animate({height: 'show'}, 0);
+        $('#legend-purchase').animate({height: 'show'}, 0);
     } else {
-        $('legend-purchase').animate({height: 'hide'}, 0);  
+        $('#legend-purchase').animate({height: 'hide'}, 0);  
     };
 
     govpenYears = 4;  
