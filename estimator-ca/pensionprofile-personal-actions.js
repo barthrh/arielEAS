@@ -1,9 +1,9 @@
 // Code to hide or show the menus and content panes
 
 $('#nav-basic-tab').on('click', function(){
-    $('#nav-basic-text').css('color','#0078AB');
-    $('#nav-basic-arrow').animate({height: 'show'}, 500);
-    $('#nav-basic-content').animate({height: 'show'}, 500);
+    setBasic('show');
+    setSurvivor('hide');
+    setAuthrep('hide');
 })
 
 $('#nav-survivor-tab').on('click', function(){
