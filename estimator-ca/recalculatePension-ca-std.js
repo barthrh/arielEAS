@@ -11,13 +11,13 @@ function recalculatePension() {
     var scenThreeAge = Number($('#input-ret3-age').val() );
 
     if ($('#ret3-checkbox').prop("checked") == true) {
-        $('#chart-scen3-bar').animate({height: 'show'}, 500);
-        $('#chart-scen3-separator').animate({height: 'show'}, 500);
-        $('#chart-scen3-title').animate({height: 'show'}, 500);
+        $('#chart-scen3-bar').animate({height: 'show'}, 300);
+        $('#chart-scen3-separator').animate({height: 'show'}, 300);
+        $('#chart-scen3-title').animate({height: 'show'}, 300);
     } else {
-        $('#chart-scen3-bar').animate({height: 'hide'}, 500);
-        $('#chart-scen3-separator').animate({height: 'hide'}, 500);
-        $('#chart-scen3-title').animate({height: 'hide'}, 500);
+        $('#chart-scen3-bar').animate({height: 'hide'}, 300);
+        $('#chart-scen3-separator').animate({height: 'hide'}, 300);
+        $('#chart-scen3-title').animate({height: 'hide'}, 300);
     }
    
     var purchaseYears = 0;
