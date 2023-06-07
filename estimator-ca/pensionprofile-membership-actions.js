@@ -1,8 +1,4 @@
-accordian-retirementdates
-accordian-service
-accordian-contributions
-accordian-salaries
-
+// Control the four accordian sections
 
 $('#accordian-retirementdates').on('click', function(){
     var accordHeight = $('#content-retirementdates').height();   
