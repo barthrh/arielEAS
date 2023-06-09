@@ -4,19 +4,19 @@ $('#nav-basic-tab').on('click', function(){
     setBasic('show');
     setSurvivor('hide');
     setAuthrep('hide');
-})
+});
 
 $('#nav-survivor-tab').on('click', function(){
     setBasic('hide');
     setSurvivor('show');
     setAuthrep('hide');
-})
+});
 
 $('#nav-authrep-tab').on('click', function(){
     setBasic('hide');
     setSurvivor('hide');
     setAuthrep('show');
-})
+});
 
 function setBasic(theAction) {
     
