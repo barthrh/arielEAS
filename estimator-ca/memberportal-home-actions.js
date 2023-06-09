@@ -10,3 +10,4 @@ $('#button-shrink-abouttheplan').on('click', function() {
     $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
     $('#tilesmall-abouttheplan').animate({width: 'show'},{duration: 0, queue: false});
 });
+
