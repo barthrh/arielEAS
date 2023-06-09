@@ -8,6 +8,7 @@ $('#button-article-abouttheplan').on('click', function(){
 });
 
 $('#button-shrink-abouttheplan').on('click', function(){
+    console.log('ping!');
     $('#tilelarge-abouttheplan').animate('hide',300);
     $('#tile-abouttheplan').animate({width: '250px'},300);
     $('#tilesmall-abouttheplan').animate('show',{duration: 300, queue: false});
