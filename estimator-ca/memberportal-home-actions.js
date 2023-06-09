@@ -2,8 +2,7 @@
 $('#button-article-abouttheplan').on('click', function() {
     console.log('pong!');
     $('#tile-abouttheplan').animate({width: '100vw'},300);
-    $('#tilesmall-abouttheplan').animate({width: 'hide'},{duration: 300, queue: false});
-    $('#tilelarge-abouttheplan').animate({width: 'show'},{duration: 100, queue: false});
+    $('#tilesmall-abouttheplan').animate({width: 'hide'},{duration: 30300, queue: true});
 });
 
 $('#button-shrink-abouttheplan').on('click', function() {
