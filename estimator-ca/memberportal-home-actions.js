@@ -1,7 +1,7 @@
 
 $('#button-article-abouttheplan').on('click', function() {
     $('#tile-abouttheplan').animate({width: '100vw'},300);
-    $('TileContainerArticle').css('min-width','700px');
+    $('#tile-abouttheplan').css('min-width','700px');
     $('#tilelarge-abouttheplan').animate({opacity: 'show'},300);
     $('#tilesmall-abouttheplan').animate({width: 'hide'},{duration: 0, queue: false});
 });
