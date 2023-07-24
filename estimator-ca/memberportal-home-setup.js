@@ -1,12 +1,10 @@
 
-$('#button-shrink-abouttheplan').on('click', function() {
-  $('#tile-abouttheplan').animate({width: '250px'},0);
-  $('#tile-abouttheplan').animate({minWidth: '250px'},{duration: 0, queue: false});
-  $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
-  $('#tilesmall-abouttheplan').animate({width: 'show'},{duration: 0, queue: false});
-});
+$( document ).ready(function() {
+    $('#tile-abouttheplan').animate({width: '250px'},0);
+    $('#tile-abouttheplan').animate({minWidth: '250px'},{duration: 0, queue: false});
+    $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
+    $('#tilesmall-abouttheplan').animate({width: 'show'},{duration: 0, queue: false});
 
-  $('#button-shrink-retirementinfo').on('click', function() {
     $('#tile-retirementinfo').animate({width: '250px'},0);
     $('#tile-retirementinfo').animate({minWidth: '250px'},{duration: 0, queue: false});
     $('#tilelarge-retirementinfo').animate({opacity: 'hide'},0);
