@@ -8,7 +8,7 @@ $('#button-article-abouttheplan').on('click', function() {
 
 $('#button-shrink-abouttheplan').on('click', function() {
     $('#tile-abouttheplan').animate({width: '250px'},300);
-    $('#tile-abouttheplan').css('min-width','250px');
+    $('#tile-abouttheplan').animate({minWidth: '250px'},300);
     $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
     $('#tilesmall-abouttheplan').animate({width: 'show'},{duration: 0, queue: false});
 });
