@@ -10,8 +10,9 @@ function calcRetireDate(endDate) {
 
     console.log(endDate);
 
+    // The + 1 on the date is because months are an array w/ a start index of zero.
     const tempDate = new Date();
-    tempDate.setFullYear(endYear,endMonth,endDay);
+    tempDate.setFullYear(endYear,endMonth+1,endDay);
 
     // Now format it.
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -23,6 +24,7 @@ function calcRetireDate(endDate) {
 
 $('#endemploy-date').on('change', function(){
     console.log('changed');
+    endDate = $('#endemploy-date').val();
     retireDate = calcRetireDate("10-12-2023");
     localStorage.setItem('initretire-enddate', endDate);
     localStorage.setItem('initretire-retiredate', retireDate);
