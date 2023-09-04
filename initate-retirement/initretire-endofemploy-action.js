@@ -4,9 +4,9 @@
 function calcRetireDate(endDate) {
 
     // Set up vars for the segments
-    endMonth = new Number(endDate.substr(0,2));
-    endDay = new Number(endDate.substr(3,2));
-    endYear = new Number(endDate.substr(6,4));
+    endMonth = parseInt(endDate.substr(0,2));
+    endDay = parseInt(endDate.substr(3,2));
+    endYear = parseInt(endDate.substr(6,4));
 
     if (endDay != 1) {
         endMonth = endMonth + 1;
