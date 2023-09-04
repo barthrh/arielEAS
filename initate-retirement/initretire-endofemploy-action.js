@@ -9,13 +9,16 @@ function calcRetireDate(endDate) {
     endYear = endDate.substr(6,4);
 
     console.log(endDate);
-    console.log(endMonth + ":" + endDay + ":" + endYear);
 
     const tempDate = new Date();
     tempDate.setFullYear(endYear,endMonth,endDay);
 
-    tempDate.toLocaleDateString('en-us', { year:"numeric", month:"long"}); // "Jul 2021 Friday"
+    // Now format it.
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    tempDate.toLocaleDateString('en-us', options); // "Jul 2021 Friday"
     console.log(tempDate);
+
+    return tempDate;
 }
 
 $('#endemploy-date').on('change', function(){
