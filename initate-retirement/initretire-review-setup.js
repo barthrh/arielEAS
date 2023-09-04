@@ -6,7 +6,7 @@ var retireDate = localStorage.getItem('initretire-retiredate');
 
 if ( localStorage.getItem('initretire-enddate') != null ) {
 
-    console.log("P1")
+    console.log("P1");
 
     endMonth = parseInt(endDate.substring(0,2));
     endDay = parseInt(endDate.substring(3,5));
@@ -25,17 +25,15 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 
     $("#review-endemploydate").val(endDate);
 } else {
-    console.log("P2")
+    console.log("P2");
    $("#review-endemploydate").val("September 30, 2023");  
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
-    console.log("P3")
+    console.log("P3");
    $("#review-retiredate").text(retireDate);  
-   console.log("Point3");
 } else {
-    console.log("P4")
+    console.log("P4");
    $("#review-retiredate").text("October 1, 2023")  
-   console.log("Point4");
 }
 
