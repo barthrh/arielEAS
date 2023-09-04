@@ -14,6 +14,8 @@ function calcRetireDate(endDate) {
     const tempDate = new Date();
     tempDate.setFullYear(endYear,endMonth+1,endDay);
 
+    console.log(tempDate);
+
     // Now format it.
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     retireDate = tempDate.toLocaleDateString(undefined, options); 
@@ -23,7 +25,6 @@ function calcRetireDate(endDate) {
 }
 
 $('#endemploy-date').on('change', function(){
-    console.log('changed');
     endDate = $('#endemploy-date').val();
     retireDate = calcRetireDate(endDate);
     localStorage.setItem('initretire-enddate', endDate);
