@@ -8,10 +8,12 @@ var retireDate = localStorage.getItem('initretire-retiredate');
 var form = $('form[data-name="endemploy-form"]'); 
 console.log(form);
 
+$("#endemploy-date-input-field").val("12-12-2022");
+
 if ( localStorage.getItem('initretire-enddate') != null ) {
    thisfield = form.find($("#endemploy-date-input-field")).val(endDate);
 
-   console.log("thisfield");
+   console.log("one:"+"thisfield");
 } else {
    form.find($("#endemploy-date-input-field")).val("09-20-2023");  
    console.log("Point2");
