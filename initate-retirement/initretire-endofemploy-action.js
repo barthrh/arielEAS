@@ -20,17 +20,16 @@ function calcRetireDate(endDate) {
 
     console.log(endYear);
     console.log(endMonth);
-    console.log(endDay);
 
     // The + 1 on the date is because months are an array w/ a start index of zero.
 //    const tempDate = new Date(reformatDate);
-    const tempDate = new Date(Date.UTC(endYear, endMonth, 1, 0, 0, 0));
+    const tempDate = new Date(Date.UTC(endYear, endMonth-1, 1, 0, 0, 0));
 
     newDate = new Intl.DateTimeFormat("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
-        timeZone: "EDT",
+        timeZone: "UTC",
       }).format(tempDate);
 
     console.log(tempDate);
