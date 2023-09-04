@@ -9,7 +9,7 @@ $("#endemploy-date-input-field").val("12-12-2022");
 if ( localStorage.getItem('initretire-enddate') != null ) {
    $("#endemploy-date").val(endDate);
 } else {
-   $("#endemploy-date").val("09-20-2023");  
+   $("#endemploy-date").val("09-30-2023");  
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
