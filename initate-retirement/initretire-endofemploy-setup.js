@@ -17,7 +17,7 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 } else {
    form.find($("#endemploy-date-input-field")).val("09-20-2023");  
    console.log("Point2");
-   console.log("two:"+"thisfield");
+   console.log("two: "+ thisfield );
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
