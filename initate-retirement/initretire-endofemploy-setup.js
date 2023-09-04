@@ -13,11 +13,11 @@ $("#endemploy-date-input-field").val("12-12-2022");
 if ( localStorage.getItem('initretire-enddate') != null ) {
    thisfield = form.find($("#endemploy-date-input-field")).val(endDate);
 
-   console.log("one:"+"thisfield");
+   console.log(thisfield);
 } else {
    thisfield = form.find($("#endemploy-date-input-field")).val("09-20-2023");  
    console.log("Point2");
-   console.log("two: "+ thisfield );
+   console.log(thisfield);
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
