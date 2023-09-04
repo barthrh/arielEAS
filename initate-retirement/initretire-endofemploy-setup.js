@@ -16,10 +16,10 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
-   form.find($("#retirement-date")).val(retireDate)  
+   form.find($("#retirement-date")).text(retireDate)  
    console.log("Point3");
 } else {
-   form.find($("#retirement-date")).val("October 1, 2023")  
+   form.find($("#retirement-date")).text("October 1, 2023")  
    console.log("Point4");
 }
 
