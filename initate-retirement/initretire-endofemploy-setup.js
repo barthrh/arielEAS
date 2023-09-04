@@ -3,6 +3,8 @@
 var endDate = localStorage.getItem('initretire-enddate');
 var retireDate = localStorage.getItem('initretire-retiredate');
 
+console.log("running");
+
 // 1. Find the form
 var form = $('form[data-name="endemploy-form"]'); 
 
