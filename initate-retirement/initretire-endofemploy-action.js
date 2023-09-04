@@ -9,15 +9,14 @@ function calcRetireDate(endDate) {
     endYear = parseInt(endDate.substr(6,4));
 
     if (endDay != 1) {
-        endMonth = endMonth + 1;
+        if (endMonth == 12) {
+            endMonth = 1;
+            endYear = endYear + 1;
+        } else {
+            endMonth = endMonth + 1;
+        }
     }
 
-    if (endMonth == 12) {
-        endMonth = 1;
-        endYear = endYear + 1;
-    } else {
-        endMonth = endMonth + 1;
-    }
 
     console.log(endYear);
     console.log(endMonth);
@@ -40,7 +39,7 @@ function calcRetireDate(endDate) {
 $('#endemploy-date').on('change', function(){
     endDate = $('#endemploy-date').val();
     console.log("date" + endDate);
-    
+
     retireDate = calcRetireDate(endDate);
     localStorage.setItem('initretire-enddate', endDate);
     localStorage.setItem('initretire-retiredate', retireDate);
