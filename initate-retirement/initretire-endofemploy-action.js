@@ -17,8 +17,7 @@ function calcRetireDate(endDate) {
         }
     }
 
-    // The + 1 on the date is because months are an array w/ a start index of zero.
-//    const tempDate = new Date(reformatDate);
+    // The -1 on the date is because months are an array w/ a start index of zero.
     const tempDate = new Date(Date.UTC(endYear, endMonth-1, 1, 0, 0, 0));
 
     console.log(tempDate);
