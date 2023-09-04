@@ -7,8 +7,9 @@ function calcRetireDate(endDate) {
     endMonth = endDate.substr(0,2);
     endDay = endDate.substr(3,2);
     endYear = endDate.substr(6,4);
+    reformatDate = endYear + "-" + endMonth + "-" + endDay;
 
-    console.log(endDate);
+    console.log(reformatDate);
 
     // The + 1 on the date is because months are an array w/ a start index of zero.
     const tempDate = new Date();
