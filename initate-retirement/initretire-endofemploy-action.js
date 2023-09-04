@@ -17,8 +17,8 @@ function calcRetireDate(endDate) {
     console.log(tempDate);
 
     // Now format it.
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    retireDate = tempDate.toLocaleDateString(undefined, options); 
+    const options = { year: 'numeric', month: 'long', day: 'numeric',timeZone: 'UTC' };
+    retireDate = tempDate.toLocaleDateString('en-us', options); 
     console.log(retireDate);
 
     return retireDate;
