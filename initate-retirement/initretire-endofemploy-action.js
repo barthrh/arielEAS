@@ -30,7 +30,7 @@ function calcRetireDate(endDate) {
         year: "numeric",
         month: "long",
         day: "numeric",
-        timeZone: "UTC",
+        timeZone: "EDT",
       }).format(tempDate);
 
     console.log(tempDate);
