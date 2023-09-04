@@ -11,11 +11,11 @@ console.log(form);
 $("#endemploy-date-input-field").val("12-12-2022");
 
 if ( localStorage.getItem('initretire-enddate') != null ) {
-   thisfield = form.find($("#endemploy-date-input-field")).val(endDate);
+   thisfield = form.find($("#endemploy-date")).val(endDate);
 
    console.log(thisfield);
 } else {
-   thisfield = form.find($("#endemploy-date-input-field")).val("09-20-2023");  
+   thisfield = form.find($("#endemploy-date")).val("09-20-2023");  
    console.log("Point2");
    console.log(thisfield);
 }
