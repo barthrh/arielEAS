@@ -25,7 +25,7 @@ function calcRetireDate(endDate) {
 $('#endemploy-date').on('change', function(){
     console.log('changed');
     endDate = $('#endemploy-date').val();
-    retireDate = calcRetireDate("10-12-2023");
+    retireDate = calcRetireDate(endDate);
     localStorage.setItem('initretire-enddate', endDate);
     localStorage.setItem('initretire-retiredate', retireDate);
  });
