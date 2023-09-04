@@ -29,4 +29,11 @@ $('#endemploy-date').on('change', function(){
     retireDate = calcRetireDate(endDate);
     localStorage.setItem('initretire-enddate', endDate);
     localStorage.setItem('initretire-retiredate', retireDate);
+
+    if ( localStorage.getItem('initretire-retiredate') != null ) {
+        $("#retirement-date").text(retireDate);  
+     } else {
+        $("#retirement-date").text("October 1, 2023");
+     }
+     
  });
