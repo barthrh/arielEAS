@@ -4,9 +4,9 @@
 function calcRetireDate(endDate) {
 
     // Set up vars for the segments
-    endMonth = endDate.substr(1,2);
-    endDay = endDate.substr(4,2);
-    endYear = endDate.substr(7,4);
+    endMonth = endDate.substr(0,2);
+    endDay = endDate.substr(3,2);
+    endYear = endDate.substr(6,4);
 
     console.log(endDate);
     console.log(endMonth + ":" + endDay + ":" + endYear);
