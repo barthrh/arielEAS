@@ -8,8 +8,9 @@ function calcRetireDate(endDate) {
     endDay = endDate.substring(4,2);
     endYear = endDate.substring(7,4);
 
+    console.log(endDate);
     console.log(endMonth + "-" + endDay + "-" + endYear);
-    
+
     const tempDate = new Date();
     tempDate.setFullYear(endYear,endMonth,endDay);
 
