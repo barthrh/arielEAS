@@ -26,7 +26,15 @@ function calcRetireDate(endDate) {
 //    const tempDate = new Date(reformatDate);
     const tempDate = new Date(Date.UTC(endYear, endMonth, 1, 0, 0, 0));
 
+    newDate = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC",
+      }).format(date);
+
     console.log(tempDate);
+    console.log(newDate);
 
     // Now format it.
     const options = { year: 'numeric', month: 'long', day: 'numeric',timeZone: 'UTC' };
