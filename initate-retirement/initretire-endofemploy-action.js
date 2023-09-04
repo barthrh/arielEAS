@@ -18,12 +18,12 @@ function calcRetireDate(endDate) {
     retireDate = tempDate.toLocaleDateString(undefined, options); 
     console.log(retireDate);
 
-    return tempDate;
+    return retireDate;
 }
 
 $('#endemploy-date').on('change', function(){
     console.log('changed');
-    retireDate = calcRetireDate("11-12-2023");
+    retireDate = calcRetireDate("10-12-2023");
     localStorage.setItem('initretire-enddate', endDate);
     localStorage.setItem('initretire-retiredate', retireDate);
  });
