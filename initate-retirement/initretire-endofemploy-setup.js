@@ -9,13 +9,13 @@ console.log("running");
 var form = $('form[data-name="endemploy-form"]'); 
 
 if ( localStorage.getItem('initretire-enddate') != null ) {
-   form.find($("#endemploy-date-input-field")).val(initretire-enddate)  
+   form.find($("#endemploy-date-input-field")).val(endDate)  
 } else {
    form.find($("#endemploy-date-input-field")).val("09-20-2023")  
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
-   form.find($("#retirement-date")).val(initretire-retiredate)  
+   form.find($("#retirement-date")).val(retireDate)  
 } else {
    form.find($("#retirement-date")).val("October 1, 2023")  
 }
