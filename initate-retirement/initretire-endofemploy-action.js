@@ -15,8 +15,8 @@ function calcRetireDate(endDate) {
 
     // Now format it.
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    tempDate.toLocaleDateString('en-us', options); // "Jul 2021 Friday"
-    console.log(tempDate);
+    retireDate = tempDate.toLocaleDateString(undefined, options); 
+    console.log(retireDate);
 
     return tempDate;
 }
