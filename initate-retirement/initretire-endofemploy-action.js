@@ -4,16 +4,16 @@
 function calcRetireDate(endDate) {
 
     // Set up vars for the segments
-    endMonth = endDate.substr(0,2);
-    endDay = endDate.substr(3,2);
-    endYear = endDate.substr(6,4);
+    endMonth = new Number(endDate.substr(0,2));
+    endDay = new Number(endDate.substr(3,2));
+    endYear = new Number(endDate.substr(6,4));
 
     if (endDay != 1) {
         endMonth = endMonth + 1;
     }
 
     if (endMonth == 12) {
-        endMonth = "01";
+        endMonth = 1;
         endYear = endYear + 1;
     } else {
         endMonth = endMonth + 1;
