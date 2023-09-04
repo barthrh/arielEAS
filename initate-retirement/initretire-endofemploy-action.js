@@ -8,17 +8,17 @@ function calcRetireDate(endDate) {
     endDay = endDate.substr(3,2);
     endYear = endDate.substr(6,4);
 
-    if (endDay == 1) {
-        if (endMonth == 12) {
-            endMonth = "01";
-            endYear = endYear + 1;
-        } else {
-            endMonth = endMonth + 1;
-        }
-
-        reformatDate = endYear + "-" + endMonth + "-" + endDay;
-
+    if (endDay != 1) {
+        endMonth = endMonth + 1;
     }
+
+    if (endMonth == 12) {
+        endMonth = "01";
+        endYear = endYear + 1;
+    } else {
+        endMonth = endMonth + 1;
+    }
+    reformatDate = endYear + "-" + endMonth + "-" + endDay;
 
     console.log(reformatDate);
 
