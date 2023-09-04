@@ -7,6 +7,7 @@ var retireDate = localStorage.getItem('initretire-retiredate');
 if ( localStorage.getItem('initretire-enddate') != null ) {
 
     console.log("P1");
+    console.log(endDate);
 
     endMonth = parseInt(endDate.substring(0,2));
     endDay = parseInt(endDate.substring(3,5));
@@ -22,7 +23,6 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
     retireDate = tempDate.toLocaleDateString('en-us', options); 
     console.log(retireDate);
     
-
     $("#review-endemploydate").val(endDate);
 } else {
     console.log("P2");
@@ -31,6 +31,7 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
     console.log("P3");
+    console.log(retireDate);
    $("#review-retiredate").text(retireDate);  
 } else {
     console.log("P4");
