@@ -7,12 +7,24 @@ function calcRetireDate(endDate) {
     endMonth = endDate.substr(0,2);
     endDay = endDate.substr(3,2);
     endYear = endDate.substr(6,4);
-    reformatDate = endYear + "-" + endMonth + "-" + endDay;
+
+    if (endDay == 1) {
+        if (endMonth == 12) {
+            endMonth = "01";
+            endYear = endYear + 1;
+        } else {
+            endMonth = endMonth + 1;
+        }
+
+        reformatDate = endYear + "-" + endMonth + "-" + endDay;
+
+    }
 
     console.log(reformatDate);
 
     // The + 1 on the date is because months are an array w/ a start index of zero.
-    const tempDate = new Date(reformatDate);
+//    const tempDate = new Date(reformatDate);
+    const tempDate = new Date(Date.UTC(endYear, endMonth, 1, 0, 0, 0));
 
     console.log(tempDate);
 
