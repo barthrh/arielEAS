@@ -40,9 +40,9 @@ function recalculatePension() {
     var raiseMultTwo = Math.max( (1 + raisePercent)**(scenTwoAge - 55), 0);
     var raiseMultThree = Math.max( (1 + raisePercent)**(scenThreeAge - 55), 0);
 
-    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + ( (scenOneAge - 55) * 3699 ) * raiseMultOne ) / pensionFrequecy;
-    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo ) / pensionFrequecy;
-    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + ( (scenThreeAge - 55) * 3699 ) * raiseMultThree ) / pensionFrequecy;
+    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + ( (scenOneAge - 55) * 2699 ) * raiseMultOne ) / pensionFrequecy;
+    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + ( (scenTwoAge - 55) * 2699 ) * raiseMultTwo ) / pensionFrequecy;
+    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + ( (scenThreeAge - 55) * 2699 ) * raiseMultThree ) / pensionFrequecy;
     
     scenOnePension = Math.min(scenOnePension, pensionMax);
     scenTwoPension = Math.min(scenTwoPension, pensionMax);
