@@ -13,6 +13,10 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
     endDay = parseInt(endDate.substring(3,5));
     endYear = parseInt(endDate.substring(6,8));
 
+    console.log(endYear);
+    console.log(endMonth);
+    console.log(endDay);
+    
     // The -1 on the date is because months are an array w/ a start index of zero.
     const tempDate = new Date(Date.UTC(endYear, endMonth-1, 1, 0, 0, 0));
 
@@ -20,21 +24,21 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 
     // Now format it.
     const options = { year: 'numeric', month: 'long', day: 'numeric',timeZone: 'UTC' };
-    retireDate = tempDate.toLocaleDateString('en-us', options); 
-    console.log(retireDate);
+    endDateText = tempDate.toLocaleDateString('en-us', options); 
+    console.log(endDateText);
     
-    $("#review-endemploydate").val(endDate);
+    $("#review-endemploydate").val(endDateText);
 } else {
     console.log("P2");
-   $("#review-endemploydate").val("September 30, 2023");  
+    $("#review-endemploydate").val("September 30, 2023");  
 }
 
 if ( localStorage.getItem('initretire-retiredate') != null ) {
     console.log("P3");
     console.log(retireDate);
-   $("#review-retiredate").text(retireDate);  
+    $("#review-retiredate").text(retireDate);  
 } else {
     console.log("P4");
-   $("#review-retiredate").text("October 1, 2023")  
+    $("#review-retiredate").text("October 1, 2023")  
 }
 
