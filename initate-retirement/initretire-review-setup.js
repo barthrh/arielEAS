@@ -11,14 +11,14 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
 
     endMonth = parseInt(endDate.substring(0,2));
     endDay = parseInt(endDate.substring(3,5));
-    endYear = parseInt(endDate.substring(6,8));
+    endYear = parseInt(endDate.substring(6,10));
 
     console.log(endYear);
     console.log(endMonth);
     console.log(endDay);
-    
+
     // The -1 on the date is because months are an array w/ a start index of zero.
-    const tempDate = new Date(Date.UTC(endYear, endMonth-1, 1, 0, 0, 0));
+    const tempDate = new Date(Date.UTC(endYear, endMonth-1, endDay, 0, 0, 0));
 
     console.log(tempDate);
 
