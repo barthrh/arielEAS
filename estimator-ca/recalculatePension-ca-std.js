@@ -48,9 +48,9 @@ function recalculatePension() {
     scenTwoPension = Math.min(scenTwoPension, pensionMax);
     scenThreePension = Math.min(scenThreePension, pensionMax);
     
-    var scenOneSize = (((scenOnePension * pensionFrequecy) - (pensionBaseline * pensionFrequecy) ) / 80) - 90;
-    var scenTwoSize = (((scenTwoPension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 140;
-    var scenThreeSize = (((scenThreePension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 190;
+    var scenOneSize = (((scenOnePension * pensionFrequecy) - (pensionBaseline * pensionFrequecy) ) / 80) - 150;
+    var scenTwoSize = (((scenTwoPension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 150;
+    var scenThreeSize = (((scenThreePension  * pensionFrequecy) - (pensionBaseline  * pensionFrequecy) ) / 80) - 150;
     
     var purchHeight = purchaseYears * 5;
     var govpenHeight = govpenYears * 5;
