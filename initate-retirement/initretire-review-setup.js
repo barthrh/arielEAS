@@ -27,7 +27,7 @@ if ( localStorage.getItem('initretire-enddate') != null ) {
     endDateText = tempDate.toLocaleDateString('en-us', options); 
     console.log(endDateText);
     
-    $("#review-endemploydate").val(endDateText);
+    $("#review-endemploydate").text(endDateText);
 } else {
     console.log("P2");
     $("#review-endemploydate").val("September 30, 2023");  
