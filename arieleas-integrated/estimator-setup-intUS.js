@@ -11,4 +11,4 @@ $('#content-taxation').animate({height: 'hide'}, 0);
 $('#content-lvl2-taxation').animate({height: 'hide'}, 0);
 $('#content-information').animate({height: 'hide'}, 0);
 $('#content-spouse').animate({height: 'hide'}, 0);
-
+$('#content-chartvalues').animate({height: 'hide'}, 0);

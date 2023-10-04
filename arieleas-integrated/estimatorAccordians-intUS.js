@@ -66,8 +66,7 @@ $('#accordian-parameters').on('click', function(){
     $('#content-spouse').animate({height: 'toggle'}, 500);
  });
  
- /*
  $('#accordian-chartvalues').on('click', function(){
+   var accordHeight = $('#content-chartvalues').height();   
    $('#content-chartvalues').animate({height: 'toggle'}, 500);
 });
-*/
