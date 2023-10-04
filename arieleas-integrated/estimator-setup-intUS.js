@@ -5,7 +5,7 @@ console.log("Estimator setup loaded.");
 $('#content-parameters').animate({height: 'show'}, 0);
 $('#content-purchase').animate({height: 'show'}, 0);
 $('#content-lvl2-purchase').animate({height: 'hide'}, 0);
-$('#content-reciprocal').animate({height: 'show'}, 0);
+$('#content-reciprocal').animate({height: 'hide'}, 0);
 $('#content-lvl2-reciprocal').animate({height: 'hide'}, 0);
 $('#content-taxation').animate({height: 'hide'}, 0);
 $('#content-lvl2-taxation').animate({height: 'hide'}, 0);
