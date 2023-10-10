@@ -214,7 +214,7 @@ function updateElectionStatusBars() {
         $('#retire-election-pill').animate({height: 'hide'}, 0);
         localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
-
+    }
 }
 
 function updateReviewStatusBars() {
