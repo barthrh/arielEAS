@@ -284,6 +284,32 @@ function updateReviewStatusBars() {
 
 }
 
+$('#initiate-continue-link').on('click', function() {
+    console.log('Continue Election');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+
+    switch (electionStatus) {
+        case 'step5': 
+            window.open("/integrated/retireonline/retireonline-step-review","_self");
+            break;
+        case 'step4': 
+            window.open("/integrated/retireonline/retireonline-step-taxwithholding","_self");
+            break;
+        case 'step3': 
+            window.open("/integrated/retireonline/retireonline-step-banking","_self");
+            break;
+        case 'step2': 
+            window.open("/integrated/retireonline/retireonline-step-keydates","_self");
+            break;
+        case 'step1': 
+            window.open("/integrated/retireonline/retireonline-step-myinfo","_self");
+            break;
+        default: 
+            window.open("/integrated/retireonline/retireonline-step-myinfo","_self");
+    }
+});
+
+
 $('#election-continue-link').on('click', function() {
     console.log('Continue Election');
     var electionStatus = localStorage.getItem('retire-elections-status');
@@ -300,6 +326,22 @@ $('#election-continue-link').on('click', function() {
             break;
         default: 
             window.open("/integrated/retireonline/retire-choices/retire-choices-election","_self");
+    }
+});
+
+$('#review-continue-link').on('click', function() {
+    console.log('Continue Election');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+
+    switch (electionStatus) {
+        case 'step2': 
+            window.open("/integrated/retireonline/retire-choices/retire-choices-reviewwaivers","_self");
+            break;
+        case 'step1': 
+            window.open("/integrated/retireonline/retire-choices/retire-choices-review","_self");
+            break;
+        default: 
+            window.open("/integrated/retireonline/retire-choices/retire-choices-review","_self");
     }
 });
 
