@@ -14,6 +14,10 @@ if (localStorage.getItem('retire-insurance-status') == null ){
     localStorage.setItem('retire-insurance-status','notstarted');
 }
 
+if (localStorage.getItem('retire-review-status') == null ){
+    localStorage.setItem('retire-review-status','notstarted');
+}
+
 if ( localStorage.getItem('scenOneAge') == null ) {
     localStorage.setItem('scenOneAge',60);  
 }

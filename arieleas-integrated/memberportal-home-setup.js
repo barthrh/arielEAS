@@ -25,6 +25,10 @@ if (localStorage.getItem('retire-insurance-status') == null ){
     localStorage.setItem('retire-insurance-status','notstarted');
 }
 
+if (localStorage.getItem('retire-review-status') == null ){
+    localStorage.setItem('retire-review-status','notstarted');
+}
+
 // On load perform an initial recalculation
 $( document ).ready(function() {
     console.log( "ready!" );
@@ -113,7 +117,7 @@ $('#election-continue-link').on('click', function() {
 
     switch (electionStatus) {
         case 'step3': {
-        window.open("/integrated/retireonline/retire-choices/retire-choices-documents","_self");
+            window.open("/integrated/retireonline/retire-choices/retire-choices-documents","_self");
         }
         case 'step2': {
             window.open("/integrated/retireonline/retire-choices/retire-choices-insurance","_self");
