@@ -28,13 +28,47 @@ if (localStorage.getItem('retire-insurance-status') == null ){
 // On load perform an initial recalculation
 $( document ).ready(function() {
     console.log( "ready!" );
-    updateStatusBars();
+    intializeLocalStorage();
+    setHomePageTiles();
 });
+
+
+function intializeLocalStorage() {
+    // Evaluate the status of the processes and then set the bars accordingly
+    if (localStorage.getItem('retire-initiate-status') == null ){
+        localStorage.setItem('retire-initiate-status','notstarted');
+    }
+
+    if (localStorage.getItem('retire-elections-status') == null ){
+        localStorage.setItem('retire-elections-status','notstarted');
+    }
+
+    if (localStorage.getItem('retire-insurance-status') == null ){
+        localStorage.setItem('retire-insurance-status','notstarted');
+}
+
+}
+
+function setHomePageTiles() {
+
+    var retireStatus = localStorage.getItem('retire-initiate-status');
+
+    if (retireStatus != 'notstarted') {
+        $('card-retire-notstarted').animate({height: 'hide'}, 0);
+        $('card-retireinprogress').animate({height: 'show'}, 0);
+        updateStatusBars();
+    } else {
+        $('card-retire-notstarted').animate({height: 'show'}, 0);
+        $('card-retireinprogress').animate({height: 'hide'}, 0);
+    }
+
+}
+
 
 function updateStatusBars() {
     console.log('Updating Bars');
-    
-    var retireStatus = localStorage.getItem('retire-initiate-status');
+
+    var retireStatus =  localStorage.getItem('retire-initiate-status');
     var electionStatus = localStorage.getItem('retire-elections-status');
     var insuranceStatus = localStorage.getItem('retire-insurance-status');
 
