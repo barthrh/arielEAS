@@ -108,24 +108,22 @@ function updateElectionStatusBars() {
 
 
 $('#election-continue-link').on('click', function() {
-    console.log('click');
-    var bar3Class = $('#progress-bar3').attr('class');
-    console.log(bar3Class);
-    if (bar3Class == 'widget-statusstep-notstarted') {
-        console.log('notstart');
-        setBarStatus('progress-bar3','inprogress')
-    } else {
-        if (bar3Class == 'widget-statusstep-inprogress') {
-            console.log('inprogress');
-            setBarStatus('progress-bar3','done')
+    console.log('Continue Election');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+
+    switch (electionStatus) {
+        case 'step3': {
+        window.open("retire-choices-documents","_self");
         }
-        else {
-            if (bar3Class == 'widget-statusstep-done') {
-                console.log('done');
-                setBarStatus('progress-bar3','notstarted')
-            }
+        case 'step2': {
+            window.open("retire-choices-insurance","_self");
         }
-    }
+        case 'step1': {
+            window.open("retire-choices-election","_self");
+        }
+        default: {
+            window.open("retire-choices-election","_self");
+        }
 });
 
 // Secret full reset by clicking on Complete pill for application
