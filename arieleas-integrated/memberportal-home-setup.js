@@ -75,8 +75,9 @@ function updateElectionStatusBars() {
     var retireStatus =  localStorage.getItem('retire-initiate-status');
     var electionStatus = localStorage.getItem('retire-elections-status');
     var insuranceStatus = localStorage.getItem('retire-insurance-status');
+    var reviewStatus = localStorage.getItem('retire-review-status');
 
-    switch (retireStatus) {
+    switch (electionStatus) {
         case 'step1':
             setBarStatus('progress-election-bar1','inprogress');
             setBarStatus('progress-election-bar2','notstarted');
@@ -142,16 +143,13 @@ $('#pill-complete-application').on('click', function() {
 
 
 function setBarStatus(barName, newStatus) {
-    console.log(barName + " ; " + newStatus);
 
     var jqID = "#" + barName;
     var barClass = $(jqID).attr('class');
     var statusClass = "widget-statusstep-" + newStatus;
-    console.log(jqID);
-    console.log(statusClass);
 
     $(jqID).removeClass(barClass);
     $(jqID).addClass(statusClass);
 
-    console.log($(jqID).attr('class'));
+    console.log("stuatus updated to:" + $(jqID).attr('class') + "  on:" + jqID);
 }
