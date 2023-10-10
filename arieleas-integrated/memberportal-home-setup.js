@@ -77,6 +77,8 @@ function updateElectionStatusBars() {
     var insuranceStatus = localStorage.getItem('retire-insurance-status');
     var reviewStatus = localStorage.getItem('retire-review-status');
 
+    console.log("Election Status" + electionStatus);
+
     switch (electionStatus) {
         case 'step1':
             setBarStatus('progress-election-bar1','inprogress');
