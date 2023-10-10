@@ -6,8 +6,8 @@ if (localStorage.getItem('retire-initiate-status') == null ){
     localStorage.setItem('retire-initiate-status','notstarted');
 }
 
-if (localStorage.getItem('retire-options-status') == null ){
-    localStorage.setItem('retire-options-status','notstarted');
+if (localStorage.getItem('retire-elections-status') == null ){
+    localStorage.setItem('retire-elections-status','notstarted');
 }
 
 if (localStorage.getItem('retire-insurance-status') == null ){
