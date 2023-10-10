@@ -212,10 +212,9 @@ function updateElectionStatusBars() {
         $('#retire-election-bars').animate({height: 'hide'}, 0);
         $('#retire-election-pill').animate({height: 'show'}, 0);
         $('#election-continue-link').animate({height: 'hide'}, 0);
-    } else{
+    } else {
         $('#retire-election-bars').animate({height: 'show'}, 0);
         $('#retire-election-pill').animate({height: 'hide'}, 0);
-        localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
         if (retireStatus == 'done') {
             $('#election-continue-link').animate({height: 'show'}, 0);
@@ -273,8 +272,6 @@ function updateReviewStatusBars() {
     } else{
         $('#retire-review-bars').animate({height: 'show'}, 0);
         $('#retire-review-pill').animate({height: 'hide'}, 0);
-        localStorage.setItem('retire-review-status','notstarted');
-        localStorage.setItem('retire-review-status','notstarted');
         if (electionStatus == 'done') {
             $('#review-continue-link').animate({height: 'show'}, 0);
         } else {        
@@ -333,9 +330,9 @@ $('#election-continue-link').on('click', function() {
 
 $('#review-continue-link').on('click', function() {
     console.log('Continue Election');
-    var initiateStatus = localStorage.getItem('retire-initiate-status');
+    var reviewStatus = localStorage.getItem('retire-review-status');
 
-    switch (initiateStatus) {
+    switch (reviewStatus) {
         case 'step2': 
             window.open("/integrated/retireonline/retire-choices/retire-choices-reviewwaivers","_self");
             break;
