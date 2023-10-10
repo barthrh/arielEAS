@@ -143,9 +143,11 @@ function updateInitiateStatusBars() {
     if (retireStatus == 'done') {
         $('#retire-initiate-bars').animate({height: 'hide'}, 0);
         $('#retire-initiate-pill').animate({height: 'show'}, 0);
+        $('#initiate-continue-link').animate({height: 'hide'}, 0);
     } else{
         $('#retire-initiate-bars').animate({height: 'show'}, 0);
         $('#retire-initiate-pill').animate({height: 'hide'}, 0);
+        $('#initiate-continue-link').animate({height: 'show'}, 0);
         localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
 
@@ -209,9 +211,11 @@ function updateElectionStatusBars() {
     if (electionStatus == 'done') {
         $('#retire-election-bars').animate({height: 'hide'}, 0);
         $('#retire-election-pill').animate({height: 'show'}, 0);
+        $('#election-continue-link').animate({height: 'hide'}, 0);
     } else{
         $('#retire-election-bars').animate({height: 'show'}, 0);
         $('#retire-election-pill').animate({height: 'hide'}, 0);
+        $('#election-continue-link').animate({height: 'show'}, 0);
         localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
     }
@@ -255,8 +259,7 @@ function updateReviewStatusBars() {
             setBarStatus('progress-review-bar1','notstarted');
             setBarStatus('progress-review-bar2','notstarted');
             $('#retire-reviews-stepxofy').text('');
-            $('#retire-reviews-stepname').text('Not started');
-        
+            $('#retire-reviews-stepname').text('Not started');   
     }
 }
 
