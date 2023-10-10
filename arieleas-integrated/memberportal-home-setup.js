@@ -19,3 +19,22 @@ console.log('Class3:' + bar3Class);
 $('#progress-bar3').removeClass(bar1Class);
 $('#progress-bar3').addClass('widget-statusstep-done');
 console.log('Class3b:' + bar3Class);
+
+$('#election-continue-link').on('click', function() {
+    var bar3Class = $('#progress-bar3').attr('class');
+    if (bar3Class == 'widget-statusstep-notstart') {
+        $('#progress-bar3').removeClass(bar3Class);
+        $('#progress-bar3').addClass('widget-statusstep-inprogress');
+    } else {
+        if (bar3Class == 'widget-statusstep-inprogress') {
+            $('#progress-bar3').removeClass(bar3Class);
+            $('#progress-bar3').addClass('widget-statusstep-done');
+        }
+        else {
+            if (bar3Class == 'widget-statusstep-done') {
+                $('#progress-bar3').removeClass(bar3Class);
+                $('#progress-bar3').addClass('widget-statusstep-nostarted');
+            }
+        }
+    }
+});
