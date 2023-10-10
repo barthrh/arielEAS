@@ -56,7 +56,7 @@ function setHomePageTiles() {
     if (retireStatus != 'notstarted') {
         $('card-retire-notstarted').animate({height: 'hide'}, 0);
         $('card-retireinprogress').animate({height: 'show'}, 0);
-        updateStatusBars();
+        updateElectionStatusBars();
     } else {
         $('card-retire-notstarted').animate({height: 'show'}, 0);
         $('card-retireinprogress').animate({height: 'hide'}, 0);
@@ -65,7 +65,7 @@ function setHomePageTiles() {
 }
 
 
-function updateStatusBars() {
+function updateElectionStatusBars() {
     console.log('Updating Bars');
 
     var retireStatus =  localStorage.getItem('retire-initiate-status');
@@ -77,25 +77,35 @@ function updateStatusBars() {
             setBarStatus('progress-election-bar1','inprogress');
             setBarStatus('progress-election-bar2','notstarted');
             setBarStatus('progress-election-bar3','notstarted');
+            $('#retire-elections-stepxofy').text('Step 1 of 4');
+            $('#retire-elections-stepname').text('Pension options');
         case 'step2':
             setBarStatus('progress-election-bar1','done');
             setBarStatus('progress-election-bar2','inprogress');
             setBarStatus('progress-election-bar3','notstarted');
+            $('#retire-elections-stepxofy').text('Step 2 of 4');
+            $('#retire-elections-stepname').text('Insurance');
         case 'step3':
             setBarStatus('progress-election-bar1','done');
             setBarStatus('progress-election-bar2','done');
             setBarStatus('progress-election-bar3','inprogress');
+            $('#retire-elections-stepxofy').text('Step 3 of 4');
+            $('#retire-elections-stepname').text('Documents');
         case 'done':
             setBarStatus('progress-election-bar1','done');
             setBarStatus('progress-election-bar2','done');
             setBarStatus('progress-election-bar3','done');
+            $('#retire-elections-stepxofy').text('');
+            $('#retire-elections-stepname').text('Completed');
         default:
             setBarStatus('progress-election-bar1','notstarted');
             setBarStatus('progress-election-bar2','notstarted');
             setBarStatus('progress-election-bar3','notstarted');           
+            $('#retire-elections-stepxofy').text('');
+            $('#retire-elections-stepname').text('Not started');
     }
-
 }
+
 
 $('#election-continue-link').on('click', function() {
     console.log('click');
