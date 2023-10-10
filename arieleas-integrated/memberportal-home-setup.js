@@ -113,16 +113,16 @@ $('#election-continue-link').on('click', function() {
 
     switch (electionStatus) {
         case 'step3': {
-        window.open("retire-choices-documents","_self");
+        window.open("/integrated/retireonline/retire-choices/retire-choices-documents","_self");
         }
         case 'step2': {
-            window.open("retire-choices-insurance","_self");
+            window.open("/integrated/retireonline/retire-choices/retire-choices-insurance","_self");
         }
         case 'step1': {
-            window.open("retire-choices-election","_self");
+            window.open("/integrated/retireonline/retire-choices/retire-choices-election","_self");
         }
         default: {
-            window.open("retire-choices-election","_self");
+            window.open("/integrated/retireonline/retire-choices/retire-choices-election","_self");
         }
     }
 });
