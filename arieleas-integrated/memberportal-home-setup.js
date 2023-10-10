@@ -142,10 +142,13 @@ function updateInitiateStatusBars() {
 
     if (retireStatus == 'done') {
         $('#retire-initiate-bars').animate({height: 'hide'}, 0);
-        $('retire-initiate-pill').animate({height: 'show'}, 0);
+        $('#retire-initiate-pill').animate({height: 'show'}, 0);
     } else{
         $('#retire-initiate-bars').animate({height: 'show'}, 0);
-        $('retire-initiate-pill').animate({height: 'hide'}, 0);
+        $('#retire-initiate-pill').animate({height: 'hide'}, 0);
+        localStorage.setItem('retire-elections-status','notstarted');
+        localStorage.setItem('retire-review-status','notstarted');
+
     }
 
 }
@@ -202,6 +205,16 @@ function updateElectionStatusBars() {
             $('#retire-elections-stepname').text('Not started');
         
     }
+
+    if (electionStatus == 'done') {
+        $('#retire-election-bars').animate({height: 'hide'}, 0);
+        $('#retire-election-pill').animate({height: 'show'}, 0);
+    } else{
+        $('#retire-election-bars').animate({height: 'show'}, 0);
+        $('#retire-election-pill').animate({height: 'hide'}, 0);
+        localStorage.setItem('retire-elections-status','notstarted');
+        localStorage.setItem('retire-review-status','notstarted');
+
 }
 
 function updateReviewStatusBars() {
@@ -272,6 +285,7 @@ $('#retire-initiate-pill').on('click', function() {
     localStorage.setItem('retire-initiate-status','notstarted');
     localStorage.setItem('retire-elections-status','notstarted');
     localStorage.setItem('retire-insurance-status','notstarted');
+    localStorage.setItem('retire-review-status','notstarted');
 
 })
 
