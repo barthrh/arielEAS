@@ -215,9 +215,13 @@ function updateElectionStatusBars() {
     } else{
         $('#retire-election-bars').animate({height: 'show'}, 0);
         $('#retire-election-pill').animate({height: 'hide'}, 0);
-        $('#election-continue-link').animate({height: 'show'}, 0);
         localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
+        if (retireStatus == 'done') {
+            $('#election-continue-link').animate({height: 'show'}, 0);
+        } else {        
+            $('#election-continue-link').animate({height: 'hide'}, 0);
+        }
     }
 }
 
@@ -261,6 +265,23 @@ function updateReviewStatusBars() {
             $('#retire-reviews-stepxofy').text('');
             $('#retire-reviews-stepname').text('Not started');   
     }
+
+    if (reviewStatus == 'done') {
+        $('#retire-review-bars').animate({height: 'hide'}, 0);
+        $('#retire-review-pill').animate({height: 'show'}, 0);
+        $('#review-continue-link').animate({height: 'hide'}, 0);
+    } else{
+        $('#retire-review-bars').animate({height: 'show'}, 0);
+        $('#retire-review-pill').animate({height: 'hide'}, 0);
+        localStorage.setItem('retire-reviews-status','notstarted');
+        localStorage.setItem('retire-review-status','notstarted');
+        if (electionStatus == 'done') {
+            $('#review-continue-link').animate({height: 'show'}, 0);
+        } else {        
+            $('#review-continue-link').animate({height: 'hide'}, 0);
+        }
+    }
+
 }
 
 $('#election-continue-link').on('click', function() {
