@@ -86,24 +86,24 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','inprogress');
             setBarStatus('progress-initiate-bar2','notstarted');
             setBarStatus('progress-initiate-bar3','notstarted');
-            $('#retire-initiates-stepxofy').text('Step 1 of 4');
-            $('#retire-initiates-stepname').text('My information');
+            $('#retire-initiate-stepxofy').text('Step 1 of 4');
+            $('#retire-initiate-stepname').text('My information');
             break;
         case 'step2': 
             console.log("set to Lvl2");
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','inprogress');
             setBarStatus('progress-initiate-bar3','notstarted');
-            $('#retire-initiates-stepxofy').text('Step 2 of 4');
-            $('#retire-initiates-stepname').text('Dates and options');
+            $('#retire-initiate-stepxofy').text('Step 2 of 4');
+            $('#retire-initiate-stepname').text('Dates and options');
             break;
         case 'step3': 
             console.log("set to Lvl3");
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','inprogress');
-            $('#retire-initiates-stepxofy').text('Step 3 of 4');
-            $('#retire-initiates-stepname').text('Banking');
+            $('#retire-initiate-stepxofy').text('Step 3 of 4');
+            $('#retire-initiate-stepname').text('Banking');
             break;
         case 'step4': 
             console.log("set to Lvl4");
@@ -111,8 +111,8 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','done');
             setBarStatus('progress-initiate-bar4','inprogress');
-            $('#retire-initiates-stepxofy').text('Step 4 of 5');
-            $('#retire-initiates-stepname').text('Tax Withholding');
+            $('#retire-initiate-stepxofy').text('Step 4 of 5');
+            $('#retire-initiate-stepname').text('Tax Withholding');
             break;
         case 'step5': 
             console.log("set to Lvl5");
@@ -120,24 +120,24 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','done');
             setBarStatus('progress-initiate-bar4','inprogress');
-            $('#retire-initiates-stepxofy').text('Step 5 of 5');
-            $('#retire-initiates-stepname').text('Review');
+            $('#retire-initiate-stepxofy').text('Step 5 of 5');
+            $('#retire-initiate-stepname').text('Review');
             break;
         case 'done': 
             console.log("set to done");
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','done');
-            $('#retire-initiates-stepxofy').text('');
-            $('#retire-initiates-stepname').text('Completed');
+            $('#retire-initiate-stepxofy').text('');
+            $('#retire-initiate-stepname').text('Completed');
             break;
         default: 
             console.log("set to default");
             setBarStatus('progress-initiate-bar1','notstarted');
             setBarStatus('progress-initiate-bar2','notstarted');
             setBarStatus('progress-initiate-bar3','notstarted');           
-            $('#retire-initiates-stepxofy').text('');
-            $('#retire-initiates-stepname').text('Not started');        
+            $('#retire-initiate-stepxofy').text('');
+            $('#retire-initiate-stepname').text('Not started');        
     }
 
     if (retireStatus == 'done') {
@@ -240,30 +240,30 @@ function updateReviewStatusBars() {
             console.log("set to Lvl1");
             setBarStatus('progress-review-bar1','inprogress');
             setBarStatus('progress-review-bar2','notstarted');
-            $('#retire-reviews-stepxofy').text('');
-            $('#retire-reviews-stepname').text('Review options');
+            $('#retire-review-stepxofy').text('');
+            $('#retire-review-stepname').text('Review options');
             break;
         case 'step2': 
             console.log("set to Lvl2");
             setBarStatus('progress-review-bar1','done');
             setBarStatus('progress-review-bar2','inprogress');
-            $('#retire-reviews-stepxofy').text('');
-            $('#retire-reviews-stepname').text('Waivers & Consent');
+            $('#retire-review-stepxofy').text('');
+            $('#retire-review-stepname').text('Waivers & Consent');
             break;
         case 'done': 
             console.log("set to done");
             setBarStatus('progress-review-bar1','done');
             setBarStatus('progress-review-bar2','done');
             setBarStatus('progress-review-bar3','done');
-            $('#retire-reviews-stepxofy').text('');
-            $('#retire-reviews-stepname').text('Completed');
+            $('#retire-review-stepxofy').text('');
+            $('#retire-review-stepname').text('Completed');
             break;
         default: 
             console.log("set to default");
             setBarStatus('progress-review-bar1','notstarted');
             setBarStatus('progress-review-bar2','notstarted');
-            $('#retire-reviews-stepxofy').text('');
-            $('#retire-reviews-stepname').text('Not started');   
+            $('#retire-review-stepxofy').text('');
+            $('#retire-review-stepname').text('Not started');   
     }
 
     if (reviewStatus == 'done') {
@@ -273,7 +273,7 @@ function updateReviewStatusBars() {
     } else{
         $('#retire-review-bars').animate({height: 'show'}, 0);
         $('#retire-review-pill').animate({height: 'hide'}, 0);
-        localStorage.setItem('retire-reviews-status','notstarted');
+        localStorage.setItem('retire-review-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
         if (electionStatus == 'done') {
             $('#review-continue-link').animate({height: 'show'}, 0);
