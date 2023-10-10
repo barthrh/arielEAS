@@ -30,7 +30,7 @@ $('#election-continue-link').on('click', function() {
             if (bar3Class == 'widget-statusstep-done') {
                 console.log('done');
                 $('#progress-bar3').removeClass(bar3Class);
-                $('#progress-bar3').addClass('widget-statusstep-nostarted');
+                $('#progress-bar3').addClass('widget-statusstep-notstarted');
             }
         }
     }
