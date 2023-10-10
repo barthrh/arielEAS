@@ -314,6 +314,8 @@ $('#election-continue-link').on('click', function() {
     console.log('Continue Election');
     var electionStatus = localStorage.getItem('retire-elections-status');
 
+    confirm(electionStatus);
+
     switch (electionStatus) {
         case 'step3': 
             window.open("/integrated/retireonline/retire-choices/retire-choices-documents","_self");
