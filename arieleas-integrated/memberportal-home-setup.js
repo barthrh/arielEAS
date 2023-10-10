@@ -128,6 +128,16 @@ $('#election-continue-link').on('click', function() {
     }
 });
 
+// Secret full reset by clicking on Complete pill for application
+$('#pill-complete-application').on('click', function() {
+    console.log('Resetting...');
+    localStorage.setItem('retire-initiate-status','notstarted');
+    localStorage.setItem('retire-elections-status','notstarted');
+    localStorage.setItem('retire-insurance-status','notstarted');
+
+})
+
+
 function setBarStatus(barName, newStatus) {
     console.log(barName + " ; " + newStatus);
 
