@@ -23,6 +23,7 @@ console.log('Class3b:' + bar3Class);
 $('#election-continue-link').on('click', function() {
     console.log('click');
     var bar3Class = $('#progress-bar3').attr('class');
+    console.log(bar3Class);
     if (bar3Class == 'widget-statusstep-notstart') {
         console.log('notstart');
         $('#progress-bar3').removeClass(bar3Class);
