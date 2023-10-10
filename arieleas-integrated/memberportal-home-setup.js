@@ -124,6 +124,7 @@ $('#election-continue-link').on('click', function() {
         default: {
             window.open("retire-choices-election","_self");
         }
+    }
 });
 
 // Secret full reset by clicking on Complete pill for application
