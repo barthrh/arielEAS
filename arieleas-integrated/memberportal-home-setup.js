@@ -138,7 +138,7 @@ $('#election-continue-link').on('click', function() {
         case 'step1': 
             window.open("/integrated/retireonline/retire-choices/retire-choices-election","_self");
             break;
-        default: {
+        default: 
             window.open("/integrated/retireonline/retire-choices/retire-choices-election","_self");
     }
 });
