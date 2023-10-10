@@ -286,9 +286,9 @@ function updateReviewStatusBars() {
 
 $('#initiate-continue-link').on('click', function() {
     console.log('Continue Election');
-    var electionStatus = localStorage.getItem('retire-elections-status');
+    var retireStatus = localStorage.getItem('retire-initiate-status');
 
-    switch (electionStatus) {
+    switch (retireStatus) {
         case 'step5': 
             window.open("/integrated/retireonline/retireonline-step-review","_self");
             break;
@@ -331,9 +331,9 @@ $('#election-continue-link').on('click', function() {
 
 $('#review-continue-link').on('click', function() {
     console.log('Continue Election');
-    var electionStatus = localStorage.getItem('retire-elections-status');
+    var initiateStatus = localStorage.getItem('retire-initiate-status');
 
-    switch (electionStatus) {
+    switch (initiateStatus) {
         case 'step2': 
             window.open("/integrated/retireonline/retire-choices/retire-choices-reviewwaivers","_self");
             break;
