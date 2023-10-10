@@ -86,6 +86,8 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','inprogress');
             setBarStatus('progress-initiate-bar2','notstarted');
             setBarStatus('progress-initiate-bar3','notstarted');
+            setBarStatus('progress-initiate-bar4','notstarted');
+            setBarStatus('progress-initiate-bar5','notstarted');
             $('#retire-initiate-stepxofy').text('Step 1 of 4');
             $('#retire-initiate-stepname').text('My information');
             break;
@@ -94,6 +96,8 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','inprogress');
             setBarStatus('progress-initiate-bar3','notstarted');
+            setBarStatus('progress-initiate-bar4','notstarted');
+            setBarStatus('progress-initiate-bar5','notstarted');
             $('#retire-initiate-stepxofy').text('Step 2 of 4');
             $('#retire-initiate-stepname').text('Dates and options');
             break;
@@ -102,6 +106,8 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','inprogress');
+            setBarStatus('progress-initiate-bar4','notstarted');
+            setBarStatus('progress-initiate-bar5','notstarted');
             $('#retire-initiate-stepxofy').text('Step 3 of 4');
             $('#retire-initiate-stepname').text('Banking');
             break;
@@ -110,7 +116,9 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','done');
+            setBarStatus('progress-initiate-bar4','done');
             setBarStatus('progress-initiate-bar4','inprogress');
+            setBarStatus('progress-initiate-bar5','notstarted');
             $('#retire-initiate-stepxofy').text('Step 4 of 5');
             $('#retire-initiate-stepname').text('Tax Withholding');
             break;
@@ -119,7 +127,8 @@ function updateInitiateStatusBars() {
             setBarStatus('progress-initiate-bar1','done');
             setBarStatus('progress-initiate-bar2','done');
             setBarStatus('progress-initiate-bar3','done');
-            setBarStatus('progress-initiate-bar4','inprogress');
+            setBarStatus('progress-initiate-bar4','done');
+            setBarStatus('progress-initiate-bar5','inprogress');
             $('#retire-initiate-stepxofy').text('Step 5 of 5');
             $('#retire-initiate-stepname').text('Review');
             break;
@@ -310,8 +319,6 @@ $('#initiate-continue-link').on('click', function() {
 $('#election-continue-link').on('click', function() {
     console.log('Continue Election');
     var electionStatus = localStorage.getItem('retire-elections-status');
-
-    confirm(electionStatus);
 
     switch (electionStatus) {
         case 'step3': 
