@@ -25,31 +25,42 @@ if (localStorage.getItem('retire-insurance-status') == null ){
     localStorage.setItem('retire-insurance-status','notstarted');
 }
 
-var retireStatus = localStorage.getItem('retire-initiate-status');
-var electionStatus = localStorage.getItem('retire-elections-status');
-var insuranceStatus = localStorage.getItem('retire-insurance-status');
+// On load perform an initial recalculation
+$( document ).ready(function() {
+    console.log( "ready!" );
+    updateStatusBars();
+});
 
-switch (retireStatus) {
-    case 'step1':
-        setBarStatus('progress-election-bar1','inprogress');
-        setBarStatus('progress-election-bar2','notstarted');
-        setBarStatus('progress-election-bar3','notstarted');
-    case 'step2':
-        setBarStatus('progress-election-bar1','done');
-        setBarStatus('progress-election-bar2','inprogress');
-        setBarStatus('progress-election-bar3','notstarted');
-    case 'step3':
-        setBarStatus('progress-election-bar1','done');
-        setBarStatus('progress-election-bar2','done');
-        setBarStatus('progress-election-bar3','inprogress');
-    case 'done':
-        setBarStatus('progress-election-bar1','done');
-        setBarStatus('progress-election-bar2','done');
-        setBarStatus('progress-election-bar3','done');
-    default:
-        setBarStatus('progress-election-bar1','notstarted');
-        setBarStatus('progress-election-bar2','notstarted');
-        setBarStatus('progress-election-bar3','notstarted');           
+function updateStatusBars() {
+    console.log('Updating Bars');
+    
+    var retireStatus = localStorage.getItem('retire-initiate-status');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+    var insuranceStatus = localStorage.getItem('retire-insurance-status');
+
+    switch (retireStatus) {
+        case 'step1':
+            setBarStatus('progress-election-bar1','inprogress');
+            setBarStatus('progress-election-bar2','notstarted');
+            setBarStatus('progress-election-bar3','notstarted');
+        case 'step2':
+            setBarStatus('progress-election-bar1','done');
+            setBarStatus('progress-election-bar2','inprogress');
+            setBarStatus('progress-election-bar3','notstarted');
+        case 'step3':
+            setBarStatus('progress-election-bar1','done');
+            setBarStatus('progress-election-bar2','done');
+            setBarStatus('progress-election-bar3','inprogress');
+        case 'done':
+            setBarStatus('progress-election-bar1','done');
+            setBarStatus('progress-election-bar2','done');
+            setBarStatus('progress-election-bar3','done');
+        default:
+            setBarStatus('progress-election-bar1','notstarted');
+            setBarStatus('progress-election-bar2','notstarted');
+            setBarStatus('progress-election-bar3','notstarted');           
+    }
+
 }
 
 $('#election-continue-link').on('click', function() {
