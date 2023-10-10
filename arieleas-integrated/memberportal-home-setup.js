@@ -54,12 +54,12 @@ function setHomePageTiles() {
     var retireStatus = localStorage.getItem('retire-initiate-status');
 
     if (retireStatus != 'notstarted') {
-        $('card-retire-notstarted').animate({height: 'hide'}, 0);
-        $('card-retireinprogress').animate({height: 'show'}, 0);
+        $('#card-retire-notstarted').animate({height: 'hide'}, 0);
+        $('#card-retireinprogress').animate({height: 'show'}, 0);
         updateElectionStatusBars();
     } else {
-        $('card-retire-notstarted').animate({height: 'show'}, 0);
-        $('card-retireinprogress').animate({height: 'hide'}, 0);
+        $('#card-retire-notstarted').animate({height: 'show'}, 0);
+        $('#card-retireinprogress').animate({height: 'hide'}, 0);
     }
 
 }
