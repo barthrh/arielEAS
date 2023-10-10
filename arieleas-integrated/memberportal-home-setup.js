@@ -11,14 +11,6 @@ $( document ).ready(function() {
     $('#tilesmall-retirementinfo').animate({width: 'show'},{duration: 0, queue: false});
 });
 
-var bar1Class = $('#progress-bar1').attr('class');
-console.log('Class:' + bar1Class);
-
-var bar3Class = $('#progress-bar3').attr('class');
-console.log('Class3:' + bar3Class);
-$('#progress-bar3').removeClass(bar1Class);
-$('#progress-bar3').addClass('widget-statusstep-done');
-console.log('Class3b:' + bar3Class);
 
 $('#election-continue-link').on('click', function() {
     console.log('click');
