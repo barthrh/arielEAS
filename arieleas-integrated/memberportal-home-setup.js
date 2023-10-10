@@ -60,7 +60,9 @@ function setHomePageTiles() {
     if (retireStatus != 'notstarted') {
         $('#card-retire-notstarted').animate({height: 'hide'}, 0);
         $('#card-retireinprogress').animate({height: 'show'}, 0);
+        updateInitiateStatusBars();
         updateElectionStatusBars();
+        updateReviewStatusBars();
     } else {
         $('#card-retire-notstarted').animate({height: 'show'}, 0);
         $('#card-retireinprogress').animate({height: 'hide'}, 0);
@@ -68,6 +70,85 @@ function setHomePageTiles() {
 
 }
 
+function updateInitiateStatusBars() {
+    console.log('Updating Bars');
+
+    var retireStatus =  localStorage.getItem('retire-initiate-status');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+    var insuranceStatus = localStorage.getItem('retire-insurance-status');
+    var reviewStatus = localStorage.getItem('retire-review-status');
+
+    console.log("Initiate Status: " + retireStatus);
+
+    switch (retireStatus) {
+        case 'step1': 
+            console.log("set to Lvl1");
+            setBarStatus('progress-initiate-bar1','inprogress');
+            setBarStatus('progress-initiate-bar2','notstarted');
+            setBarStatus('progress-initiate-bar3','notstarted');
+            $('#retire-initiates-stepxofy').text('Step 1 of 4');
+            $('#retire-initiates-stepname').text('My information');
+            break;
+        case 'step2': 
+            console.log("set to Lvl2");
+            setBarStatus('progress-initiate-bar1','done');
+            setBarStatus('progress-initiate-bar2','inprogress');
+            setBarStatus('progress-initiate-bar3','notstarted');
+            $('#retire-initiates-stepxofy').text('Step 2 of 4');
+            $('#retire-initiates-stepname').text('Dates and options');
+            break;
+        case 'step3': 
+            console.log("set to Lvl3");
+            setBarStatus('progress-initiate-bar1','done');
+            setBarStatus('progress-initiate-bar2','done');
+            setBarStatus('progress-initiate-bar3','inprogress');
+            $('#retire-initiates-stepxofy').text('Step 3 of 4');
+            $('#retire-initiates-stepname').text('Banking');
+            break;
+        case 'step4': 
+            console.log("set to Lvl4");
+            setBarStatus('progress-initiate-bar1','done');
+            setBarStatus('progress-initiate-bar2','done');
+            setBarStatus('progress-initiate-bar3','done');
+            setBarStatus('progress-initiate-bar4','inprogress');
+            $('#retire-initiates-stepxofy').text('Step 4 of 5');
+            $('#retire-initiates-stepname').text('Tax Withholding');
+            break;
+        case 'step5': 
+            console.log("set to Lvl5");
+            setBarStatus('progress-initiate-bar1','done');
+            setBarStatus('progress-initiate-bar2','done');
+            setBarStatus('progress-initiate-bar3','done');
+            setBarStatus('progress-initiate-bar4','inprogress');
+            $('#retire-initiates-stepxofy').text('Step 5 of 5');
+            $('#retire-initiates-stepname').text('Review');
+            break;
+        case 'done': 
+            console.log("set to done");
+            setBarStatus('progress-initiate-bar1','done');
+            setBarStatus('progress-initiate-bar2','done');
+            setBarStatus('progress-initiate-bar3','done');
+            $('#retire-initiates-stepxofy').text('');
+            $('#retire-initiates-stepname').text('Completed');
+            break;
+        default: 
+            console.log("set to default");
+            setBarStatus('progress-initiate-bar1','notstarted');
+            setBarStatus('progress-initiate-bar2','notstarted');
+            setBarStatus('progress-initiate-bar3','notstarted');           
+            $('#retire-initiates-stepxofy').text('');
+            $('#retire-initiates-stepname').text('Not started');        
+    }
+
+    if (retireStatus == 'done') {
+        $('#retire-initiate-bars').animate({height: 'hide'}, 0);
+        $('retire-initiate-pill').animate({height: 'show'}, 0);
+    } else{
+        $('#retire-initiate-bars').animate({height: 'show'}, 0);
+        $('retire-initiate-pill').animate({height: 'hide'}, 0);
+    }
+
+}
 
 function updateElectionStatusBars() {
     console.log('Updating Bars');
@@ -123,6 +204,48 @@ function updateElectionStatusBars() {
     }
 }
 
+function updateReviewStatusBars() {
+    console.log('Updating Bars');
+
+    var retireStatus =  localStorage.getItem('retire-initiate-status');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+    var insuranceStatus = localStorage.getItem('retire-insurance-status');
+    var reviewStatus = localStorage.getItem('retire-review-status');
+
+    console.log("Election Status: " + electionStatus);
+
+    switch (reviewStatus) {
+        case 'step1': 
+            console.log("set to Lvl1");
+            setBarStatus('progress-review-bar1','inprogress');
+            setBarStatus('progress-review-bar2','notstarted');
+            $('#retire-reviews-stepxofy').text('');
+            $('#retire-reviews-stepname').text('Review options');
+            break;
+        case 'step2': 
+            console.log("set to Lvl2");
+            setBarStatus('progress-review-bar1','done');
+            setBarStatus('progress-review-bar2','inprogress');
+            $('#retire-reviews-stepxofy').text('');
+            $('#retire-reviews-stepname').text('Waivers & Consent');
+            break;
+        case 'done': 
+            console.log("set to done");
+            setBarStatus('progress-review-bar1','done');
+            setBarStatus('progress-review-bar2','done');
+            setBarStatus('progress-review-bar3','done');
+            $('#retire-reviews-stepxofy').text('');
+            $('#retire-reviews-stepname').text('Completed');
+            break;
+        default: 
+            console.log("set to default");
+            setBarStatus('progress-review-bar1','notstarted');
+            setBarStatus('progress-review-bar2','notstarted');
+            $('#retire-reviews-stepxofy').text('');
+            $('#retire-reviews-stepname').text('Not started');
+        
+    }
+}
 
 $('#election-continue-link').on('click', function() {
     console.log('Continue Election');
@@ -144,7 +267,7 @@ $('#election-continue-link').on('click', function() {
 });
 
 // Secret full reset by clicking on Complete pill for application
-$('#pill-complete-application').on('click', function() {
+$('#retire-initiate-pill').on('click', function() {
     console.log('Resetting...');
     localStorage.setItem('retire-initiate-status','notstarted');
     localStorage.setItem('retire-elections-status','notstarted');
