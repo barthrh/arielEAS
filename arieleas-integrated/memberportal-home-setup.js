@@ -18,20 +18,32 @@ $('#election-continue-link').on('click', function() {
     console.log(bar3Class);
     if (bar3Class == 'widget-statusstep-notstarted') {
         console.log('notstart');
-        $('#progress-bar3').removeClass(bar3Class);
-        $('#progress-bar3').addClass('widget-statusstep-inprogress');
+        setBarStatus('progress-bar3','inprogress')
     } else {
         if (bar3Class == 'widget-statusstep-inprogress') {
             console.log('inprogress');
-            $('#progress-bar3').removeClass(bar3Class);
-            $('#progress-bar3').addClass('widget-statusstep-done');
+            setBarStatus('progress-bar3','done')
         }
         else {
             if (bar3Class == 'widget-statusstep-done') {
                 console.log('done');
-                $('#progress-bar3').removeClass(bar3Class);
-                $('#progress-bar3').addClass('widget-statusstep-notstarted');
+                setBarStatus('progress-bar3','notstarted')
             }
         }
     }
 });
+
+function setBarStatus(barName, newStatus) {
+    console.log(barName + " ; " + newStatus);
+
+    var jqID = "#" + barName;
+    var barClass = $(jqID).attr('class');
+    var statusClass = "widget-statusstep-" + newStatus;
+    console.log(jqID);
+    console.log(statusClass);
+
+    $(jqID).removeClass(barClass);
+    $(jqID).addClass(statusClass);
+
+    console.log($(jqID).attr('class'));
+}
