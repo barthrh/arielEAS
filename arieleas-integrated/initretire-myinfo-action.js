@@ -10,3 +10,7 @@ $('#link-addbenny-pri').on('click'),function() {
     $('#update-benef-frame').animate({height: 'hide'}, 0);
 }
 
+$('#link-addbenny-sec').on('click'),function() {
+    $('#add-benef-frame').animate({height: 'show'}, 0);
+    $('#update-benef-frame').animate({height: 'hide'}, 0);
+}
