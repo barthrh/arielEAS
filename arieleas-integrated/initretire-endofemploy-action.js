@@ -63,7 +63,7 @@ $('#endemploy-date').on('change', function(){
 function setSplitButtonStyle(buttonName,newStatus) {
     var jqID = "#" + buttonName;
     var buttonClass = $(jqID).attr('class');
-    var statusClass = "EASSplitButton-" + newStatus;
+    var statusClass = "eassplitbutton-" + newStatus;
 
     $(jqID).removeClass(buttonClass);
     $(jqID).addClass(statusClass);
