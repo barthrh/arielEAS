@@ -62,6 +62,17 @@ $('#endemploy-date').on('change', function(){
     $('#reciprocal-details').animate({height: 'hide'}, 500);
  })
 
+ $('#button-retirenow-yes').on('click', function() {
+    // Set the color
+    setSplitButtonStyle('button-reciprocal-yes','selected');
+    setSplitButtonStyle('button-reciprocal-no','inactive');
+ })
+
+ $('#button-retirenow-no').on('click', function() {
+    // Set the color
+    setSplitButtonStyle('button-reciprocal-no','selected');
+    setSplitButtonStyle('button-reciprocal-yes','inactive');
+ })
 
 function setSplitButtonStyle(buttonName,newStatus) {
     var jqID = "#" + buttonName;
