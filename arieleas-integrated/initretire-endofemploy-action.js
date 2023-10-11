@@ -64,14 +64,14 @@ $('#endemploy-date').on('change', function(){
 
  $('#button-retirenow-yes').on('click', function() {
     // Set the color
-    setSplitButtonStyle('button-reciprocal-yes','selected');
-    setSplitButtonStyle('button-reciprocal-no','inactive');
+    setSplitButtonStyle('button-retirenow-yes','selected');
+    setSplitButtonStyle('button-retirenow-no','inactive');
  })
 
  $('#button-retirenow-no').on('click', function() {
     // Set the color
-    setSplitButtonStyle('button-reciprocal-no','selected');
-    setSplitButtonStyle('button-reciprocal-yes','inactive');
+    setSplitButtonStyle('button-retirenow-no','selected');
+    setSplitButtonStyle('button-retirenow-yes','inactive');
  })
 
 function setSplitButtonStyle(buttonName,newStatus) {
