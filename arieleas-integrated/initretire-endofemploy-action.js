@@ -50,7 +50,7 @@ $('#endemploy-date').on('change', function(){
     setSplitButtonStyle('button-reciprocal-yes','selected');
     setSplitButtonStyle('button-reciprocal-no','inactive');
 
-    $('#reciprocal-details').animate({height: 'show'}, 500);
+    $('#reciprocal-details').animate({height: '0px'}, 500);
 
  })
 
@@ -58,7 +58,7 @@ $('#endemploy-date').on('change', function(){
     // Set the color
     setSplitButtonStyle('button-reciprocal-no','selected');
     setSplitButtonStyle('button-reciprocal-yes','inactive');
-    
+
     $('#reciprocal-details').animate({height: 'hide'}, 500);
  })
 
