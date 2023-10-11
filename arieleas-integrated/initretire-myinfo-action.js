@@ -1,4 +1,5 @@
 // Actions for the various buttons and links.
+console.log('Myinfo-actions loaded.');
 
 $('#button-add-cancel').on('click',function() {
     $('#add-benef-frame').animate({height: 'hide'}, 0);
