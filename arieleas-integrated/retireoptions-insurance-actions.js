@@ -17,5 +17,5 @@ if (insuranceStatus == 'notstarted') {
 $('#button-insurance-enroll').on('click', function() {
     // takind the easy path of just calling insurance done when you go to it.
     localStorage.setItem('insuranceStatus','done');
-    window.open("/integrated/retireonline/retire-choices/retire-choices-election");
+    window.open("https://rivendell-demo-ee.morneaushepell.com/Tools/AccessTool/EnrollmentResponsiveTool");
 })
