@@ -25,4 +25,9 @@ $('#button-insurance-enroll').on('click', function() {
 $('#accordian-insurancedetails').on('click', function(){
     var accordHeight = $('#content-insurancedetails').height();   
     $('#content-insurancedetails').animate({height: 'toggle'}, 500);
-});
+})
+
+$('#insurance-status-complete').on('click',function() {
+    // Reset the status to not started... secret button
+    localStorage.setItem('insuranceStatus','notstarted');
+})
