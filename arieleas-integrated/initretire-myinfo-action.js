@@ -20,5 +20,6 @@ $('#link-addbenny-sec').on('click',function() {
 
 $('#link-addnew-beneficiary').on('click',function(){
     console.log('summon the add');
-    $('#enter-beneficiary-frame').animate({height: 'hide'}, 0);
+    $('#enter-beneficiary-frame').animate({height: 'show'}, 100);
 })
+
