@@ -7,11 +7,13 @@ if (insuranceStatus == null){
 }
 
 if (insuranceStatus == 'notstarted') {
-    $('#frame-insurance-done').animate({height: 'hide'}, 0);
     $('#frame-insurance-notstarted').animate({height: 'show'}, 0);
+    $('#frame-insurance-done').animate({height: 'hide'}, 0);
+    $('#frame-insurance-details').animate({height: 'hide'}, 0);
 } else {
-    $('#frame-insurance-done').animate({height: 'show'}, 0);
     $('#frame-insurance-notstarted').animate({height: 'hide'}, 0);
+    $('#frame-insurance-done').animate({height: 'show'}, 0);
+    $('#frame-insurance-details').animate({height: 'show'}, 0);
 }
 
 $('#button-insurance-enroll').on('click', function() {
@@ -19,3 +21,8 @@ $('#button-insurance-enroll').on('click', function() {
     localStorage.setItem('insuranceStatus','done');
     window.open("https://rivendell-demo-ee.morneaushepell.com/Tools/AccessTool/EnrollmentResponsiveTool");
 })
+
+$('#accordian-insurancedetails').on('click', function(){
+    var accordHeight = $('#content-insurancedetails').height();   
+    $('#content-insurancedetails').animate({height: 'toggle'}, 500);
+});
