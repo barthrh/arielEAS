@@ -1,0 +1,12 @@
+// Actions for the various buttons and links.
+
+$('#button-add-cancel').on('click',function() {
+    $('#add-benef-frame').animate({height: 'hide'}, 0);
+    $('#update-benef-frame').animate({height: 'show'}, 0);
+})
+
+$('#link-addbenny-pri').on('click'),function() {
+    $('#add-benef-frame').animate({height: 'show'}, 0);
+    $('#update-benef-frame').animate({height: 'hide'}, 0);
+}
+
