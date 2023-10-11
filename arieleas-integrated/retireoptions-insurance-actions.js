@@ -16,6 +16,9 @@ if (insuranceStatus == 'notstarted') {
     $('#frame-insurance-details').animate({height: 'show'}, 0);
 }
 
+$('#content-insurancedetails').animate({height: 'hide'}, 500);
+
+
 $('#button-insurance-enroll').on('click', function() {
     // takind the easy path of just calling insurance done when you go to it.
     localStorage.setItem('insuranceStatus','done');
@@ -23,7 +26,6 @@ $('#button-insurance-enroll').on('click', function() {
 })
 
 $('#accordian-insurancedetails').on('click', function() {
-    console.log('accordion');
     var accordHeight = $('#content-insurancedetails').height();   
     $('#content-insurancedetails').animate({height: 'toggle'}, 500);
 })
