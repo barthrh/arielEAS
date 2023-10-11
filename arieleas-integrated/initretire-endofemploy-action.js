@@ -3,8 +3,8 @@
 // Default the split buttons on page load.
     // Set the color
 $( document ).ready(function() {
-    setSplitButtonStyle('button-retirenow-no','selected');
-    setSplitButtonStyle('button-retirenow-yes','inactive');
+    setSplitButtonStyle('button-reciprocal-no','selected');
+    setSplitButtonStyle('button-reciprocal-yes','inactive');
     $('#reciprocal-details').animate({height: 'hide'}, 0);
 });
 
