@@ -1,7 +1,6 @@
 // Nothing yet.
 
 // Default the split buttons on page load.
-    // Set the color
 $( document ).ready(function() {
     setSplitButtonStyle('button-reciprocal-no','selected');
     setSplitButtonStyle('button-reciprocal-yes','inactive');
