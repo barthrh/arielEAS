@@ -29,5 +29,6 @@ $('#accordian-insurancedetails').on('click', function(){
 
 $('#insurance-status-complete').on('click',function() {
     // Reset the status to not started... secret button
+    console.log('Resetting Insurance...');
     localStorage.setItem('insuranceStatus','notstarted');
 })
