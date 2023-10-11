@@ -1,5 +1,12 @@
 // Nothing yet.
 
+// Default the split buttons on page load.
+    // Set the color
+$( document ).ready(function() {
+    setSplitButtonStyle('button-retirenow-no','selected');
+    setSplitButtonStyle('button-retirenow-yes','inactive');
+    $('#reciprocal-details').animate({height: 'hide'}, 0);
+});
 
 function calcRetireDate(endDate) {
 
