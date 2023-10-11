@@ -22,7 +22,8 @@ $('#button-insurance-enroll').on('click', function() {
     window.open("https://rivendell-demo-ee.morneaushepell.com/Tools/AccessTool/EnrollmentResponsiveTool");
 })
 
-$('#accordian-insurancedetails').on('click', function(){
+$('#accordian-insurancedetails').on('click', function() {
+    console.log('accordion');
     var accordHeight = $('#content-insurancedetails').height();   
     $('#content-insurancedetails').animate({height: 'toggle'}, 500);
 })
