@@ -31,3 +31,8 @@ $('#link-addnew-beneficiary').on('click',function(){
     $('#button-add-add').text('Add');
 })
 
+$('#button-add-add').on('click',function() {
+    if ($('#button-add-add').text = 'Done') {
+        $('#modalinfo').animate({ height: 'hide'}, 0);
+    }
+})
