@@ -5,6 +5,7 @@ console.log('Insurance profile loaded...');
 $( document ).ready(function() {
     console.log('Ready!');
     showMedicalContent();
+    showLifeContent();
 })
 
 
@@ -39,4 +40,37 @@ function showMedicalContent() {
     $('#nav-medical-content').animate({height: 'show'}, 300);
 
     $('#page-title-text').text('Health - Medical coverage');
+}
+
+$('#nav-life-tab').on('click',function() {
+    showLifeContent();
+})
+
+$('#nav-beneficiary-tab').on('click',function() {
+    $('#nav-beneficiary-text').css('color','#0078AB');
+    $('#nav-beneficiary-arrow').animate({height: 'show'}, 0);
+
+    $('#nav-life-text').css('color','#595959');
+    $('#nav-life-arrow').animate({height: 'hide'}, 0);
+
+    $('#nav-beneficiary-content').animate({height: 'show'}, 300);
+    $('#nav-life-content').animate({height: 'hide'}, 300);
+
+    $('#page-title-text').text('Life Insurance - Beneficiaries');
+
+})
+
+function showLifeContent() {
+    console.log('show life');
+
+    $('#nav-life-text').css('color','#0078AB');
+    $('#nav-life-arrow').animate({height: 'show'}, 0);
+
+    $('#nav-beneficiary-text').css('color','#595959');
+    $('#nav-beneficiary-arrow').animate({height: 'hide'}, 0);
+
+    $('#nav-beneficiary-content').animate({height: 'hide'}, 300);
+    $('#nav-life-content').animate({height: 'show'}, 300);
+
+    $('#page-title-text').text('Life Insurance - Member');
 }
