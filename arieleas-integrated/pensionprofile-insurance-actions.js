@@ -3,6 +3,7 @@
 console.log('Insurance profile loaded...');
 
 $( document ).ready(function() {
+    console.log('Ready!');
     showMedicalContent();
 })
 
@@ -21,9 +22,13 @@ $('#nav-dental-tab').on('click',function() {
     $('#nav-dental-content').animate({height: 'show'}, 300);
     $('#nav-medical-content').animate({height: 'hide'}, 300);
 
+    $('#page-title-text').text('Health - Dental coverage');
+
 })
 
 function showMedicalContent() {
+    console.log('show medical');
+    
     $('#nav-medical-text').css('color','#0078AB');
     $('#nav-medical-arrow').animate({height: 'show'}, 0);
 
@@ -34,5 +39,4 @@ function showMedicalContent() {
     $('#nav-medical-content').animate({height: 'show'}, 300);
 
     $('#page-title-text').text('Health - Medical coverage');
-
 }
