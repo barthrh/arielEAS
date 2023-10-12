@@ -32,6 +32,7 @@ $('#link-addnew-beneficiary').on('click',function(){
 })
 
 $('#button-add-done').on('click',function() {
+    console.log('Done event');
     if ($('#button-add-add').text = 'Done') {
         console.log('Done pressed');
         $('#add-benef-frame').animate({height: 'hide'}, 0);
