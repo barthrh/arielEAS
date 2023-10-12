@@ -29,6 +29,7 @@ $('#link-addnew-beneficiary').on('click',function(){
     $('#enter-beneficiary-frame').animate({height: 'show'}, 100);
     $('#button-add-cancel').animate({height: 'show'}, 0);
     $('#button-add-done').text('Add');
+    console.log('end of summon the add');
 })
 
 $('#close-addbenny').on('click',function(){
