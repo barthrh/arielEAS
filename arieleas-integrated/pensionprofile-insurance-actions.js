@@ -11,6 +11,7 @@ $( document ).ready(function() {
 
 $('#nav-medical-tab').on('click',function() {
     showMedicalContent();
+    $('#page-title-text').text('Health - Medical coverage');
 })
 
 $('#nav-dental-tab').on('click',function() {
@@ -39,11 +40,11 @@ function showMedicalContent() {
     $('#nav-dental-content').animate({height: 'hide'}, 300);
     $('#nav-medical-content').animate({height: 'show'}, 300);
 
-    $('#page-title-text').text('Health - Medical coverage');
 }
 
 $('#nav-life-tab').on('click',function() {
     showLifeContent();
+    $('#page-title-text').text('Life Insurance - Member');
 })
 
 $('#nav-beneficiary-tab').on('click',function() {
@@ -72,5 +73,4 @@ function showLifeContent() {
     $('#nav-beneficiary-content').animate({height: 'hide'}, 300);
     $('#nav-life-content').animate({height: 'show'}, 300);
 
-    $('#page-title-text').text('Life Insurance - Member');
 }
