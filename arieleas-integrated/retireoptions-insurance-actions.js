@@ -1,8 +1,8 @@
 // Start by setting the size and visibility of objects.
 
-var insuranceStatus = localStorage.getItem('insuranceStatus');
+var insuranceStatus = localStorage.getItem('retire-insurance-status');
 if (insuranceStatus == null){
-    localStorage.setItem('insuranceStatus','notstarted');
+    localStorage.setItem('retire-insurance-status','notstarted');
     insuranceStatus = 'notstarted';
 }
 
@@ -21,7 +21,7 @@ $('#content-insurancedetails').animate({height: 'hide'}, 500);
 
 $('#button-insurance-enroll').on('click', function() {
     // takind the easy path of just calling insurance done when you go to it.
-    localStorage.setItem('insuranceStatus','done');
+    localStorage.setItem('retire-insurance-status','done');
     window.open("https://rivendell-demo-ee.morneaushepell.com/Tools/AccessTool/EnrollmentResponsiveTool");
 })
 
@@ -33,5 +33,5 @@ $('#accordian-insurancedetails').on('click', function() {
 $('#insurance-status-complete').on('click',function() {
     // Reset the status to not started... secret button
     console.log('Resetting Insurance...');
-    localStorage.setItem('insuranceStatus','notstarted');
+    localStorage.setItem('retire-insurance-status','notstarted');
 })
