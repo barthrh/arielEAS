@@ -31,6 +31,13 @@ $('#link-addnew-beneficiary').on('click',function(){
     $('#button-add-add').text('Add');
 })
 
+$('#close-addbenny').on('click',function(){
+    console.log('Close add');
+    $('#add-benef-frame').animate({height: 'hide'}, 0);
+    $('#update-benef-frame').animate({height: 'show'}, 0);
+})
+
+
 $('#button-add-done').on('click',function() {
     console.log('Done event');
     if ($('#button-add-add').text = 'Done') {
