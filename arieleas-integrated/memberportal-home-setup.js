@@ -9,6 +9,10 @@ $( document ).ready(function() {
     $('#tile-retirementinfo').animate({minWidth: '250px'},{duration: 0, queue: false});
     $('#tilelarge-retirementinfo').animate({opacity: 'hide'},0);
     $('#tilesmall-retirementinfo').animate({width: 'show'},{duration: 0, queue: false});
+
+    console.log( "ready!" );
+    intializeLocalStorage();
+    setHomePageTiles();
 });
 
 
@@ -29,12 +33,6 @@ if (localStorage.getItem('retire-review-status') == null ){
     localStorage.setItem('retire-review-status','notstarted');
 }
 
-// On load perform an initial recalculation
-$( document ).ready(function() {
-    console.log( "ready!" );
-    intializeLocalStorage();
-    setHomePageTiles();
-});
 
 
 function intializeLocalStorage() {
