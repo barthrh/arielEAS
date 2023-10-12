@@ -33,6 +33,8 @@ $('#link-addnew-beneficiary').on('click',function(){
 
 $('#button-add-add').on('click',function() {
     if ($('#button-add-add').text = 'Done') {
-        $('#modalinfo').animate({ height: 'hide'}, 0);
+        console.log('Done pressed');
+        $('#add-benef-frame').animate({height: 'hide'}, 0);
+        $('#update-benef-frame').animate({height: 'show'}, 0);
     }
 })
