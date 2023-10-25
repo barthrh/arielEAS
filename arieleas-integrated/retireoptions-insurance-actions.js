@@ -10,10 +10,12 @@ if (insuranceStatus == 'notstarted') {
     $('#frame-insurance-notstarted').animate({height: 'show'}, 0);
     $('#frame-insurance-done').animate({height: 'hide'}, 0);
     $('#frame-insurance-details').animate({height: 'hide'}, 0);
+    $('#content-insurance-details').animate({height: 'hide'},0);
 } else {
     $('#frame-insurance-notstarted').animate({height: 'hide'}, 0);
     $('#frame-insurance-done').animate({height: 'show'}, 0);
     $('#frame-insurance-details').animate({height: 'show'}, 0);
+    $('#content-insurance-details').animate({height: 'show'},0);
 }
 
 $('#content-insurancedetails').animate({height: 'hide'}, 500);
