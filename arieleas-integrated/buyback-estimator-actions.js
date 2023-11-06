@@ -46,7 +46,7 @@ $('#accordian-information').on('click', function(){
     $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-basis', 'years');
 
- })
+ });
 
  $('#button-select-buydollars').on('click', function() {
     // Set the color
@@ -56,7 +56,7 @@ $('#accordian-information').on('click', function(){
     $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-basis', 'dollars');
 
- })
+ });
 
  // This is for the split display by button
  $('#button-display-yearly').on('click', function() {
@@ -67,7 +67,7 @@ $('#accordian-information').on('click', function(){
     $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-display', 'yearly');
 
- })
+ });
 
  $('#button-display-monthly').on('click', function() {
     // Set the color
@@ -77,4 +77,4 @@ $('#accordian-information').on('click', function(){
     $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-display', 'monthly');
 
- })
+ });
