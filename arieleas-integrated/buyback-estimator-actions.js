@@ -78,3 +78,16 @@ $('#accordian-information').on('click', function(){
     localStorage.setItem('buyback-display', 'monthly');
 
  });
+
+
+ // Supporting Functions
+
+ function setSplitButtonStyle(buttonName,newStatus) {
+    var jqID = "#" + buttonName;
+    var buttonClass = $(jqID).attr('class');
+    var statusClass = "eassplitbutton-" + newStatus;
+
+    $(jqID).removeClass(buttonClass);
+    $(jqID).addClass(statusClass);
+
+ }
