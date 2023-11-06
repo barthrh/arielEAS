@@ -15,5 +15,5 @@ $('#accordian-pensiondetails').on('click', function() {
 
 $('#accordian-buybackdetails').on('click', function() {
     var accordHeight = $('#content-buybackdetails').height();   
-    $('#content-pensiondetails').animate({height: 'toggle'}, 500);
+    $('#content-buybackdetails').animate({height: 'toggle'}, 500);
 })
