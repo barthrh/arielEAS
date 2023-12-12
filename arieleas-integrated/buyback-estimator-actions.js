@@ -8,9 +8,11 @@
 // Default section visibility
 $('#content-pensiondetails').animate({height: 'hide'},0);
 $('#content-buybackdetails').animate({height: 'hide'},0);
+$('#buyback-entry-dollars').animate({height: 'hide'},0);
 
-// Set the default age
+// Set the default values
 $('#input-ret1-age').val('61');
+localStorage.setItem('buyback-basis', 'years');
 
 
 $('#accordian-pensiondetails').on('click', function() {
@@ -43,7 +45,8 @@ $('#accordian-information').on('click', function(){
     setSplitButtonStyle('button-select-buyyears','selected');
     setSplitButtonStyle('button-select-buydollars','inactive');
 
-    $('#reciprocal-details').animate({height: 'show'}, 500);
+    $('#buyback-select-years').animate({height: 'show'}, 500);
+    $('#buyback-select-dollars').animate({height: 'hide'}, 500);
     localStorage.setItem('buyback-basis', 'years');
 
  });
@@ -53,7 +56,8 @@ $('#accordian-information').on('click', function(){
     setSplitButtonStyle('button-select-buydollars','selected');
     setSplitButtonStyle('button-select-buyyears','inactive');
 
-    $('#reciprocal-details').animate({height: 'show'}, 500);
+    $('#buyback-select-years').animate({height: 'hide'}, 500);
+    $('#buyback-select-dollars').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-basis', 'dollars');
 
  });
