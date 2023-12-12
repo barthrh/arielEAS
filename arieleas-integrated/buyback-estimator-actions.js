@@ -46,7 +46,7 @@ $('#accordian-information').on('click', function(){
     setSplitButtonStyle('button-select-buydollars','inactive');
 
     $('#buyback-entry-years').animate({height: 'show'}, 500);
-    $('#buyback-entry-dollars').animate({height: 'hide'}, 500);
+    $('#buyback-entry-dollars').animate({height: 'hide'}, 0);
     localStorage.setItem('buyback-basis', 'years');
 
  });
@@ -56,7 +56,7 @@ $('#accordian-information').on('click', function(){
     setSplitButtonStyle('button-select-buydollars','selected');
     setSplitButtonStyle('button-select-buyyears','inactive');
 
-    $('#buyback-entry-years').animate({height: 'hide'}, 500);
+    $('#buyback-entry-years').animate({height: 'hide'}, 0);
     $('#buyback-entry-dollars').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-basis', 'dollars');
 
