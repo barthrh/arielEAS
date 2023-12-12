@@ -30,8 +30,7 @@ $('#term-age-spinner-down').on('click', function(){
   		newAge = currentAge - 1;
   }
   
-  var form = $('form[data-name="ret-options-form"]'); 
-  form.find($("#input-ret1-age")).val(newAge); 
+  $("#input-ret1-age").val(newAge); 
  });
  
  $('#ret1-age-spinner-up').on('click', function(){
@@ -40,8 +39,7 @@ $('#term-age-spinner-down').on('click', function(){
   if(!currentAge) currentAge = 0;
   let newAge = currentAge + 1;
   
-  var form = $('form[data-name="ret-options-form"]'); 
-  form.find($("#input-ret1-age")).val(newAge); 
+  $("#input-ret1-age").val(newAge); 
 
 });
 
