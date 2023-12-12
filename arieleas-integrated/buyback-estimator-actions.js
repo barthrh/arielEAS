@@ -10,7 +10,7 @@ $('#content-pensiondetails').animate({height: 'hide'},0);
 $('#content-buybackdetails').animate({height: 'hide'},0);
 
 // Set the default age
-$('#input-retire-age').val('61');
+$('#input-ret1-age').val('61');
 
 
 $('#accordian-pensiondetails').on('click', function() {
