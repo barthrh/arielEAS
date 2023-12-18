@@ -193,13 +193,18 @@ $('#button-display-yearly').on('click', function() {
    // Calculate the pension under both bases at the prescribed frequency
    let basePension = 0;
    let buybackPension = 0;
+   let buybackIncrease = 0;
    basePension = calculatePension(retirementAge,0,buybackFrequency);
    buybackPension = calculatePension(retirementAge,buybackYears,buybackFrequency);
+   buybackIncrease = buybackPension - basePension;
+   if (buybackIncrease < 0) {
+      buybackIncrease = 0;
+   }
 
    // Update everything
    updateBasePension(basePension);
    updateBuybackPension(buybackPension);
-   updateRetirementAges(retirementAge);
+   updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease);
  }
 
 function updateBasePension(newBasePension) {
@@ -241,13 +246,28 @@ function updateBasePension(newBasePension) {
 }
 
 
-function updateRetirementAges(retirementAge) {
+function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease) {
 
-   ageText = "Age " + retirementAge;
+   let dollarFormat = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumSignificantDigits: 3,
+   });
+
+   let ageText = "Age " + retirementAge;
 
    $('#pill-pensiondetails-retireage-without').text(ageText);
    $('#pill-pensiondetails-retireage-with').text(ageText);
    $('#pill-pensiondetails-age').text(ageText);
    $('#pill-buybacksummary-age').text(ageText);
 
+   let buybackYearsText = buybackYears.toFixed(2) + ' years';
+   $('#buybacksummary-years').text(buybackYearsText);
+
+   let buybackDollarsText = dollarFormat.format(buybackDollars);
+   $('#buybacksummary-cost').text(buybackDollarsText);
+
+   let buybackIncreaseText = dollarFormat.format(buybackIncrease);
+   $('#buybacksummary-increase').text(buybackIncreaseText);
+   
 }
