@@ -160,20 +160,20 @@ $('#accordian-information').on('click', function(){
 function updateBasePension(newBasePension) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
-   $('#chart-basepension-value').val(newBasePension);
-   $('#table-basepension-value').val(newBasePension);
+   $('#chart-basepension-value').text(dollarFormat.format(newBasePension));
+   $('#table-basepension-value').text(dollarFormat.format(newBasePension));
 
    // Set height of chart-basepension-bar
    let barsize = ( newBasePension.toFixed(0)/100 ) * 0.28;
    barsize = barsize.toFixed(0);
-   $('#chart-buybackpension-bar').animate({height: barsize}, 500);
+   $('#chart-basepension-bar').animate({height: barsize}, 500);
  }
 
  function updateBuybackPension(newBuybackPension) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
-   $('#chart-buybackpension-value').val(newBuybackPension);
-   $('#table-buybackpension-value').val(newBuybackPension);
+   $('#chart-buybackpension-value').text(dollarFormat.format(newBuybackPension));
+   $('#table-buybackpension-value').text(dollarFormat.format(newBuybackPension));
 
    // Set height of chart-buybackpension-bar
    let barsize = ( newBuybackPension.toFixed(0)/100 ) * 0.28;
