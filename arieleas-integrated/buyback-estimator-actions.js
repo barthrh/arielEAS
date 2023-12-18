@@ -166,6 +166,7 @@ $('#button-display-yearly').on('click', function() {
          buybackYears = Number(buybackYears);
          if (buybackYears > 2) {
             buybackYears = 2;
+            $('#field-buyback-years').val(buybackYears);
          }
          buybackDollars = buybackYears / 2 * 4520;
          buybackDollars = buybackDollars.toFixed(0);
@@ -181,6 +182,7 @@ $('#button-display-yearly').on('click', function() {
          buybackDollars = Number(buybackDollars);
          if (buybackDollars > 4520) {
             buybackDollars = 4520;
+            $('#field-buyback-dollars').val(buybackDollars);
          }
          buybackYears = buybackDollars / 4520 * 2;
          buybackYears = buybackYears.toFixed(1);
