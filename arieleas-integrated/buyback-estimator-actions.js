@@ -114,9 +114,11 @@ $('#accordian-information').on('click', function(){
 
 
  function calculatePension(retirementAge,buybackService,pensionFrequecy) {
-   var pensionBaseline = 30000/pensionFrequecy;
-
-   var pensionAmount = ( (pensionBaseline * pensionFrequecy) + ( (retirementAge + buybackService - 55) * 3699 )) / pensionFrequecy;
+   let pensionBaseline = 30000/pensionFrequecy;
+   
+   let pensionBaseAmount = (pensionBaseline * pensionFrequecy) + ( (retirementAge - 55) * 3699 ) / pensionFrequecy;
+   let pensionBuybackAmount = buybackService * 1785 / pensionFrequecy;
+   let pensionAmount = pensionBaseAmount + pensionBuybackAmount;
    console.log('pension' + pensionAmount);
 
    return pensionAmount;
@@ -170,7 +172,8 @@ function updateBasePension(newBasePension) {
    $('#table-basepension-value').text(dollarFormat.format(newBasePension));
 
    // Set height of chart-basepension-bar
-   let barsize = ( newBasePension.toFixed(0)/100 ) * 0.28;
+   let newBasePensionRounded = newBasePension.toFixed(0)/100;
+   let barsize = 50 + newBasePensionRounded * 0.4;
    barsize = barsize.toFixed(0);
    $('#chart-basepension-bar').animate({height: barsize}, 500);
  }
@@ -188,7 +191,8 @@ function updateBasePension(newBasePension) {
    $('#table-buybackpension-value').text(dollarFormat.format(newBuybackPension));
 
    // Set height of chart-buybackpension-bar
-   let barsize = ( newBuybackPension.toFixed(0)/100 ) * 0.28;
+   let newBuybackPensionRounded = newBuybackPension.toFixed(0)/100;
+   let barsize = 50 + newBuybackPensionRounded * 0.4;
    barsize = barsize.toFixed(0);
    $('#chart-buybackpension-bar').animate({height: barsize}, 500);
 }
