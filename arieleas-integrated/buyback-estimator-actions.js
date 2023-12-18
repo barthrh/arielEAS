@@ -25,7 +25,10 @@ $( document ).ready(function() {
    calculateBuybackChart();
  });
 
- $('#button-recalculate').on('click',calculateBuybackChart());
+ $('#button-recalculate').on('click', function() {
+   console.log('Recalc');
+   calculateBuybackChart();
+})
 
 
 $('#accordian-pensiondetails').on('click', function() {
