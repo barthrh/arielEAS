@@ -14,8 +14,13 @@ $('#buyback-entry-dollars').animate({height: 'hide'},0);
 $('#input-ret1-age').val('61');
 $('#field-buyback-years').val('2.0');
 localStorage.setItem('buyback-basis', 'years');
-localStorage.setItem('buyback-display', 'yearly');
 localStorage.setItem('buyback-retirement-age',61);
+
+//Default the split button to yearly calculations
+setSplitButtonStyle('button-display-yearly','selected');
+setSplitButtonStyle('button-display-monthly','inactive');
+localStorage.setItem('buyback-display', 'yearly');
+
 
 
 // Kick off a recalc once the form is loaded.
@@ -79,12 +84,11 @@ $('#accordian-information').on('click', function(){
  });
 
  // This is for the split display by button
- $('#button-display-yearly').on('click', function() {
+$('#button-display-yearly').on('click', function() {
     // Set the color
     setSplitButtonStyle('button-display-yearly','selected');
     setSplitButtonStyle('button-display-monthly','inactive');
 
-    $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-display', 'yearly');
 
  });
@@ -94,7 +98,6 @@ $('#accordian-information').on('click', function(){
     setSplitButtonStyle('button-display-monthly','selected');
     setSplitButtonStyle('button-display-yearly','inactive');
 
-    $('#reciprocal-details').animate({height: 'show'}, 500);
     localStorage.setItem('buyback-display', 'monthly');
 
  });
@@ -126,6 +129,10 @@ $('#accordian-information').on('click', function(){
 
  // This is the main function used to calculate the two bars in the buyback chart.
  function calculateBuybackChart() {
+   
+   // Need to know 1. Age;  2. Frequency to display;  3. Years purchased
+   
+   // 1. Get the Retirement Age.
    let retirementAge = $('#input-ret1-age').val();
    if (retirementAge == '' || isNaN(retirementAge)) {
       retirementAge = 61;
@@ -134,6 +141,7 @@ $('#accordian-information').on('click', function(){
       retirementAge = Number(retirementAge);
    }
    
+   // 2. Figure out the frequency to display
    let buybackDisplay = localStorage.getItem('buyback-display');
    let buybackFrequency = 1;
 
@@ -143,18 +151,41 @@ $('#accordian-information').on('click', function(){
       buybackFrequency = 1;
    }
 
-   var buybackYears = $('#field-buyback-years').val();
-   if (buybackYears == '' || isNaN(buybackYears)) {
-      buybackYears = 0;
+
+   // 3. Determine the number of years to purchase
+
+   // 3a. User selecting by dollars or years?
+   let buybackBasis = localStorage.getItem('buyback-basis');
+   let buybackYears = 0;
+   let buybackDollars = 0;
+
+   if (buybackBasis == 'years') {      
+      buybackYears = $('#field-buyback-years').val();
+      if (buybackYears == '' || isNaN(buybackYears)) {
+         buybackYears = 0;
+      } else {
+         buybackYears = Number(buybackYears);
+      }
    } else {
-      buybackYears = Number(buybackYears);
+      buybackDollars = $('#field-buyback-dollars').val();
+      if (buybackDollars == '' || isNaN(buybackDollars)) {
+         buybackDollars = 0;
+         buybackYears = 0;
+         $('#field-buyback-years').val(0);
+      } else {
+         buybackYears = buybackDollars / 4520 * 2;
+         buybackYears = buybackYears.toFixed(1);
+         $('#field-buyback-years').val(buybackYears);
+      }
    }
 
-   var basePension = 0;
-   var buybackPension = 0;
+   // Calculate the pension under both bases at the prescribed frequency
+   let basePension = 0;
+   let buybackPension = 0;
    basePension = calculatePension(retirementAge,0,buybackFrequency);
    buybackPension = calculatePension(retirementAge,buybackYears,buybackFrequency);
 
+   // Update everything
    updateBasePension(basePension);
    updateBuybackPension(buybackPension);
    updateRetirementAges(retirementAge);
