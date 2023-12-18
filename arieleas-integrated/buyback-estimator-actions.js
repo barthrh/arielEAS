@@ -154,7 +154,6 @@ $('#button-display-yearly').on('click', function() {
 
    // 3. Determine the number of years to purchase
 
-   // 3a. User selecting by dollars or years?
    let buybackBasis = localStorage.getItem('buyback-basis');
    let buybackYears = 0;
    let buybackDollars = 0;
@@ -165,6 +164,12 @@ $('#button-display-yearly').on('click', function() {
          buybackYears = 0;
       } else {
          buybackYears = Number(buybackYears);
+         if (buybackYears > 2) {
+            buybackYears = 2;
+         }
+         buybackDollars = buybackYears / 2 * 4520;
+         buybackDollars = buybackDollars.toFixed(0);
+         $('#field-buyback-dollars').val(buybackDollars);
       }
    } else {
       buybackDollars = $('#field-buyback-dollars').val();
@@ -173,6 +178,10 @@ $('#button-display-yearly').on('click', function() {
          buybackYears = 0;
          $('#field-buyback-years').val(0);
       } else {
+         buybackDollars = Number(buybackDollars);
+         if (buybackDollars > 4520) {
+            buybackDollars = 4520;
+         }
          buybackYears = buybackDollars / 4520 * 2;
          buybackYears = buybackYears.toFixed(1);
          $('#field-buyback-years').val(buybackYears);
