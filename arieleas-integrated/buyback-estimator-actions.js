@@ -128,10 +128,12 @@ $('#accordian-information').on('click', function(){
    }
    
    let buybackDisplay = localStorage.getItem('buyback-display');
+   let buybackFrequency = 1;
+   
    if (buybackDisplay == 'monthly') {
-      let buybackFrequency = 12;
+      buybackFrequency = 12;
    } else {
-      let buybackFrequency = 1;
+      buybackFrequency = 1;
    }
 
    var buybackYears = $('#field-buyback-years').val();
