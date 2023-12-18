@@ -125,6 +125,8 @@ $('#accordian-information').on('click', function(){
    if (retirementAge == '' || isNaN(retirementAge)) {
       retirementAge = 61;
       localStorage.setItem('buyback-retirement-age',61);
+   } else {
+      retirementAge = Number(retirementAge);
    }
    
    let buybackDisplay = localStorage.getItem('buyback-display');
@@ -139,6 +141,8 @@ $('#accordian-information').on('click', function(){
    var buybackYears = $('#field-buyback-years').val();
    if (buybackYears == '' || isNaN(buybackYears)) {
       buybackYears = 0;
+   } else {
+      buybackYears = Number(buybackYears);
    }
 
    var basePension = 0;
