@@ -173,7 +173,7 @@ function updateBasePension(newBasePension) {
 
    // Set height of chart-basepension-bar
    let newBasePensionRounded = newBasePension.toFixed(0)/100;
-   let barsize = 50 + newBasePensionRounded * 0.4;
+   let barsize = (newBasePensionRounded *.7 * 0.1) + (newBasePensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-basepension-bar').animate({height: barsize}, 500);
  }
@@ -192,7 +192,7 @@ function updateBasePension(newBasePension) {
 
    // Set height of chart-buybackpension-bar
    let newBuybackPensionRounded = newBuybackPension.toFixed(0)/100;
-   let barsize = 50 + newBuybackPensionRounded * 0.4;
+   let barsize = (newBuybackPensionRounded *.7 * 0.1) + (newBuybackPensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-buybackpension-bar').animate({height: barsize}, 500);
 }
