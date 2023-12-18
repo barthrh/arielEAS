@@ -157,6 +157,7 @@ $('#accordian-information').on('click', function(){
 
    updateBasePension(basePension);
    updateBuybackPension(buybackPension);
+   updateRetirementAges(retirementAge);
  }
 
 function updateBasePension(newBasePension) {
@@ -195,4 +196,16 @@ function updateBasePension(newBasePension) {
    let barsize = (newBuybackPensionRounded *.7 * 0.1) + (newBuybackPensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-buybackpension-bar').animate({height: barsize}, 500);
+}
+
+
+function updateRetirementAges(retirementAge) {
+
+   ageText = "Age " + retirementAge;
+
+   $('#pill-pensiondetails-retireage-without').text(ageText);
+   $('#pill-pensiondetails-retireage-with').text(ageText);
+   $('#pill-pensiondetails-age').text(ageText);
+   $('#pill-buybacksummary-age').text(ageText);
+
 }
