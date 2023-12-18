@@ -160,6 +160,12 @@ $('#accordian-information').on('click', function(){
 function updateBasePension(newBasePension) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
+   let dollarFormat = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumSignificantDigits: 3,
+   });
+
    $('#chart-basepension-value').text(dollarFormat.format(newBasePension));
    $('#table-basepension-value').text(dollarFormat.format(newBasePension));
 
@@ -171,6 +177,12 @@ function updateBasePension(newBasePension) {
 
  function updateBuybackPension(newBuybackPension) {
    // Updates all of the fields that depend on a recalc of the base pension.
+
+   let dollarFormat = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumSignificantDigits: 3,
+   });
 
    $('#chart-buybackpension-value').text(dollarFormat.format(newBuybackPension));
    $('#table-buybackpension-value').text(dollarFormat.format(newBuybackPension));
