@@ -122,14 +122,14 @@ $('#accordian-information').on('click', function(){
  // This is the main function used to calculate the two bars in the buyback chart.
  function calculateBuybackChart() {
    let retirementAge = $('#input-ret1-age').val();
-   if (retirementAge == '') {
+   if (retirementAge == '' || isNaN(retirementAge)) {
       retirementAge = 61;
       localStorage.setItem('buyback-retirement-age',61);
    }
    
    let buybackDisplay = localStorage.getItem('buyback-display');
    let buybackFrequency = 1;
-   
+
    if (buybackDisplay == 'monthly') {
       buybackFrequency = 12;
    } else {
@@ -137,7 +137,7 @@ $('#accordian-information').on('click', function(){
    }
 
    var buybackYears = $('#field-buyback-years').val();
-   if (buybackYears == '') {
+   if (buybackYears == '' || isNaN(buybackYears)) {
       buybackYears = 0;
    }
 
@@ -169,7 +169,7 @@ function updateBasePension(newBasePension) {
    $('#table-buybackpension-value').val(newBuybackPension);
 
    // Set height of chart-buybackpension-bar
-   let barsize = ( newBasePension.toFixed(0)/100 ) * 0.28;
+   let barsize = ( newBuybackPension.toFixed(0)/100 ) * 0.28;
    barsize = barsize.toFixed(0);
    $('#chart-buybackpension-bar').animate({height: barsize}, 500);
 }
