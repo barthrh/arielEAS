@@ -293,13 +293,15 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
       buybackYearsTwo = 0.5;
    }
 
-   // Do the dollars based on the years.
+   // Do the dollars based on the years. Cost One is a plug to ensure it always balances due to rounding.
    buybackCostOne = buybackYearsOne / 1.5 * (4520 / 2 * 1.5);
    buybackCostTwo = buybackYearsTwo / 0.5 * (4520 / 2 * 0.5);
    buybackCostTotal = buybackCostOne + buybackCostTwo;
-   buybackCostOne = buybackCostOne.toFixed(0);
    buybackCostTwo = buybackCostTwo.toFixed(0);
    buybackCostTotal = buybackCostTotal.toFixed(0);
+   buybackCostOne = buybackCostTotal.valueOf() - buybackCostTwo.valueOf();
+   buybackCostOne = buybackCostOne.toFixed(0);
+
 
    // Update the labels
    $('#table-bbservice1-value').text(buybackYearsOne.toFixed(2));
