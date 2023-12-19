@@ -198,7 +198,7 @@ $('#button-display-yearly').on('click', function() {
    basePension = calculatePension(retirementAge,0,buybackFrequency);
    buybackPension = calculatePension(retirementAge,buybackYears,buybackFrequency);
  
-   buybackIncrease = buybackPension - basePension;
+   buybackIncrease = Math.round(buybackPension - basePension);
  
    if (buybackIncrease < 0) {
       buybackIncrease = 0;
