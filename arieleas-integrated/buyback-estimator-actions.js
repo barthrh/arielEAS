@@ -276,10 +276,12 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
    let buybackCostOne = 0;
    let buybackCostTwo = 0;
    let buybackCostTotal = 0;
+   
    if (buybackYears < 2) {
       // Need to change something; not buying 100%
       if (buybackYears > 1.5) {
          buybackYearsTwo = buybackYears - 1.5;
+         buybackYearsOne = 1.5;
       } else {
          // Buying less than 1.5 years
          buybackYearsTwo = 0;
@@ -294,9 +296,10 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
    // Do the dollars based on the years.
    buybackCostOne = buybackYearsOne / 1.5 * (4520 / 2 * 1.5);
    buybackCostTwo = buybackYearsTwo / 0.5 * (4520 / 2 * 0.5);
+   buybackCostTotal = buybackCostOne + buybackCostTwo;
    buybackCostOne = buybackCostOne.toFixed(0);
    buybackCostTwo = buybackCostTwo.toFixed(0);
-   buybackCostTotal = buybackCostOne + buybackCostTwo;
+   buybackCostTotal = buybackCostTotal.toFixed(0);
 
    // Update the labels
    $('#table-bbservice1-value').text(buybackYearsOne.toFixed(2));
