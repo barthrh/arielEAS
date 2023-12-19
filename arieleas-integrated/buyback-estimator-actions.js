@@ -119,7 +119,7 @@ $('#button-display-yearly').on('click', function() {
  function calculatePension(retirementAge,buybackService,pensionFrequecy) {
    let pensionBaseline = 30000/pensionFrequecy;
    
-   let pensionBaseAmount = (pensionBaseline * pensionFrequecy) + ( (retirementAge - 55) * 3699 ) / pensionFrequecy;
+   let pensionBaseAmount = ( (pensionBaseline * pensionFrequecy) + ( (retirementAge - 55) * 3699 ) ) / pensionFrequecy;
    let pensionBuybackAmount = buybackService * 1785 / pensionFrequecy;
    let pensionAmount = pensionBaseAmount + pensionBuybackAmount;
    console.log('pension' + pensionAmount);
@@ -205,12 +205,12 @@ $('#button-display-yearly').on('click', function() {
    }
 
    // Update everything
-   updateBasePension(basePension);
-   updateBuybackPension(buybackPension);
+   updateBasePension(basePension,buybackFrequency);
+   updateBuybackPension(buybackPension,buybackFrequency);
    updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease);
  }
 
-function updateBasePension(newBasePension) {
+function updateBasePension(newBasePension,pensionFrequecy) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
    let dollarFormat = new Intl.NumberFormat('en-US', {
@@ -223,13 +223,13 @@ function updateBasePension(newBasePension) {
    $('#table-basepension-value').text(dollarFormat.format(newBasePension));
 
    // Set height of chart-basepension-bar
-   let newBasePensionRounded = Math.round(newBasePension)/100;
+   let newBasePensionRounded = Math.round(newBasePension)*pensionFrequecy/100;
    let barsize = (newBasePensionRounded *.7 * 0.1) + (newBasePensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-basepension-bar').animate({height: barsize}, 500);
  }
 
- function updateBuybackPension(newBuybackPension) {
+ function updateBuybackPension(newBuybackPension,pensionFrequecy) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
    let dollarFormat = new Intl.NumberFormat('en-US', {
@@ -241,8 +241,8 @@ function updateBasePension(newBasePension) {
    $('#chart-buybackpension-value').text(dollarFormat.format(newBuybackPension));
    $('#table-buybackpension-value').text(dollarFormat.format(newBuybackPension));
 
-   // Set height of chart-buybackpension-bar
-   let newBuybackPensionRounded = newBuybackPension.toFixed(0)/100;
+   // Set height of chart-buybackpension-bar using ANNUALIZED pension amount.
+   let newBuybackPensionRounded = Math.round(newBuybackPension)*pensionFrequecy/100;
    let barsize = (newBuybackPensionRounded *.7 * 0.1) + (newBuybackPensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-buybackpension-bar').animate({height: barsize}, 500);
