@@ -251,7 +251,7 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
    let dollarFormat = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      maximumSignificantDigits: 3,
+      maximumSignificantDigits: 4,
    });
 
    let ageText = "Age " + retirementAge;
