@@ -216,7 +216,7 @@ function updateBasePension(newBasePension) {
    let dollarFormat = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      maximumSignificantDigits: 3,
+      maximumSignificantDigits: 4,
    });
 
    $('#chart-basepension-value').text(dollarFormat.format(newBasePension));
@@ -235,7 +235,7 @@ function updateBasePension(newBasePension) {
    let dollarFormat = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
-      maximumSignificantDigits: 3,
+      maximumSignificantDigits: 4,
    });
 
    $('#chart-buybackpension-value').text(dollarFormat.format(newBuybackPension));
