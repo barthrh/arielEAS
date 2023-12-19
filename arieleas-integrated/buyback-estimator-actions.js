@@ -207,7 +207,7 @@ $('#button-display-yearly').on('click', function() {
    // Update everything
    updateBasePension(basePension,buybackFrequency);
    updateBuybackPension(buybackPension,buybackFrequency);
-   updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease);
+   updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease,buybackFrequency);
  }
 
 function updateBasePension(newBasePension,pensionFrequecy) {
@@ -249,7 +249,7 @@ function updateBasePension(newBasePension,pensionFrequecy) {
 }
 
 
-function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease) {
+function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncrease,buybackFrequecy) {
 
    let dollarFormat = new Intl.NumberFormat('en-US', {
       style: 'currency',
@@ -272,6 +272,14 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
 
    let buybackIncreaseText = dollarFormat.format(buybackIncrease);
    $('#buybacksummary-increase').text(buybackIncreaseText);
+
+   if (buybackFrequecy = 12) {
+      $('#buybacksummary-increase-label').text('Your monthly pension increase');
+      $('#table-details-header'.text('Impact on monthly pension');
+   } else {
+      $('#buybacksummary-increase-label').text('Your annual pension increase');
+      $('#table-details-header'.text('Impact on monthly pension');
+   }
 
    // Now update the table of buyback years.
    let buybackYearsOne = 0;
