@@ -278,7 +278,7 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
       $('#table-details-header').text('Impact on monthly pension');
    } else {
       $('#buybacksummary-increase-label').text('Your annual pension increase');
-      $('#table-details-header').text('Impact on monthly pension');
+      $('#table-details-header').text('Impact on annual pension');
    }
 
    // Now update the table of buyback years.
