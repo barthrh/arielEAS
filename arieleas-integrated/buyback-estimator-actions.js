@@ -269,5 +269,41 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
 
    let buybackIncreaseText = dollarFormat.format(buybackIncrease);
    $('#buybacksummary-increase').text(buybackIncreaseText);
-   
+
+   // Now update the table of buyback years.
+   let buybackYearsOne = 0;
+   let buybackYearsTwo = 0;
+   let buybackCostOne = 0;
+   let buybackCostTwo = 0;
+   let buybackCostTotal = 0;
+   if (buybackYears < 2) {
+      // Need to change something; not buying 100%
+      if (buybackYears > 1.5) {
+         buybackYearsTwo = buybackYears - 1.5;
+      } else {
+         // Buying less than 1.5 years
+         buybackYearsTwo = 0;
+         buybackYearsOne = buybackYears;
+      }
+   } else {
+      // It's two so all at 100%
+      buybackYearsOne = 1.5;
+      buybackYearsTwo = 0.5;
+   }
+
+   // Do the dollars based on the years.
+   buybackCostOne = buybackYearsOne / 1.5 * (4520 / 2 * 1.5);
+   buybackCostTwo = buybackYearsTwo / 0.5 * (4520 / 2 * 0.5);
+   buybackCostOne = buybackCostOne.toFixed(0);
+   buybackCostTwo = buybackCostTwo.toFixed(0);
+   buybackCostTotal = buybackCostOne + buybackCostTwo;
+
+   // Update the labels
+   $('#table-bbservice1-value').text(buybackYearsOne.toFixed(2));
+   $('#table-bbservice2-value').text(buybackYearsTwo.toFixed(2));
+   $('#table-bbservicetot-value').text(buybackYears.toFixed(2));
+   $('#table-bbcost1-value').text(dollarFormat.format(buybackCostOne));
+   $('#table-bbcost2-value').text(dollarFormat.format(buybackCostTwo));
+   $('#table-bbcosttot-value').text(dollarFormat.format(buybackCostTotal));
+
 }
