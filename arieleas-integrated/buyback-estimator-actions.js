@@ -194,9 +194,12 @@ $('#button-display-yearly').on('click', function() {
    let basePension = 0;
    let buybackPension = 0;
    let buybackIncrease = 0;
+ 
    basePension = calculatePension(retirementAge,0,buybackFrequency);
    buybackPension = calculatePension(retirementAge,buybackYears,buybackFrequency);
+ 
    buybackIncrease = buybackPension - basePension;
+ 
    if (buybackIncrease < 0) {
       buybackIncrease = 0;
    }
@@ -220,7 +223,7 @@ function updateBasePension(newBasePension) {
    $('#table-basepension-value').text(dollarFormat.format(newBasePension));
 
    // Set height of chart-basepension-bar
-   let newBasePensionRounded = newBasePension.toFixed(0)/100;
+   let newBasePensionRounded = Math.round(newBasePension)/100;
    let barsize = (newBasePensionRounded *.7 * 0.1) + (newBasePensionRounded *.3 * 0.8);
    barsize = barsize.toFixed(0);
    $('#chart-basepension-bar').animate({height: barsize}, 500);
