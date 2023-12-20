@@ -35,6 +35,9 @@ $( document ).ready(function() {
    calculateBuybackChart();
 })
 
+$('#btn-leavconfirm-close').on('click', function() {
+   $('#modal-leaveconfirm').animate({height: 'hide'},500);
+})
 
 $('#accordian-pensiondetails').on('click', function() {
     var accordHeight = $('#content-pensiondetails').height();   
