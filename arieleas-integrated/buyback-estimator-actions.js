@@ -36,7 +36,7 @@ $( document ).ready(function() {
 })
 
 $('#button-leaveconfirm-close').on('click', function() {
-   $('#modal-leaveconfirm').animate({height: 'hide'},500);
+   $('#modal-leaveconfirm').animate({height: 'hide'},0);
 })
 
 $('#accordian-pensiondetails').on('click', function() {
