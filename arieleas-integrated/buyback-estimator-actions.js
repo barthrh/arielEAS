@@ -35,7 +35,7 @@ $( document ).ready(function() {
    calculateBuybackChart();
 })
 
-$('#btn-leavconfirm-close').on('click', function() {
+$('#button-leavconfirm-close').on('click', function() {
    $('#modal-leaveconfirm').animate({height: 'hide'},500);
 })
 
