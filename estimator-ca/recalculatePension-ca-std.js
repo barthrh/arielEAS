@@ -41,7 +41,7 @@ function recalculatePension() {
         var extinterestTwo = 0;
         var extinterestThree = 0;
     } else {
-        var extinterest = 0.5 + extinterestPct/100;
+        var extinterest = 0.05 + extinterestPct/100;
         var extinterestOne = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenOneAge - 55), 0) );
         var extinterestTwo = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenTwoAge - 55), 0) );
         var extinterestThree = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenThreeAge - 55), 0) );
