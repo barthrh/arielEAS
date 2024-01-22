@@ -95,7 +95,7 @@ $('#ret3-age-spinner-down').on('click', function(){
 });
 
 // EXPECTED INTEREST CREDIT
-$('#ret3-age-spinner-down').on('click', function(){
+$('#expinterest-spinner-down').on('click', function(){
 	let currentPct = Number($('#input-interestcredit-pct').val() );
   let newPct = 0;
   if(!currentPct || currentPct <= 0) {
@@ -108,7 +108,7 @@ $('#ret3-age-spinner-down').on('click', function(){
   form.find($("#input-interestcredit-pct")).val(newPct); 
  });
  
- $('#ret3-age-spinner-up').on('click', function(){
+ $('#expinterest-spinner-up').on('click', function(){
 
   let currentPct = Number($('#input-ret3-age').val() );
   if(!currentPct) currentPct = 0;
