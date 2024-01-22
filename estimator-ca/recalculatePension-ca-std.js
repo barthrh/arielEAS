@@ -37,9 +37,9 @@ function recalculatePension() {
     // It's totally unscientific.
     var extinterestPct = Number($('#input-interestcredit-pct').val() );
     var extinterest = 0.10 + extinterestPct/100;
-    var extinterestOne = 9220 * ( Math.max( (1 + extinterest)**(scenOneAge - 55), 0) );
-    var extinterestTwo = 9220 * ( Math.max( (1 + extinterest)**(scenTwoAge - 55), 0) );
-    var extinterestThree = 9220 * ( Math.max( (1 + extinterest)**(scenThreeAge - 55), 0) );
+    var extinterestOne = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenOneAge - 55), 0) );
+    var extinterestTwo = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenTwoAge - 55), 0) );
+    var extinterestThree = 9220 * extinterest * ( Math.max( (1 + extinterest)**(scenThreeAge - 55), 0) );
     console.log('interestOne' + extinterestOne);
 
     // Figure out impact of salary increase assuming age 55 now
