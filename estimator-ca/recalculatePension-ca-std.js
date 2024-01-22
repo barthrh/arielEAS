@@ -33,6 +33,15 @@ function recalculatePension() {
 
     govpenYears = 4;  
    
+    // This is the interest credit for cash balance plans. We are basing it on an $9220 opening balance.
+    // It's totally unscientific.
+    var extinterestPct = Number($('#input-interestcredit-pct').val() );
+    var extinterest = 0.10 + extinterestPct/100;
+    var extinterestOne = 9220 * ( Math.max( (1 + expinterest)**(scenOneAge - 55), 0) );
+    var extinterestTwo = 9220 * ( Math.max( (1 + expinterest)**(scenTwoAge - 55), 0) );
+    var extinterestThree = 9220 * ( Math.max( (1 + expinterest)**(scenThreeAge - 55), 0) );
+    console.log('interestOne' + extinterestOne);
+
     // Figure out impact of salary increase assuming age 55 now
     // Dividing percent by 500 to minimize the impact on total service
     var raisePercent = Number($('#raise-slider-single').val()) / 500;
@@ -40,9 +49,9 @@ function recalculatePension() {
     var raiseMultTwo = Math.max( (1 + raisePercent)**(scenTwoAge - 55), 0);
     var raiseMultThree = Math.max( (1 + raisePercent)**(scenThreeAge - 55), 0);
 
-    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + ( (scenOneAge - 55) * 3699 ) * raiseMultOne ) / pensionFrequecy;
-    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo ) / pensionFrequecy;
-    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + ( (scenThreeAge - 55) * 3699 ) * raiseMultThree ) / pensionFrequecy;
+    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + extinterestOne + ( (scenOneAge - 55) * 3699 ) * raiseMultOne ) / pensionFrequecy;
+    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + extinterestTwo + ( (scenTwoAge - 55) * 3699 ) * raiseMultTwo ) / pensionFrequecy;
+    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + extinterestThree + ( (scenThreeAge - 55) * 3699 ) * raiseMultThree ) / pensionFrequecy;
     
     scenOnePension = Math.min(scenOnePension, pensionMax);
     scenTwoPension = Math.min(scenTwoPension, pensionMax);
