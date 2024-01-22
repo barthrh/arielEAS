@@ -94,3 +94,27 @@ $('#ret3-age-spinner-down').on('click', function(){
 
 });
 
+// EXPECTED INTEREST CREDIT
+$('#ret3-age-spinner-down').on('click', function(){
+	let currentPct = Number($('#input-interestcredit-pct').val() );
+  let newPct = 0;
+  if(!currentPct || currentPct <= 0) {
+  	newPct = 2;
+  } else {
+  		newPct = currentPct - 0.5;
+  }
+  
+  var form = $('form[data-name="ret-options-form"]'); 
+  form.find($("#input-interestcredit-pct")).val(newPct); 
+ });
+ 
+ $('#ret3-age-spinner-up').on('click', function(){
+
+  let currentPct = Number($('#input-ret3-age').val() );
+  if(!currentPct) currentPct = 0;
+  let newPct = currentPct + 0.5;
+  
+  var form = $('form[data-name="ret-options-form"]'); 
+  form.find($("#input-interestcredit-pct")).val(newPct); 
+
+});
