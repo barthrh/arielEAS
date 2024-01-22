@@ -110,7 +110,7 @@ $('#expinterest-spinner-down').on('click', function(){
  
  $('#expinterest-spinner-up').on('click', function(){
 
-  let currentPct = Number($('#input-ret3-age').val() );
+  let currentPct = Number($('#input-interestcredit-pct').val() );
   if(!currentPct) currentPct = 0;
   let newPct = currentPct + 0.5;
   
