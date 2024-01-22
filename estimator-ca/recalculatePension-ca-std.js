@@ -36,10 +36,10 @@ function recalculatePension() {
     // This is the interest credit for cash balance plans. We are basing it on an $9220 opening balance.
     // It's totally unscientific.
     var extinterestPct = Number($('#input-interestcredit-pct').val() );
-    var expinterest = 0.10 + extinterestPct/100;
-    var extinterestOne = 9220 * ( Math.max( (1 + expinterest)**(scenOneAge - 55), 0) );
-    var extinterestTwo = 9220 * ( Math.max( (1 + expinterest)**(scenTwoAge - 55), 0) );
-    var extinterestThree = 9220 * ( Math.max( (1 + expinterest)**(scenThreeAge - 55), 0) );
+    var extinterest = 0.10 + extinterestPct/100;
+    var extinterestOne = 9220 * ( Math.max( (1 + extinterest)**(scenOneAge - 55), 0) );
+    var extinterestTwo = 9220 * ( Math.max( (1 + extinterest)**(scenTwoAge - 55), 0) );
+    var extinterestThree = 9220 * ( Math.max( (1 + extinterest)**(scenThreeAge - 55), 0) );
     console.log('interestOne' + extinterestOne);
 
     // Figure out impact of salary increase assuming age 55 now
