@@ -9,31 +9,35 @@ var showTileProfile = localStorage.getItem('tile-profile');
 var showTileDcpension = localStorage.getItem('tile-dcpension');
 var showTileInitiate = localStorage.getItem('tile-initiate');
 
-// If these variables were empty, initialize them. The default is to show.
-if ( showTileEstimate != null ) {
-    if (showTileEstimate == 'hide') {
-        $('#tile-estimate').animate({height: 'hide'}, 0);
-    } else {
-        $('#tile-estimate').animate({height: 'show'}, 0); 
-    } 
-}
- else {
-    $('#tile-estimate').animate({height: 'show'}, 0); 
- }
- 
- if ( showTileProfile != null ) {
-    if (showTileProfile == 'hide') {
-        $('#tile-profile').animate({height: 'hide'}, 0);
-    } else {
-        $('#tile-profile').animate({height: 'show'}, 0); 
-    } 
-}
- else {
-    $('#tile-profile').animate({height: 'show'}, 0); 
- }
+
 
 
 $( document ).ready(function() {
+
+    // If these variables were empty, initialize them. The default is to show.
+    if ( showTileEstimate != null ) {
+        if (showTileEstimate == 'hide') {
+            $('#tile-estimate').animate({height: 'hide'}, 0);
+        } else {
+            $('#tile-estimate').animate({height: 'show'}, 0); 
+        } 
+    }
+    else {
+        $('#tile-estimate').animate({height: 'show'}, 0); 
+    }
+    
+    if ( showTileProfile != null ) {
+        if (showTileProfile == 'hide') {
+            $('#tile-profile').animate({height: 'hide'}, 0);
+        } else {
+            $('#tile-profile').animate({height: 'show'}, 0); 
+        } 
+    }
+    else {
+        $('#tile-profile').animate({height: 'show'}, 0); 
+    }
+
+
     $('#tile-abouttheplan').animate({width: '250px'},0);
     $('#tile-abouttheplan').animate({minWidth: '250px'},{duration: 0, queue: false});
     $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
