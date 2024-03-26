@@ -5,13 +5,10 @@ var showTileProfile = localStorage.getItem('tile-profile');
 var showTileDcpension = localStorage.getItem('tile-dcpension');
 var showTileInitiate = localStorage.getItem('tile-initiate');
 
-if (showTileEstimate == 'hide') {
-    $('#radio-estimate-hide').prop('checked',true);
-    $('#radio-estimate-show').prop('checked',false);
-} else {
-    $('#radio-estimate-show').prop('checked',true);
-    $('#radio-estimate-hide').prop('checked',false);
-};
+setRadioDefaults('estimate',showTileEstimate);
+setRadioDefaults('profile',showTileProfile);
+setRadioDefaults('initiate',showTileInitiate);
+setRadioDefaults('dcpension',showTileDcpension);
 
 $('#button-save-tiles').on('click',function(){
     let estimateStatus = checkRadioValue('estimate');
@@ -49,4 +46,20 @@ function checkRadioValue(radioID) {
     }
 
     return retVal;
+}
+
+function setRadioDefaults(radioID, tileStatus) {
+
+    let radioIDShow = '#radio-' + radioID + '-show';
+    let radioIDHide = '#radio-' + radioID + '-hide';
+
+    if (tileStatus == 'hide') {
+        $(radioIDHide).prop('checked',true);
+        $(radioIDShow).prop('checked',false);
+    } else {
+        $(radioIDShow).prop('checked',true);
+        $(radioIDHide).prop('checked',false);
+    };
+    
+
 }
