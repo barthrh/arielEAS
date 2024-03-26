@@ -14,16 +14,20 @@ if (showTileEstimate == 'hide') {
 };
 
 $('#button-save-tiles').on('click',function(){
-    localStorage.setItem('tile-estimate',$('#radio-estimate'.val()));
+    let estimateStatus = checkRadioValue('estimate');
+    localStorage.setItem('tile-estimate',estimateStatus);
     console.log(localStorage.getItem('tile-estimate'));
 
-    localStorage.setItem('tile-profile',$('#radio-profile'.val()));
+    let profileStatus = checkRadioValue('profile');
+    localStorage.setItem('tile-profile',profileStatus);
     console.log(localStorage.getItem('tile-profile'));
 
-    localStorage.setItem('tile-initiate',$('#radio-initiate'.val()));
+    let initiateStatus = checkRadioValue('initiate');
+    localStorage.setItem('tile-initiate',initiateStatus);
     console.log(localStorage.getItem('tile-initiate'));
 
-    localStorage.setItem('tile-dcpension',$('#radio-dcpension'.val()));
+    let dcpensionStatus = checkRadioValue('dcpension');
+    localStorage.setItem('tile-dcpension',dcpensionStatus);
     console.log(localStorage.getItem('tile-dcpension'));
 });
 
