@@ -1,3 +1,8 @@
+// Test Data
+localStorage.setItem('tile-estimate','show');
+localStorage.setItem('tile-profile','hide');
+
+
 // Queue up the default variables to enable or disable tiles on the home page.
 var showTileEstimate = localStorage.getItem('tile-estimate');
 var showTileProfile = localStorage.getItem('tile-profile');
