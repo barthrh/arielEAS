@@ -26,6 +26,9 @@ $('#button-save-tiles').on('click',function(){
     let dcpensionStatus = checkRadioValue('dcpension');
     localStorage.setItem('tile-dcpension',dcpensionStatus);
     console.log(localStorage.getItem('tile-dcpension'));
+
+    $('#message-tile-saved').animate({height: 'show'}, 500);
+    $('#message-tile-saved').animate({height: 'hide'}, 5000);
 });
 
 
