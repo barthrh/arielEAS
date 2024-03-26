@@ -6,9 +6,11 @@ var showTileDcpension = localStorage.getItem('tile-dcpension');
 var showTileInitiate = localStorage.getItem('tile-initiate');
 
 if (showTileEstimate == 'hide') {
-    $('#radio-estimate').val('hide');
+    $('#radio-estimate-hide').prop('checked',true);
+    $('#radio-estimate-show').prop('checked',false);
 } else {
-    $('#radio-estimate').val('show');
+    $('#radio-estimate-show').prop('checked',true);
+    $('#radio-estimate-hide').prop('checked',false);
 };
 
 $('#button-save-tiles').on('click',function(){
