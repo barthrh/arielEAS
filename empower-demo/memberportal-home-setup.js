@@ -1,8 +1,6 @@
-$( document ).ready(function() {
 
-    // Test Data
-    localStorage.setItem('tile-estimate','show');
-    localStorage.setItem('tile-profile','hide');
+// Set up the tiles and content
+$( document ).ready(function() {
 
 
     // Queue up the default variables to enable or disable tiles on the home page.
@@ -60,6 +58,7 @@ $( document ).ready(function() {
         $('#tile-initiate').show(); 
     }
 
+    // Tidy up the content tiles and render them cleanly.
     $('#tile-abouttheplan').animate({width: '250px'},0);
     $('#tile-abouttheplan').animate({minWidth: '250px'},{duration: 0, queue: false});
     $('#tilelarge-abouttheplan').animate({opacity: 'hide'},0);
