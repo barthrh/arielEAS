@@ -1,6 +1,6 @@
 // Test Data
-localStorage.setItem('tile-estimate','hide');
-localStorage.setItem('tile-profile','show');
+localStorage.setItem('tile-estimate','show');
+localStorage.setItem('tile-profile','hide');
 
 
 // Queue up the default variables to enable or disable tiles on the home page.
@@ -17,24 +17,24 @@ $( document ).ready(function() {
     // If these variables were empty, initialize them. The default is to show.
     if ( showTileEstimate != null ) {
         if (showTileEstimate == 'hide') {
-            $('#tile-estimate').animate({height: 'hide'}, 0);
+            $('#tile-estimate').hide();
         } else {
-            $('#tile-estimate').animate({height: 'show'}, 0); 
+            $('#tile-estimate').show(); 
         } 
     }
     else {
-        $('#tile-estimate').animate({height: 'show'}, 0); 
+        $('#tile-estimate').show(); 
     }
     
     if ( showTileProfile != null ) {
         if (showTileProfile == 'hide') {
-            $('#tile-profile').animate({height: 'hide'}, 0);
+            $('#tile-profile').hide();
         } else {
-            $('#tile-profile').animate({height: 'show'}, 0); 
+            $('#tile-profile').show(); 
         } 
     }
     else {
-        $('#tile-profile').animate({height: 'show'}, 0); 
+        $('#tile-profile').show(); 
     }
 
 
