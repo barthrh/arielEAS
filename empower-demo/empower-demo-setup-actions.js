@@ -27,8 +27,8 @@ $('#button-save-tiles').on('click',function(){
     localStorage.setItem('tile-dcpension',dcpensionStatus);
     console.log(localStorage.getItem('tile-dcpension'));
 
-    $('#message-tile-saved').animate({height: 'show'}, 500);
-    $('#message-tile-saved').animate({height: 'hide'}, 5000);
+    $('#message-tile-saved').animate({opacity: 'show'}, 500);
+    $('#message-tile-saved').animate({opacity: 'hide'}, 5000);
 });
 
 
