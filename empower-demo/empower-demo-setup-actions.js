@@ -6,8 +6,10 @@ var showTileDcpension = localStorage.getItem('tile-dcpension');
 var showTileInitiate = localStorage.getItem('tile-initiate');
 
 if (showTileEstimate == 'hide') {
-    $('#')
-}
+    $('#radio-estimate').val('hide');
+} else {
+    $('#radio-estimate').val('show');
+};
 
 $('#button-save-tiles').on('click',function(){
     localStorage.setItem('tile-estimate',$('#radio-estimate'.valueOf()));
