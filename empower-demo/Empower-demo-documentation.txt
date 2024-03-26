@@ -1,0 +1,96 @@
+VARIABLES / OBJECT NAMES
+
+tile-estimator : object : tile on home page
+tile-profile   : object : tile on home page
+tile-dcpension : object : tile on home page
+tile-initiate  : object : tile on home page
+
+scenOneAge      : variable : estimator  'Age of scenario
+scenTwoAge      : variable : estimator  'Age of scenario
+scenThreeAge    : variable : estimator  'Age of scenario
+pensionEmpOne   : variable : estimator  'purpose unknown
+pensionEmpTwo   : variable : estimator  'purpose unknown
+pensionEmpThree : variable : estimator  'purpose unknown 
+
+
+
+FILE USAGE  BY PAGE
+
+empower-demo/memberportal-home-setup.js
+    - Member home
+
+empower-demo/memberportal-home-actions.js
+    - Member home
+
+estimator-ca/calculateAccordians-ca-std.js
+    - calculator-ca
+
+calculateAgeSpinners.js
+    - calculator-ca
+
+estimator-ca/recalculatePension-ca-std.js
+    - calculator-ca
+
+ageSliderManagement.js
+    - calculator-ca
+
+empower-demo/pensionprofile-personal-actions.js
+    - pension profile - personal
+
+estimator-ca/pensionprofile-employment-setup.js
+estimator-ca/pensionprofile-employment-actions.js
+    - These file don't even exist
+    - Both commented out in page persion profile - employment
+
+empower-demo/pensionprofile-membership-setup.js
+    - pension profile - membership
+
+empower-demo/pensionprofile-membership-actions.js
+    - pension profile - membership
+
+initate-retirement/initretire-endofemploy-setup.js
+    - RetireOnline-Step2
+
+initate-retirement/initretire-endofemploy-action.js
+    - RetireOnline-Step2
+
+initate-retirement/initretire-review-setup.js
+    - RetireOnline-Step4
+
+
+
+3RD PARTY JAVASCRIPT REFERENCES
+
+-- * These are for the slider widget * --
+
+refreshless.com//nouislider/dist/nouislider.css
+    - calculator-ca   (head tag)
+
+refreshless.com/nouislider/dist/nouislider.js
+    - calculator.ca
+
+cdn.jsdelivr.net/jquery/latest/jquery.min.js
+    - calculator-ca
+
+refreshless.com/nouislider/documentation/assets/wNumb.js
+    - calculator-ca
+
+-- *  ------------------------------ * --
+
+
+
+Member home
+    - Estimator disclaimer
+        - Calculator-ca
+            - Pension details
+            - Saved assumptions
+    - Pension profile - Personal (in calculator-ca)
+        - Pension profile - employment
+        - Pension profile - membership
+    - Defined Contribution
+        - External link
+    - Retire Online / Retire Online Step 1
+        - Retire Online Step 2
+            - Retire Online Step 3
+                - Retire Online Step 4
+                    - Retire Online Step 5
