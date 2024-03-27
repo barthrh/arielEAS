@@ -13,19 +13,15 @@ setRadioDefaults('dcpension',showTileDcpension);
 $('#button-save-tiles').on('click',function(){
     let estimateStatus = checkRadioValue('estimate');
     localStorage.setItem('tile-estimate',estimateStatus);
-    console.log(localStorage.getItem('tile-estimate'));
 
     let profileStatus = checkRadioValue('profile');
     localStorage.setItem('tile-profile',profileStatus);
-    console.log(localStorage.getItem('tile-profile'));
 
     let initiateStatus = checkRadioValue('initiate');
     localStorage.setItem('tile-initiate',initiateStatus);
-    console.log(localStorage.getItem('tile-initiate'));
 
     let dcpensionStatus = checkRadioValue('dcpension');
     localStorage.setItem('tile-dcpension',dcpensionStatus);
-    console.log(localStorage.getItem('tile-dcpension'));
 
     $('#message-tile-saved').animate({opacity: 'show'}, 500);
     $('#message-tile-saved').animate({opacity: 'hide'}, 5000);
@@ -39,12 +35,10 @@ function checkRadioValue(radioID) {
     let radioIDHide = '#radio-' + radioID + '-hide';
  
     if ($(radioIDShow).prop('checked') == true) {
-        console.log('show checked on ' + radioID);
         retVal = 'show';
     }
 
     if ($(radioIDHide).prop('checked') == true) {
-        console.log('hide checked on ' + radioID);
         retVal = 'hide';
     }
 
