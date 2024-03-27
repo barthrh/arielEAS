@@ -109,9 +109,9 @@ $('#button-save-planinfo').on('click',function(){
         }
     }
 
-    localStorage.setItem('planinfo-dcpension-total',$('#field-planinfo-total').text());
-    localStorage.setItem('planinfo-dcpension-vested',$('#field-planinfo-vested').text());
-    localStorage.setItem('planinfo-dcpension-return',$('#field-planinfo-return').text());
+    localStorage.setItem('planinfo-dcpension-total',$('#field-planinfo-total').val());
+    localStorage.setItem('planinfo-dcpension-vested',$('#field-planinfo-vested').val());
+    localStorage.setItem('planinfo-dcpension-return',$('#field-planinfo-return').val());
     
     $('#message-planinfo-saved').animate({opacity: 'show'}, 500);
     $('#message-planinfo-saved').animate({opacity: 'hide'}, 5000);
