@@ -8,7 +8,7 @@ $('#nav-tab-employment').on('click',function() {
 });
 
 $('#nav-tab-membership').on('click',function() {
-    let planType = localStorage.getItem('plan-type');
+    let planType = localStorage.getItem('demo-plan-type');
 
     if (planType == 'cashbal') {
         window.location.href = 'pension-profile-cashbal';
