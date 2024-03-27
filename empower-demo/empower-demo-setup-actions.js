@@ -76,7 +76,7 @@ if (profilePlanType == 'cashbal') {
     $('#radio-plantype-stddb').prop('checked',false);
 }
 
-$('#button-save-tiles').on('click',function(){
+$('#button-save-planinfo').on('click',function(){
 
     if($('#radio-plantype-stddb').prop('checked') == true) {
         localStorage.setItem('demo-plan-type','stddb');
