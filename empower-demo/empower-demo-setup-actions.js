@@ -79,6 +79,24 @@ if (profilePlanType == 'cashbal') {
     $('#radio-plantype-stddb').prop('checked',true);
 }
 
+let dcpensionTotal = localStorage.getItem('planinfo-dcpension-total');
+let dcpensionVested = localStorage.getItem('planinfo-dcpension-vested');
+let dcpensionReturn = localStorage.getItem('planinfo-dcpension-return');
+
+// Leave all values at the static defaul if nothing saved.
+if (dcpensionTotal != null) {
+    $('#field-planinfo-total').text(dcpensionTotal);
+} 
+
+if (dcpensionVested != null) {
+    $('#field-planinfo-vested').text(dcpensionVested);
+} 
+
+if (dcpensionReturn != null) {
+    $('#field-planinfo-return').text(dcpensionReturn);
+} 
+
+
 $('#button-save-planinfo').on('click',function(){
 
     if($('#radio-plantype-stddb').prop('checked') == true) {
@@ -91,6 +109,10 @@ $('#button-save-planinfo').on('click',function(){
         }
     }
 
+    localStorage.setItem('planinfo-dcpension-total',$('#field-planinfo-total'.text()));
+    localStorage.setItem('planinfo-dcpension-vested',$('#field-planinfo-vested'.text()));
+    localStorage.setItem('planinfo-dcpension-return',$('#field-planinfo-return'.text()));
+    
     $('#message-planinfo-saved').animate({opacity: 'show'}, 500);
     $('#message-planinfo-saved').animate({opacity: 'hide'}, 5000);
 

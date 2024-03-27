@@ -58,6 +58,26 @@ $( document ).ready(function() {
         $('#tile-initiate').show(); 
     }
 
+    // ***********  DC PENSION VALUES  ***********
+    // Sets the amounts displayed in the DC pension tile
+    let dcpensionTotal = localStorage.getItem('planinfo-dcpension-total');
+    let dcpensionVested = localStorage.getItem('planinfo-dcpension-vested');
+    let dcpensionReturn = localStorage.getItem('planinfo-dcpension-return');
+
+    // Leave all values at the static defaul if nothing saved.
+    if (dcpensionTotal != null) {
+        $('#dcpension-total').text(dcpensionTotal);
+    } 
+    
+    if (dcpensionVested != null) {
+        $('#dcpension-vested').text(dcpensionVested);
+    } 
+    
+    if (dcpensionReturn != null) {
+        $('#dcpension-return').text(dcpensionReturn);
+    } 
+
+    // ***********  CONTENT TILES  ***********
     // Tidy up the content tiles and render them cleanly.
     $('#tile-abouttheplan').animate({width: '250px'},0);
     $('#tile-abouttheplan').animate({minWidth: '250px'},{duration: 0, queue: false});

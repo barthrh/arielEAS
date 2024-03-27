@@ -1,11 +1,13 @@
 VARIABLES / OBJECT NAMES
 
 tile-estimator : object : tile on home page
-tile-profile   : object : tile on home page
-tile-dcpension : object : tile on home page
-tile-initiate  : object : tile on home page
-demo-plan-type : object : Determines type of plan (stddb or cashbal)
-
+tile-profile                : object : tile on home page
+tile-dcpension              : object : tile on home page
+tile-initiate               : object : tile on home page
+demo-plan-type              : object : Determines type of plan (stddb or cashbal)
+planinfo-dcpension-total    : object : Value of DC total balance used in Empower demo
+planinfo-dcpension-vested   : object : Value of DC vested balance used in Empower demo
+planinfo-dcpension-return   : object : Value of the DC plan rate of return used in Empower demo
 
 scenOneAge      : variable : estimator  'Age of scenario
 scenTwoAge      : variable : estimator  'Age of scenario
