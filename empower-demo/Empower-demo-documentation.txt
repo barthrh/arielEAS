@@ -4,6 +4,8 @@ tile-estimator : object : tile on home page
 tile-profile   : object : tile on home page
 tile-dcpension : object : tile on home page
 tile-initiate  : object : tile on home page
+demo-plan-type : object : Determines type of plan (stddb or cashbal)
+
 
 scenOneAge      : variable : estimator  'Age of scenario
 scenTwoAge      : variable : estimator  'Age of scenario

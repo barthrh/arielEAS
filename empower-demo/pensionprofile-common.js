@@ -8,5 +8,11 @@ $('#nav-tab-employment').on('click',function() {
 });
 
 $('#nav-tab-membership').on('click',function() {
-    window.location.href = 'pension-profile-membership';
+    let planType = localStorage.getItem('plan-type');
+
+    if (planType == 'cashbal') {
+        window.location.href = 'pension-profile-membership';
+    } else {
+        window.location.href = 'pension-profile-cashbal';
+    }
 });
