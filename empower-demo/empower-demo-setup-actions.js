@@ -1,5 +1,9 @@
 // This is code related to the setup page for the Empower Demo
 
+
+
+//  ***************** SECTION 1 - TILE SELECTION *******************  //
+//  ****************************************************************  //
 var showTileEstimate = localStorage.getItem('tile-estimate');
 var showTileProfile = localStorage.getItem('tile-profile');
 var showTileDcpension = localStorage.getItem('tile-dcpension');
@@ -60,3 +64,31 @@ function setRadioDefaults(radioID, tileStatus) {
     
 
 }
+
+
+//  ***************** SECTION 2 - PENSION INFO *********************  //
+//  ****************************************************************  //
+
+var profilePlanType = localStorage.getItem('demo-plan-type');
+
+if (profilePlanType == 'cashbal') {
+    $('#radio-plantype-cashbal').prop('checked',true);
+    $('#radio-plantype-stddb').prop('checked',false);
+}
+
+$('#button-save-tiles').on('click',function(){
+
+    if($('#radio-plantype-stddb').prop('checked') == true) {
+        localStorage.setItem('demo-plan-type','stddb');
+    } else {
+        if($('#radio-plantype-cashbal').prop('checked') == true) {
+            localStorage.setItem('demo-plan-type','cashbal');
+        } else {
+            localStorage.setItem('demo-plan-type','stddb');
+        }
+    }
+
+    $('#message-planinfo-saved').animate({opacity: 'show'}, 500);
+    $('#message-planinfo-saved').animate({opacity: 'hide'}, 5000);
+
+});
