@@ -11,8 +11,8 @@ $('#nav-tab-membership').on('click',function() {
     let planType = localStorage.getItem('plan-type');
 
     if (planType == 'cashbal') {
-        window.location.href = 'pension-profile-membership';
-    } else {
         window.location.href = 'pension-profile-cashbal';
+    } else {
+        window.location.href = 'pension-profile-membership';
     }
 });
