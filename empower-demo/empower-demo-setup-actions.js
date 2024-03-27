@@ -74,6 +74,9 @@ var profilePlanType = localStorage.getItem('demo-plan-type');
 if (profilePlanType == 'cashbal') {
     $('#radio-plantype-cashbal').prop('checked',true);
     $('#radio-plantype-stddb').prop('checked',false);
+} else {
+    $('#radio-plantype-cashbal').prop('checked',false);
+    $('#radio-plantype-stddb').prop('checked',true);
 }
 
 $('#button-save-planinfo').on('click',function(){
