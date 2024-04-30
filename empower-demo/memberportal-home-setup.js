@@ -65,7 +65,7 @@ $( document ).ready(function() {
     let dcpensionReturn = localStorage.getItem('planinfo-dcpension-return');
 
     // Leave all values at the static defaul if nothing saved.
-    if (dcpensionTotal != null && dcpensionTotal !='') {
+    if ( !(isEmpty(dcpensionTotal)) ) {
         $('#dcpension-total').text(dcpensionTotal);
     } 
     
