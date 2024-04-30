@@ -88,7 +88,7 @@ if ( !(dcpensionTotal.isEmpty) ) {
     $('#field-planinfo-total').val(dcpensionTotal);
 } 
 
-if ( !(dcpensionVested.isEmpty()) ) {
+if ( !(dcpensionVested.isEmpty) ) {
     $('#field-planinfo-vested').val(dcpensionVested);
 } 
 
