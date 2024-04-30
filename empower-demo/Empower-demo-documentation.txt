@@ -1,3 +1,12 @@
+GENERAL COMMENTARY
+
+Still unproven...
+To create client-specific versions of the site that can be pre-linked...
+Can we prompt for a demo ID at the beginning and use that ID (or a URL param) to select from a list of defaults?
+
+
+
+
 VARIABLES / OBJECT NAMES
 
 tile-estimator : object : tile on home page
