@@ -69,11 +69,11 @@ $( document ).ready(function() {
         $('#dcpension-total').text(dcpensionTotal);
     } 
     
-    if (dcpensionVested != null && dcpensionVested != '') {
+    if ( !(isEmpty(dcpensionVested)) ) {
         $('#dcpension-vested').text(dcpensionVested);
     } 
     
-    if (dcpensionReturn != null && dcpensionReturn != '') {
+    if ( !(isEmpty(dcpensionReturn)) ) {
         $('#dcpension-return').text(dcpensionReturn);
     } 
 
