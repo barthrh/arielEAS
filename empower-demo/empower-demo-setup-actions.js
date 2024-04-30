@@ -84,15 +84,15 @@ let dcpensionVested = localStorage.getItem('planinfo-dcpension-vested');
 let dcpensionReturn = localStorage.getItem('planinfo-dcpension-return');
 
 // Leave all values at the static defaul if nothing saved.
-if ( !(isEmpty(dcpensionTotal)) ) {
+if ( !(dcpensionTotal.isEmpty) ) {
     $('#field-planinfo-total').val(dcpensionTotal);
 } 
 
-if ( !(isEmpty(dcpensionVested)) ) {
+if ( !(dcpensionVested.isEmpty()) ) {
     $('#field-planinfo-vested').val(dcpensionVested);
 } 
 
-if ( !(isEmpty(dcpensionReturn)) ) {
+if ( !(dcpensionReturn.isEmpty) ) {
     $('#field-planinfo-return').val(dcpensionReturn);
 } 
 
