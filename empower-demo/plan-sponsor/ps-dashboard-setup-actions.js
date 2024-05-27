@@ -39,3 +39,11 @@ $('#accordian-report-calculations').on('click', function(){
 $('#accordian-report-payments').on('click', function(){
     $('#contentgroup-report-payments').animate({height: 'toggle'}, 500);
 });
+
+$('#ps-searchbox-button').on('click',function(){
+    $('#ps-modal-ppsearch').show();
+});
+
+$('#ps-modal-ppsearch-close').on('click',function(){
+    $('#ps-modal-ppsearch').hide();
+});
