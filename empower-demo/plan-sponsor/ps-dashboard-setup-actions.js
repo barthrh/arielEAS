@@ -41,7 +41,7 @@ $('#accordian-report-payments').on('click', function(){
 });
 
 $('#ps-searchbox-button').on('click',function(){
-    $('#ps-modal-ppsearch').show();
+    $('#ps-modal-ppsearch').animate({opacity: '1.0'}, 300);
 });
 
 $('#ps-modal-ppsearch-close').on('click',function(){
