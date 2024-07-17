@@ -11,19 +11,19 @@
   if ( localStorage.getItem('scenOneAge') != null ) {
      form.find($("#input-ret1-age")).val(scenOneAge);  
   } else {
-     form.find($("#input-ret1-age")).val("60");  
+     form.find($("#input-ret1-age")).val("62");  
   }
   
   if ( localStorage.getItem('scenTwoAge') != null ) {
      form.find($("#input-ret2-age")).val(scenTwoAge);  
   } else {
-     form.find($("#input-ret2-age")).val("62");  
+     form.find($("#input-ret2-age")).val("65");  
   }
 
   if ( localStorage.getItem('scenThreeAge') != null ) {
      form.find($("#input-ret3-age")).val(scenThreeAge);  
   } else {
-     form.find($("#input-ret3-age")).val("64");  
+     form.find($("#input-ret3-age")).val("67");  
   }
 
   $('#raise-slider-single').val(0);
