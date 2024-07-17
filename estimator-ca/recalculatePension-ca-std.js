@@ -3,7 +3,7 @@ function recalculatePension() {
     // Number of payments per year
     var pensionFrequecy = localStorage.getItem('pensionFrequency');
    
-    var pensionMax = 60000/pensionFrequecy;
+    var pensionMax = 80000/pensionFrequecy;
     var pensionBaseline = 35000/pensionFrequecy;
    
     var scenOneAge = Number($('#input-ret1-age').val() );
