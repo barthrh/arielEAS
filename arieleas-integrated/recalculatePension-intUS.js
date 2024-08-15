@@ -3,7 +3,7 @@ function recalculatePension() {
     // Number of payments per year
     var pensionFrequecy = localStorage.getItem('pensionFrequency');
     
-    var pensionMax = 60000/pensionFrequecy;
+    var pensionMax = 70000/pensionFrequecy;
     var pensionBaseline = 30000/pensionFrequecy;
     
     var scenOneAge = Number($('#input-ret1-age').val() );
@@ -45,9 +45,9 @@ function recalculatePension() {
     var raiseMultTwo = Math.max( (1 + raisePercent)**(scenTwoAge - 55), 0);
     var raiseMultThree = Math.max( (1 + raisePercent)**(scenThreeAge - 55), 0);
  
-    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + ( (scenOneAge - 55) * 3000 ) * raiseMultOne ) / pensionFrequecy;
-    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + ( (scenTwoAge - 55) * 3000 ) * raiseMultTwo ) / pensionFrequecy;
-    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + ( (scenThreeAge - 55) * 3000 ) * raiseMultThree ) / pensionFrequecy;
+    var scenOnePension = ( (pensionBaseline * pensionFrequecy) + ( (scenOneAge - 55) * 3100 ) * raiseMultOne ) / pensionFrequecy;
+    var scenTwoPension = ( (pensionBaseline * pensionFrequecy) + ( (scenTwoAge - 55) * 3100 ) * raiseMultTwo ) / pensionFrequecy;
+    var scenThreePension = ( (pensionBaseline * pensionFrequecy) + ( (scenThreeAge - 55) * 3100 ) * raiseMultThree ) / pensionFrequecy;
     
     scenOnePension = Math.min(scenOnePension, pensionMax);
     scenTwoPension = Math.min(scenTwoPension, pensionMax);
