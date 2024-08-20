@@ -48,14 +48,14 @@ $( document ).ready(function() {
 
     // Initiate Retirement tile
     if ( showTileInitiate != null ) {
-        if (showTileInitiate == 'hide') {
-            $('#tile-initiate').hide();
+        if (showTileInitiate == 'show') {
+            $('#tile-initiate').show();
         } else {
-            $('#tile-initiate').show(); 
+            $('#tile-initiate').hide(); 
         } 
     }
     else {
-        $('#tile-initiate').show(); 
+        $('#tile-initiate').hide(); 
     }
 
     // ***********  DC PENSION VALUES  ***********
