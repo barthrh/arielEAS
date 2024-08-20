@@ -61,8 +61,13 @@ function setHomePageTiles() {
         updateElectionStatusBars();
         updateReviewStatusBars();
     } else {
-        $('#card-retire-notstarted').animate({height: 'show'}, 0);
-        $('#card-retireinprogress').animate({height: 'hide'}, 0);
+        if (retireStatus == 'started') {
+            $('#card-retire-notstarted').animate({height: 'show'}, 0);
+            $('#card-retireinprogress').animate({height: 'hide'}, 0);
+        } else {
+            $('#card-retire-notstarted').animate({height: 'hide'}, 0);
+            $('#card-retireinprogress').animate({height: 'hide'}, 0);
+        }
     }
 
 }
