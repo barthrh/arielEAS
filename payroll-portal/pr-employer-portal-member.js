@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     $('#tab-member-content').show();
+    $('#tab-member-content').animate({height: 'show'}, 500);
     $('#tab-payment-content').hide();
     $('#tab-banking-content').hide();
     $('#tab-tax-content').hide();
@@ -63,11 +64,13 @@ $('#tab-member').on('click', function(){
 
  // Modal details form
  $('#tab-paydetail-detail').on('click', function(){
+    console.log('click detail');
     $('#tab-paydetail-details-content').show();
     $('#tab-paydetail-banking-content').hide();
  });
 
  $('#tab-paydetail-banking').on('click', function(){
+    console.log('click banking');
     $('#tab-paydetail-details-content').hide();
     $('#tab-paydetail-banking-content').show();
  });
