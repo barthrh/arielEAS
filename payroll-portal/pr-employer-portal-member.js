@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $('#tab-member-content').hide();
+    $('#tab-member-content').show();
     $('#tab-payment-content').hide();
     $('#tab-banking-content').hide();
     $('#tab-tax-content').hide();
@@ -59,4 +59,15 @@ $('#tab-member').on('click', function(){
 
  $('#payrow-year-2024').on('click',function(){
     $('#payrow-content-2024').animate({height: 'toggle'}, 500);
+ });
+
+ // Modal details form
+ $('#tab-paydetail-detail').on('click', function(){
+    $('#tab-paydetail-details-content').show();
+    $('#tab-paydetail-banking-content').hide();
+ });
+
+ $('#tab-paydetail-banking').on('click', function(){
+    $('#tab-paydetail-details-content').hide();
+    $('#tab-paydetail-banking-content').show();
  });
