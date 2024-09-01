@@ -64,13 +64,12 @@ $('#tab-member').on('click', function(){
 
  // Modal details form
  $('#tab-paydetail-detail').on('click', function(){
-    console.log('click detail');
     $('#tab-paydetail-details-content').show();
     $('#tab-paydetail-banking-content').hide();
  });
 
  $('#tab-paydetail-banking').on('click', function(){
-    console.log('click banking');
+
     $('#tab-paydetail-details-content').hide();
     $('#tab-paydetail-banking-content').show();
  });
