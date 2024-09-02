@@ -11,7 +11,11 @@ $('#multirow-delete').on('click',function(){
 });
 
 $('#multirow-add').on('click',function(){
-    
+
+    var hideblock = $(this).parent().parent().children('.hide');
+
+    hideblock.animate({height: 'show'}, 500);
+    /*    
     var multiblock1 = $(this).parent();
     var multiblock2 = $(this).parent().parent();
     var multiblock3 = $(this).parent().parent().children('div#hideblock.prer-dataentry-multirow-block.hide');
@@ -29,11 +33,6 @@ $('#multirow-add').on('click',function(){
     console.log(multiblock6);
     console.log(multiblock7);
     console.log(multiblock8);
+*/
 
 });
-
-$('#hideblock').on('click',function(){
-    console.log($(this));
-});
-
-// multiblock-paysources1
