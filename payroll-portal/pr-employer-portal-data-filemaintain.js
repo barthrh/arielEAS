@@ -10,6 +10,13 @@ $('#multirow-delete').on('click',function(){
 
 });
 
+$('#multirow-add').on('click',function(){
+    
+    var multiblock2 = $(this).parent().parent().next('div.prer-dataentry-multirow-block.hide');
+
+    console.log(multiblock2);
+
+});
 
 
-multiblock-paysources1
+// multiblock-paysources1
