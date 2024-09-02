@@ -14,7 +14,7 @@ $('#multirow-add').on('click',function(){
 
     console.log('add');
 
-    var hideblock = $(this).parent().parent().children('.hide');
+    var hideblock = $(this).parent().parent().children('.prer-dataentry-multirow-blockhide');
 
     hideblock.animate({height: 'show'}, 500);
     /*    
