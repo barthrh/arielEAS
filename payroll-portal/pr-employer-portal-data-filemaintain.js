@@ -1,4 +1,4 @@
-$('.prer-dataentry-multirow-delbutton-delete').on('click',function(){
+$('.prer-dataentry-multirow-delbutton').on('click',function(){
 
     console.log('del');
 
