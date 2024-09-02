@@ -17,12 +17,12 @@ $('#button-cancel').on('click',function(){
 
     $('#button-validate').hide();
 
-    $('#manualentry-block').hide();
+    $('#manualentry-block').animate({height: 'hide'}, 500);
     $('#datalist-empty').show();
 
 });
 
-$('#button-manualentry').on('click',function()
+$('#button-addmanual').on('click',function()
 {
     $('#button-validate').show();
 
