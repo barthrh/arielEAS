@@ -22,5 +22,8 @@ $('#multirow-add').on('click',function(){
 
 });
 
+$('#hideblock').on('click',function(){
+    console.log($(this));
+});
 
 // multiblock-paysources1
