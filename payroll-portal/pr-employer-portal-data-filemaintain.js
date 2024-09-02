@@ -1,3 +1,13 @@
+$( document ).ready(function() {
+    $('#button-validate').hide();
+    $('#manualentry-block').hide();
+    $('#datalist-empty').show();
+
+    console.log( "ready!" );
+});
+
+
+
 $('.prer-dataentry-multirow-delbutton').on('click',function(){
 
     var multiblock = $(this).closest('div.prer-dataentry-multirow-block');
@@ -17,7 +27,7 @@ $('#button-cancel').on('click',function(){
 
     $('#button-validate').hide();
 
-    $('#manualentry-block').animate({height: 'hide'}, 500);
+    $('#manualentry-block').animate({height: 'hide'}, 200);
     $('#datalist-empty').show();
 
 });
@@ -28,6 +38,5 @@ $('#button-addmanual').on('click',function()
 
     $('#manualentry-block').animate({height: 'show'}, 500);
     $('#datalist-empty').hide();
-
 
 });
