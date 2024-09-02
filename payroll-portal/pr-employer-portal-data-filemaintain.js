@@ -14,7 +14,7 @@ $('#multirow-add').on('click',function(){
     
     var multiblock1 = $(this).parent();
     var multiblock2 = $(this).parent().parent();
-    var multiblock3 = $(this).parent().parent().next('div.prer-dataentry-multirow-block.hide');
+    var multiblock3 = $(this).parent().parent().next('div#hideblock.prer-dataentry-multirow-block.hide');
 
     console.log(multiblock1);
     console.log(multiblock2);
