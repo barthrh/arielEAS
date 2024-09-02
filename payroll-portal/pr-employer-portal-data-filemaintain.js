@@ -1,5 +1,5 @@
 $('#multirow-delete').on('click',function(){
-    var multiblock = $(this).closest('prer-dataentry-multirow-block');
+    var multiblock = $(this).closest('div.prer-dataentry-multirow-block');
     
     var multiblock2 = $(this).parent().parent();
 
@@ -9,3 +9,7 @@ $('#multirow-delete').on('click',function(){
     console.log(multiblock2);
 
 });
+
+
+
+multiblock-paysources1
