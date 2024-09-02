@@ -1,12 +1,12 @@
-$('#multirow-delete').on('click',function(){
+$('.prer-dataentry-multirow-delbutton-delete').on('click',function(){
+
+    console.log('del');
+
     var multiblock = $(this).closest('div.prer-dataentry-multirow-block');
     
-    var multiblock2 = $(this).parent().parent();
-
-    multiblock2.animate({height: 'hide'}, 500);
+    multiblock.animate({height: 'hide'}, 500);
 
     console.log(multiblock);
-    console.log(multiblock2);
 
 });
 
