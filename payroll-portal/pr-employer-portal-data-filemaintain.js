@@ -13,7 +13,7 @@ $('#multirow-delete').on('click',function(){
 $('#multirow-add').on('click',function(){
 
     console.log('add');
-    
+
     var hideblock = $(this).parent().parent().children('.hide');
 
     hideblock.animate({height: 'show'}, 500);
@@ -36,5 +36,15 @@ $('#multirow-add').on('click',function(){
     console.log(multiblock7);
     console.log(multiblock8);
 */
+
+});
+
+$('.prer-dataentry-multirow-addbutton').on('click',function(){
+
+    console.log('addclass');
+
+    var hideblock = $(this).parent().parent().children('.hide');
+
+    hideblock.animate({height: 'show'}, 500);
 
 });
