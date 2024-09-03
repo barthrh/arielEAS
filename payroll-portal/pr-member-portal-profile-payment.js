@@ -22,7 +22,7 @@ function rotateImage(degree) {
 
 $('#accordian-pay2024').on('click',function(){
     $('#payrow-content-2024').animate({height: 'toggle'}, 500);
-    $('#payrow-content-2024').rotateImage(180);
+    rotateImage(180).Call($('#payrow-icon-2024'));
  });
 
  $('#accordian-pay2023').on('click',function(){
