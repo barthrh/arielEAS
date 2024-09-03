@@ -27,7 +27,7 @@ $('#accordian-pay2024').on('click',function(){
  });
 
  function rotateImage(degree) {
-	$('#demo-image').animate({  transform: degree }, {
+	$('#payrow-icon-2024').animate({  transform: degree }, {
     step: function(now,fx) {
         $(this).css({
             '-webkit-transform':'rotate('+now+'deg)', 
@@ -36,4 +36,4 @@ $('#accordian-pay2024').on('click',function(){
         });
     }
     });
-}
+};
