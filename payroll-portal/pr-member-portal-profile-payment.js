@@ -8,6 +8,7 @@ $( document ).ready(function() {
     console.log( "ready!" );
 });
 
+/*
 function rotateImage(degree) {
 	$('#payrow-icon-2024').animate({  transform: degree }, {
     step: function(now,fx) {
@@ -19,10 +20,11 @@ function rotateImage(degree) {
     }
     });
 };
+*/
 
 $('#accordian-pay2024').on('click',function(){
     $('#payrow-content-2024').animate({height: 'toggle'}, 500);
-    rotateImage(90).Call($('#payrow-icon-2024'));
+//    rotateImage(90).Call($('#payrow-icon-2024'));
  });
 
  $('#accordian-pay2023').on('click',function(){
