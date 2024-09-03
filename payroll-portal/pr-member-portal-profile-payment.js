@@ -9,7 +9,7 @@ $( document ).ready(function() {
 });
 
 function rotateImage(degree) {
-	$('#payrow-icon-2024').animate({  transform: degree }, {
+	$('this').animate({  transform: degree }, {
     step: function(now,fx) {
         $(this).css({
             '-webkit-transform':'rotate('+now+'deg)', 
@@ -22,7 +22,7 @@ function rotateImage(degree) {
 
 $('#accordian-pay2024').on('click',function(){
     $('#payrow-content-2024').animate({height: 'toggle'}, 500);
-    rotateImage(180).Call($('#payrow-icon-2024'));
+    rotateImage(90).Call($('#payrow-icon-2024'));
  });
 
  $('#accordian-pay2023').on('click',function(){
