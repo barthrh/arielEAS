@@ -9,12 +9,12 @@ $( document ).ready(function() {
 });
 
 function rotateImage(degree) {
-	$(this).animate({  transform: degree }, {
+	$('#payrow-icon-2024').animate({  transform: degree }, {
     step: function(now,fx) {
         $(this).css({
-            '-webkit-transform':'rotate('+now+'deg)', 
-            '-moz-transform':'rotate('+now+'deg)',
-            'transform':'rotate('+now+'deg)'
+            '-webkit-transform':'rotate(90deg)', 
+            '-moz-transform':'rotate(90deg)',
+            'transform':'rotate(90deg)'
         });
     }
     });
