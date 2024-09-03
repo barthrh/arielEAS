@@ -9,7 +9,7 @@ $( document ).ready(function() {
 });
 
 function rotateImage(degree) {
-	$('this').animate({  transform: degree }, {
+	$(this).animate({  transform: degree }, {
     step: function(now,fx) {
         $(this).css({
             '-webkit-transform':'rotate('+now+'deg)', 
