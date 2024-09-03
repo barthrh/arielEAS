@@ -16,6 +16,7 @@ $('#accordian-pay2024').on('click',function(){
 
  $('#accordian-pay2023').on('click',function(){
     $('#payrow-content-2023').animate({height: 'toggle'}, 500);
+    $('#payrow-icon-2023').animate({transform: "translateX(50%)"},500);
  });
 
  $('#accordian-pay2022').on('click',function(){
