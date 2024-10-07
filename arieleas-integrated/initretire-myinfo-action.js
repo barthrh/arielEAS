@@ -1,4 +1,13 @@
 // Actions for the various buttons and links.
+
+$( document ).ready(function() {
+    
+    $('#add-benef-frame').animate({height: 'hide'}, 0);
+    $('#update-benef-frame').animate({height: 'show'}, 0);
+    
+    console.log( "ready!" );
+});
+
 console.log('Myinfo-actions loaded.');
 
 $('#button-add-cancel').on('click',function() {
