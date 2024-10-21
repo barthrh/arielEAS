@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
     $('#report-preview').hide();
 
-    $('#multiselect-plan').val("D224Z101");
+    $('#multiselect-plan').val(["A104Z101","D224Z101","D234Z101"]);
 
 });
 
