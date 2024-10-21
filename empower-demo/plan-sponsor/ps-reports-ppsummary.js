@@ -6,6 +6,8 @@ $( document ).ready(function() {
 
     $('#report-preview').hide();
 
+    $('#multiselect-plan').val("D224Z101");
+
 });
 
 $('#radio-month').on('click', function(){
