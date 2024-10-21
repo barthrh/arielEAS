@@ -6,8 +6,6 @@ $( document ).ready(function() {
 
     $('#report-preview').hide();
 
-    $('#multiselect-plan').val(["A104Z101","D224Z101","D234Z101"]);
-
 });
 
 $('#radio-month').on('click', function(){
@@ -66,4 +64,16 @@ $('#radio-month').on('click', function(){
 
 $('#button-execute').on('click', function(){
     $('#report-preview').show();
-})
+});
+
+$('#selectall-plan').on('click', function(){
+
+    $('#multiselect-plan').val(["A104Z101","D224Z101","D234Z101"]);
+
+});
+
+$('#selectall-status').on('click', function(){
+
+    $('#multiselect-status').val(["active","deferred","terminated","pensioner","transfer","nonretroactive","notparticipating","transferdistinct"]);
+
+});
