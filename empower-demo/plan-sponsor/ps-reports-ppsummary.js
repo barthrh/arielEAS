@@ -4,6 +4,8 @@ $( document ).ready(function() {
     $('#param-select-year').hide();
     $('#param-select-period').hide();
 
+    $('#report-preview').hide();
+
 });
 
 $('#radio-month').on('click', function(){
@@ -59,3 +61,7 @@ $('#radio-month').on('click', function(){
        $('#radio-year').prop("checked",false);
     } 
  });
+
+$('button-execute').on('click', function(){
+    $('#report-preview').show();
+})
