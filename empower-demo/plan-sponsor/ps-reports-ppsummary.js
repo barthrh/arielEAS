@@ -33,3 +33,29 @@ $('#radio-month').on('click', function(){
         $('#param-select-year').hide();
     }
  });
+
+ $('#radio-period').on('click', function(){
+    if ($(this).prop("checked") == true) {
+       $('#param-select-month').hide();
+       $('#param-select-year').hide();
+       $('#param-select-period').show();
+
+       $('#radio-month').prop("checked",false);
+       $('#radio-year').prop("checked",false);
+       $('#radio-all').prop("checked",false);
+    } else {
+        $('#param-select-period').hide();
+    }
+ });
+
+ $('#radio-all').on('click', function(){
+    if ($(this).prop("checked") == true) {
+       $('#param-select-month').hide();
+       $('#param-select-year').hide();
+       $('#param-select-period').hide();
+
+       $('#radio-month').prop("checked",false);
+       $('#radio-period').prop("checked",false);
+       $('#radio-year').prop("checked",false);
+    } 
+ });
