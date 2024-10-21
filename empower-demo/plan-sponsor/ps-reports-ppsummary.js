@@ -62,6 +62,6 @@ $('#radio-month').on('click', function(){
     } 
  });
 
-$('button-execute').on('click', function(){
+$('#button-execute').on('click', function(){
     $('#report-preview').show();
 })
