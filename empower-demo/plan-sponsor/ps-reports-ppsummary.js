@@ -77,3 +77,4 @@ $('#selectall-status').on('click', function(){
     $('#multiselect-status').val(["active","deferred","terminated","pensioner","transfer","nonretroactive","notparticipating","transferdistinct"]);
 
 });
+
