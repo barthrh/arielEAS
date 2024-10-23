@@ -58,4 +58,4 @@ function setAuthrep(theAction) {
     $('#nav-authrep-arrow').animate({height: showHide}, 0);
     $('#nav-authrep-content').animate({height: showHide}, 300);
 }
-// nav-authrep-tab
+// nav-authrep-tab.
