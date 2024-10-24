@@ -11,5 +11,5 @@ var emailAddr = 'tommy.j.thompson@telusdemo.com';
 var phone = '330-555-3823';
 var mobile = '330-555-8283';
 
-console.log($('#resident-address').val());
+console.log($('#resident-address').text());
 
