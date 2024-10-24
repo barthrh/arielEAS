@@ -19,6 +19,7 @@ setFormValues();
 $('#button-residential-save').on('click', function(){
 
     setAddress();
+    $('#modal-window').hide();
 });
 
 
