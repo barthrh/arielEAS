@@ -35,5 +35,5 @@ function setFormValues() {
     $('#form-addr-city').val(addrCity);
     $('#form-addr-state').val(addrState);
     $('#form-addr-zip').val(addrZip);
-    $('#form-addr-country').val('USA');
+    $('#form-addr-country').val('US');
 }
