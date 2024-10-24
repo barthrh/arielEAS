@@ -30,10 +30,10 @@ function setAddress(){
 
 function setFormValues() {
 
-    $('#form-addr-1'.val(addrLine1));
-    $('#form-addr-2'.val(addrLine2));
-    $('#form-city'.val(addrCity));
-    $('#form-state'.val(addrState));
-    $('#form-zip'.val(addrZip));
-    $('#form-country'.val('USA'));
+    $('#form-addr-1').val(addrLine1);
+    $('#form-addr-2').val(addrLine2);
+    $('#form-city').val(addrCity);
+    $('#form-state').val(addrState);
+    $('#form-zip').val(addrZip);
+    $('#form-country').val('USA');
 }
