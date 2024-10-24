@@ -40,6 +40,14 @@ $('#accordian-report-payments').on('click', function(){
     $('#contentgroup-report-payments').animate({height: 'toggle'}, 500);
 });
 
+$('#accordian-forms').on('click', function(){
+    $('#contentgroup-forms').animate({height: 'toggle'}, 500);
+});
+
+$('#accordian-planinfo').on('click', function(){
+    $('#contentgroup-planinfo').animate({height: 'toggle'}, 500);
+});
+
 $('#ps-searchbox-button').on('click',function(){
     $('#ps-modal-ppsearch').animate({opacity: '0'}, 0);
     $('#ps-modal-ppsearch').show();
