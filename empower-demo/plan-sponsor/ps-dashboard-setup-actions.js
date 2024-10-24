@@ -3,6 +3,9 @@ $( document ).ready(function() {
     $('#contentgroup-retirement').hide();
     $('#contentgroup-disability').hide();
 
+    $('#contentgroup-forms').hide();
+    $('#contentgroup-planinfo').hide();
+
     $('#contentgroup-report-participants').hide();
     $('#contentgroup-report-employment').hide();
     $('#contentgroup-report-participation').hide();
