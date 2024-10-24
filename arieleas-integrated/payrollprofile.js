@@ -18,6 +18,19 @@ setFormValues();
 
 $('#button-residential-save').on('click', function(){
 
+    addrLine1 = $('#form-addr-line1').val();
+    addrLine2 = $('#form-addr-line2').val();
+    addrCity = $('#form-addr-city').val();
+    addrState = $('#form-addr-state').val();
+    addrZip = $('#form-addr-zip').val();
+    addrCountry = 'United States';
+
+    emailAddr = $('#form-email').val();
+    phone = $('#form-phone').val();
+    mobile = $('form-mobile').val();
+
+
+
     setAddress();
     $('#modal-window').hide();
 });
@@ -37,4 +50,8 @@ function setFormValues() {
     $('#form-addr-state').val(addrState);
     $('#form-addr-zip').val(addrZip);
     $('#form-addr-country').val('US');
+
+    $('#form-email').val(emailAddr);
+    $('#form-phone').val(phone);
+    $('#form-mobile').val(mobile);
 }
