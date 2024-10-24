@@ -27,7 +27,7 @@ $('#button-residential-save').on('click', function(){
 
     emailAddr = $('#form-email').val();
     phone = $('#form-phone').val();
-    mobile = $('form-mobile').val();
+    mobile = $('#form-mobile').val();
 
     setAddress();
     $('#modal-window').hide();
@@ -35,7 +35,7 @@ $('#button-residential-save').on('click', function(){
 
 
 function setAddress(){
-    console.log('setting' + addrLine1);
+    console.log('settingb' + mobile);
 
     $('#resident-address-1').text(addrLine1);
     $('#resident-address-2').text(addrCity + ', '+ addrState + '  '+ addrZip);
