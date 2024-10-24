@@ -1,14 +1,14 @@
-var addrLine1 = '1234 Main St.';
+var addrLine1 = '27 COLLEGE ROAD';
 var addrLine2 = '';
-var addrCity = 'Demotown';
+var addrCity = 'GOTHAM CITY';
 var addrState = 'MA';
-var addrZip = '01082';
+var addrZip = '02915';
 var addrCountry = 'United States';
 
 var maritalStatus = 'married';
 var gender = 'male';
 var emailAddr = 'joseph.r.truman@telusdemo.com';
-var phone = '351-555-3823';
+var phone = '';
 var mobile = '351-555-8283';
 
 console.log($('#resident-address').text());
