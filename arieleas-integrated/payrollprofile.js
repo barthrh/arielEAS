@@ -1,8 +1,8 @@
-var addrLine1 = '123 Main St.';
+var addrLine1 = '1234 Main St.';
 var addrLine2 = '';
-var addrCity = 'Demoville';
+var addrCity = 'Demotown';
 var addrState = 'OH';
-var addrZip = '43027';
+var addrZip = '43028';
 var addrCountry = 'United States';
 
 var maritalStatus = 'married';
@@ -13,4 +13,11 @@ var mobile = '330-555-8283';
 
 console.log($('#resident-address').text());
 
-$('#resident-address').text('123 Main St.\\nDemoville, OH  43027\\nUnited States');
+setAddress();
+
+
+function setAddress(){
+    $('#resident-address-1').text(addrLine1);
+    $('#resident-address-2').text(addrCity + ', '+ addrState + '  '+ addrZip);
+    $('#resident-address-3').text(addrCountry);
+};
