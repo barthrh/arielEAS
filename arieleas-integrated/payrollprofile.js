@@ -29,8 +29,6 @@ $('#button-residential-save').on('click', function(){
     phone = $('#form-phone').val();
     mobile = $('form-mobile').val();
 
-
-
     setAddress();
     $('#modal-window').hide();
 });
@@ -38,10 +36,14 @@ $('#button-residential-save').on('click', function(){
 
 function setAddress(){
     console.log('setting' + addrLine1);
-    
+
     $('#resident-address-1').text(addrLine1);
     $('#resident-address-2').text(addrCity + ', '+ addrState + '  '+ addrZip);
     $('#resident-address-3').text(addrCountry);
+
+    $('#profile-email').text(emailAddr);
+    $('#profile-phone').text(phone);
+    $('#profile-mobile').text(mobile);
 };
 
 function setFormValues() {
