@@ -13,4 +13,4 @@ var mobile = '330-555-8283';
 
 console.log($('#resident-address').text());
 
-$('#resident-address').text('123 Main St.<br>Demoville, OH<br>43027');
+$('#resident-address').text('123 Main St.\nDemoville, OH  43027\nUnited States');
