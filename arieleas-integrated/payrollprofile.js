@@ -37,6 +37,8 @@ $('#button-residential-save').on('click', function(){
 
 
 function setAddress(){
+    console.log('setting' + addrLine1);
+    
     $('#resident-address-1').text(addrLine1);
     $('#resident-address-2').text(addrCity + ', '+ addrState + '  '+ addrZip);
     $('#resident-address-3').text(addrCountry);
