@@ -14,6 +14,12 @@ var mobile = '330-555-8283';
 console.log($('#resident-address').text());
 
 setAddress();
+setFormValues();
+
+$('#button-residential-save').on('click', function(){
+
+    setAddress();
+});
 
 
 function setAddress(){
@@ -21,3 +27,13 @@ function setAddress(){
     $('#resident-address-2').text(addrCity + ', '+ addrState + '  '+ addrZip);
     $('#resident-address-3').text(addrCountry);
 };
+
+function setFormValues() {
+
+    $('#form-addr-1'.val(addrLine1));
+    $('#form-addr-2'.val(addrLine2));
+    $('#form-city'.val(addrCity));
+    $('#form-state'.val(addrState));
+    $('#form-zip'.val(addrZip));
+    $('#form-country'.val('USA'));
+}
