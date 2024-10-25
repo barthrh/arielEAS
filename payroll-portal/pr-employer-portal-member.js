@@ -46,6 +46,11 @@ $('#tab-member').on('click', function(){
     $('#tab-banking-content').show();
     $('#tab-tax-content').hide();
     $('#tab-paysources-content').hide();
+    $('#tab-member').removeClass('active');
+    $('#tab-payment').removeClass('active');
+    $('#tab-banking').addClass('active');
+    $('#tab-tax').removeClass('active');
+    $('#tab-paysources').removeClass('active');
  });
 
  $('#tab-tax').on('click', function(){
@@ -54,6 +59,11 @@ $('#tab-member').on('click', function(){
     $('#tab-banking-content').hide();
     $('#tab-tax-content').show();
     $('#tab-paysources-content').hide();
+    $('#tab-member').removeClass('active');
+    $('#tab-payment').removeClass('active');
+    $('#tab-banking').removeClass('active');
+    $('#tab-tax').addClass('active');
+    $('#tab-paysources').removeClass('active');
  });
 
  $('#tab-paysources').on('click', function(){
@@ -62,6 +72,11 @@ $('#tab-member').on('click', function(){
     $('#tab-banking-content').hide();
     $('#tab-tax-content').hide();
     $('#tab-paysources-content').show();
+    $('#tab-member').removeClass('active');
+    $('#tab-payment').removeClass('active');
+    $('#tab-banking').removeClass('active');
+    $('#tab-tax').removeClass('active');
+    $('#tab-paysources').addClass('active');
  });
 
  // year accordians in the pay table
