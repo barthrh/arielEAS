@@ -41,11 +41,13 @@ $('#reportrow-004').on('click', function(){
 
 $('#button-runreport-001').on('click', function(){
     runReport();
-    localStorage.setItem('reportRuntime', formatDate(date));
+    let currentDate = new Date();
+    localStorage.setItem('reportRuntime', formatDate(currentDate));
 });
 
 $('#button-runreport-004').on('click', function(){
-    localStorage.setItem('reportRuntime', formatDate(date));
+    let currentDate = new Date();
+    localStorage.setItem('reportRuntime', formatDate(currentDate));
     runReport();
 });
 
