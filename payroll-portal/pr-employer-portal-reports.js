@@ -44,7 +44,7 @@ $('#button-runreport-001').on('click', function(){
     let currentDate = new Date();
     localStorage.setItem('reportRuntime', formatDate(currentDate));
     console.log('dt:' + formatDate(currentDate));
-    console.log('ls:' + localStorage.setItem('reportRuntime', formatDate(currentDate)));
+    console.log('ls:' + localStorage.getItem('reportRuntime'));
 });
 
 $('#button-runreport-004').on('click', function(){
