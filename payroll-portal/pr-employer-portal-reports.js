@@ -5,6 +5,11 @@ $( document ).ready(function() {
     $('#panel-report004').hide();
     $('#panel-report-submitted').hide();
 
+    // On the OUTPUT page, set the in progress date to current
+    const date = new Date(); // Sets to current
+    $('#report-date').text(formatDate(date));
+    
+
     console.log( "ready!" );
 });
 
@@ -55,3 +60,17 @@ function runReport() {
     $('#panel-report-submitted').show();
 
 };
+
+// This is only for the OUTPUTS page sets the date to recent
+function formatDate(date) {
+    const padZero = (num) => String(num).padStart(2, '0');
+    
+    const month = padZero(date.getMonth() + 1);
+    const day = padZero(date.getDate());
+    const year = date.getFullYear();
+    const hours = padZero(date.getHours());
+    const minutes = padZero(date.getMinutes());
+    
+    return `${month}-${day}-${year} ${hours}:${minutes}`;
+};
+      
