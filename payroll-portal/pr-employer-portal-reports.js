@@ -24,3 +24,13 @@ $('#reportrow-004').on('click', function(){
     $('#panel-report001').hide();
     $('#panel-report004').show();
 });
+
+
+// Suppress enter on forms
+$('#form-report1').submit(function() {
+    return false;
+});
+
+$('#form-report2').submit(function() {
+return false;
+});
