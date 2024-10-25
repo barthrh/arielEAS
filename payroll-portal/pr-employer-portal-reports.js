@@ -7,15 +7,13 @@ $( document ).ready(function() {
 
     // On the OUTPUT page, set the in progress date to current
     var reportRuntime = localStorage.getItem('reportRuntime');
+    const date = new Date(); // Sets to current
 
     if ( localStorage.getItem('reportRuntime') != null ) {
         $('report-date').text(reportRuntime);
     } else {
-        const date = new Date(); // Sets to current
         $('#report-date').text(formatDate(date));
     }
-
-    
 
     console.log( "ready!" );
 });
@@ -44,11 +42,12 @@ $('#reportrow-004').on('click', function(){
 $('#button-runreport-001').on('click', function(){
     runReport();
     localStorage.setItem('reportRuntime', formatDate(date));
-})
+});
 
 $('#button-runreport-004').on('click', function(){
+    localStorage.setItem('reportRuntime', formatDate(date));
     runReport();
-})
+});
 
 
 // Suppress enter on forms
