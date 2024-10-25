@@ -19,6 +19,12 @@ $('#tab-member').on('click', function(){
     $('#tab-banking-content').hide();
     $('#tab-tax-content').hide();
     $('#tab-paysources-content').hide();
+    $('#tab-member').addClass('active');
+    $('#tab-payment').removeClass('active');
+    $('#tab-banking').removeClass('active');
+    $('#tab-tax').removeClass('active');
+    $('#tab-paysources').removeClass('active');
+   
  });
  
  $('#tab-payment').on('click', function(){
@@ -27,6 +33,11 @@ $('#tab-member').on('click', function(){
     $('#tab-banking-content').hide();
     $('#tab-tax-content').hide();
     $('#tab-paysources-content').hide();
+    $('#tab-member').removeClass('active');
+    $('#tab-payment').addClass('active');
+    $('#tab-banking').removeClass('active');
+    $('#tab-tax').removeClass('active');
+    $('#tab-paysources').removeClass('active');
  });
 
  $('#tab-banking').on('click', function(){
