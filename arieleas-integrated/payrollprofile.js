@@ -5,11 +5,11 @@ var addrState = 'MA';
 var addrZip = '02915';
 var addrCountry = 'United States';
 
-var maritalStatus = 'married';
+var maritalStatus = 'Unknown';
 var gender = 'male';
 var emailAddr = 'joseph.r.truman@telusdemo.com';
 var phone = '';
-var mobile = '351-555-8283';
+var mobile = '';
 
 console.log($('#resident-address').text());
 

@@ -7,7 +7,7 @@ $( document ).ready(function() {
     $('#tab-paysources-content').hide();
 
     $('#payrow-content-2023').hide();
-    $('#payrow-content-2024').hide();
+    $('#payrow-content-2024').show();
 
     console.log( "ready!" );
 });
