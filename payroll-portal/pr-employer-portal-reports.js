@@ -10,7 +10,7 @@ $( document ).ready(function() {
     const date = new Date(); // Sets to current
 
     if ( localStorage.getItem('reportRuntime') != null ) {
-        $('report-date').text(reportRuntime);
+        $('#report-date').text(reportRuntime);
     } else {
         $('#report-date').text(formatDate(date));
     }
