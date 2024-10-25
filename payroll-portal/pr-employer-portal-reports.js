@@ -6,8 +6,15 @@ $( document ).ready(function() {
     $('#panel-report-submitted').hide();
 
     // On the OUTPUT page, set the in progress date to current
-    const date = new Date(); // Sets to current
-    $('#report-date').text(formatDate(date));
+    var reportRuntime = localStorage.getItem('reportRuntime');
+
+    if ( localStorage.getItem('reportRuntime') != null ) {
+        $('report-date').text(reportRuntime);
+    } else {
+        const date = new Date(); // Sets to current
+        $('#report-date').text(formatDate(date));
+    }
+
     
 
     console.log( "ready!" );
@@ -36,6 +43,7 @@ $('#reportrow-004').on('click', function(){
 
 $('#button-runreport-001').on('click', function(){
     runReport();
+    localStorage.setItem('reportRuntime', formatDate(date));
 })
 
 $('#button-runreport-004').on('click', function(){
