@@ -4,6 +4,7 @@ $( document ).ready(function() {
     
     $('#menurow-archive').hide();
     $('#menuselect-archive').hide();
+    $('#menuselect-inbox').show();
     
     console.log( "ready!" );
 });
