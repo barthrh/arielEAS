@@ -2,8 +2,7 @@
 
 $( document ).ready(function() {
     
-    $('#menurow-archive').hide();
-    $('#menuselect-archive').hide();
+    $('#menurow-archive').removeClass('active');
     $('#menuselect-inbox').show();
     
     console.log( "ready!" );
@@ -14,7 +13,6 @@ $('#menurow-inbox').on('click', function(){
     $('#menuselect-inbox').show();
     $('#menurow-archive').removeClass('active');
     $('#menuselect-archive').hide();
-
 })
 
 $('#menurow-archive').on('click', function(){
@@ -22,5 +20,4 @@ $('#menurow-archive').on('click', function(){
     $('#menuselect-inbox').hide();
     $('#menurow-archive').addClass('active');
     $('#menuselect-archive').show();
-
 })
