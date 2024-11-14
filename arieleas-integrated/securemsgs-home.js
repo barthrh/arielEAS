@@ -2,6 +2,9 @@
 
 $( document ).ready(function() {
     
+    $('#msgcontent-1').hide();
+    $('#msgcontent-2').hide();
+
     $('#menuitem-archive').removeClass('active');
     $('#menuselect-inbox').show();
     
@@ -20,4 +23,14 @@ $('#menurow-archive').on('click', function(){
     $('#menuselect-inbox').hide();
     $('#menuitem-archive').addClass('active');
     $('#menuselect-archive').show();
+})
+
+$('#inbox-row-1').on('click', function(){
+    $('#msgcontent-1').show();
+    $('#msgcontent-2').hide();
+})
+
+$('#inbox-row-2').on('click', function(){
+    $('#msgcontent-1').hide();
+    $('#msgcontent-2').show();
 })
