@@ -14,6 +14,9 @@ $( document ).ready(function() {
 
 });
 
+$('#form-search').submit(function() {
+    return false;
+  });
 
 $('#accordian-retirement').on('click', function(){
     $('#contentgroup-retirement').animate({height: 'toggle'}, 500);
