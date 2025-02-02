@@ -6,8 +6,8 @@ $( document ).ready(function() {
   $('#content-pay2').animate({height: 'hide'}, 500);
   $('#content-pay3').animate({height: 'hide'}, 500);
 
-  $('#content-bank1').animate({height: 'hide'}, 500);
-  $('#content-bank2').animate({height: 'hide'}, 500);
+  $('#content-bank1').animate({height: 'show'}, 500);
+  $('#content-bank2').animate({height: 'show'}, 500);
 });
 
 // Control the accordian sections on pay and bank pages
