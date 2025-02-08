@@ -34,3 +34,7 @@ $('#inbox-row-2').on('click', function(){
     $('#msgcontent-1').hide();
     $('#msgcontent-2').show();
 })
+
+$('#nav-link-back').on('click', function(){
+    history.back(-1);
+})
