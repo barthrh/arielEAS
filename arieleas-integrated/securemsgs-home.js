@@ -38,3 +38,7 @@ $('#inbox-row-2').on('click', function(){
 $('#nav-link-back').on('click', function(){
     history.back(-1);
 })
+
+$('#form-createmessage').submit(function() {
+    return false;
+})
