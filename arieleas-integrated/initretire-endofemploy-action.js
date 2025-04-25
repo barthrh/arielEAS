@@ -7,6 +7,12 @@ $( document ).ready(function() {
     $('#reciprocal-details').animate({height: 'hide'}, 0);
 });
 
+// Block submission on pressing 'enter'
+$('#endemploy-form').submit(function() {
+    return false;
+});
+
+
 function calcRetireDate(endDate) {
 
     // Set up vars for the segments
