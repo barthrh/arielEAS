@@ -4,7 +4,9 @@ $( document ).ready(function() {
     
     $('#add-benef-frame').animate({height: 'hide'}, 0);
     $('#update-benef-frame').animate({height: 'show'}, 0);
-    
+    $('#enter-beneficiary-frame').animate({height: 'hide'}, 100);
+    $('#button-add-cancel').animate({height: 'hide'}, 0);
+
     console.log( "ready!" );
 });
 
