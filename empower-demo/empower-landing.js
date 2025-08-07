@@ -9,6 +9,7 @@ $(document).ready(function () {
   localStorage.removeItem('savedImageBase64');
 
   let logoBase64 = '';
+  let logoBase64a = '';
 
   // Grab a freshly posted logo
   $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', function(data) {
@@ -20,9 +21,9 @@ $(document).ready(function () {
   });
 
   // Set the landing image, just for now
-  // let logoBase64 = localStorage.getItem(('savedImageBase64'));
+  logoBase64a = localStorage.getItem(('savedImageBase64'));
   console.log('TEST: ' + localStorage.getItem(('savedImageBase64')));
-  console.log('LOGO: ' + 'HERE: ' + logoBase64);
+  console.log('LOGO: ' + 'HERE: ' + logoBase64a);
 
   // Set the image source
   $('#portalLogo').attr('src', logoBase64);
