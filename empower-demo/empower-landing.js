@@ -18,6 +18,7 @@ $(document).ready(function () {
 
   // Set the landing image, just for now
   let logoBase64 = localStorage.getItem(('savedImageBase64'));
+  console.log(logoBase64);
 
   // Set the image source
   $('#portalLogo').attr('src', logoBase64);
