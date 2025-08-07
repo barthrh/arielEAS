@@ -8,7 +8,7 @@ $(document).ready(function () {
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
 
-  let logoBase64 = '';
+  var logoBase64 = '';
   let logoBase64a = '';
 
   // Grab a freshly posted logo
