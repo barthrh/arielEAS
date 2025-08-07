@@ -9,6 +9,14 @@ $( document ).ready(function() {
     var showTileDcpension = localStorage.getItem('tile-dcpension');
     var showTileInitiate = localStorage.getItem('tile-initiate');
 
+    // Defines the updateLogo function
+    $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
+        .done(function() {
+        console.log('sub-logoupdate loaded');
+    });
+
+    updateLogo();
+
     // If these variables were empty, initialize them. The default is to show.
     // Estimator tile
     if ( showTileEstimate != null ) {

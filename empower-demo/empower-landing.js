@@ -5,10 +5,11 @@
 
 $(document).ready(function () {
 
+  // Defines the updateLogo function
   $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
     .done(function() {
       console.log('sub-logoupdate loaded');
-    });
+  });
 
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
@@ -33,18 +34,3 @@ $(document).ready(function () {
  
 });
 
-/*
-
-// This function will be used elsewhere to change the logo.
-// It's a function so I can call it in the Get from this page, otherwise it runs before the get is done.
-function updateLogo() {
-
-  // Set the landing image, just for now
-  let logoBase64 = localStorage.getItem(('savedImageBase64'));
-  
-  // Set the image source
-  $('#portalLogo').attr('src', logoBase64);
-
-};
-
-*/
