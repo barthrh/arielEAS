@@ -34,3 +34,9 @@ $(document).ready(function () {
   $('#imgLogo1').attr('src', abcLogoBase64);
 
 });
+
+$('#but-updateB64').on('click',function() {
+  let base64Text = localStorage.getItem('savedImageBase64');
+  
+  $('#base64Test').text(localStorage.getItem('savedImageBase64'));
+});
