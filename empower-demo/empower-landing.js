@@ -8,11 +8,13 @@ $(document).ready(function () {
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
 
-  var logoBase64 = '';
+  var logoBase64 = 'start';
   let logoBase64a = '';
 
   // Grab a freshly posted logo
   $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', function(data) {
+    console.log('BEFORE: ' + logoBase64);
+  
     localStorage.setItem('savedImageBase64', data);
     logoBase64 = data;
     console.log('Base64 logo stored.');
