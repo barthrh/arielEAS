@@ -22,7 +22,7 @@ $(document).ready(function () {
 
   // Set the landing image, just for now
   logoBase64a = localStorage.getItem(('savedImageBase64'));
-  console.log('TEST: ' + localStorage.getItem(('savedImageBase64')));
+  console.log('TEST: ' + logoBase64);
   console.log('LOGO: ' + 'HERE: ' + logoBase64a);
 
   // Set the image source
