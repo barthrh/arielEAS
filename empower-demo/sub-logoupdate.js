@@ -18,10 +18,12 @@ $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', functi
 });
 */
 
-$(function(setPageLogo) {
-  let logoBase64 = localStorage.getItem(('savedImageBase64'));
+function updateLogo() {
 
+  // Set the landing image, just for now
+  let logoBase64 = localStorage.getItem(('savedImageBase64'));
+  
   // Set the image source
   $('#portalLogo').attr('src', logoBase64);
 
-});
+};

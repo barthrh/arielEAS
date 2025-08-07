@@ -1,3 +1,8 @@
+// This part is the core script that processes the received logo that was posted to the Node endpoint.
+// Endpoint is currently https://empower-manager-514504a17a0e.herokuapp.com/save-image
+// content-type & Body should be json {"base64Image": "data:image/png;base64,[the base64]}"
+
+
 $(document).ready(function () {
 
   $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
@@ -28,6 +33,10 @@ $(document).ready(function () {
  
 });
 
+/*
+
+// This function will be used elsewhere to change the logo.
+// It's a function so I can call it in the Get from this page, otherwise it runs before the get is done.
 function updateLogo() {
 
   // Set the landing image, just for now
@@ -38,8 +47,4 @@ function updateLogo() {
 
 };
 
-$('#but-updateB64').on('click',function() {
-  let base64Text = localStorage.getItem('savedImageBase64');
-  
-  $('#base64Test').text(base64Text);
-});
+*/
