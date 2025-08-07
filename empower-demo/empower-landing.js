@@ -16,6 +16,8 @@ $(document).ready(function () {
     console.log('BEFORE: ' + logoBase64);
   
     localStorage.setItem('savedImageBase64', data);
+    console.log('DATA: ' + data);
+
     logoBase64 = data;
     console.log('Base64 logo stored.');
   console.log('INSIDE: ' + logoBase64);
