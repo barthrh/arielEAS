@@ -38,5 +38,5 @@ $(document).ready(function () {
 $('#but-updateB64').on('click',function() {
   let base64Text = localStorage.getItem('savedImageBase64');
   
-  $('#base64Test').text(localStorage.getItem('savedImageBase64'));
+  $('#base64Test').text(base64Text);
 });
