@@ -20,17 +20,23 @@ $(document).ready(function () {
 
     logoBase64 = data;
     console.log('Base64 logo stored.');
-  console.log('INSIDE: ' + logoBase64);
+    console.log('INSIDE: ' + logoBase64);
+
+    updateLogo();
   
   }).fail(function() {
     console.log('No Base64 logo found.');
   });
 
-  // Set the landing image, just for now
-  logoBase64a = localStorage.getItem(('savedImageBase64'));
-  console.log('TEST: ' + logoBase64);
-  console.log('LOGO: ' + 'HERE: ' + logoBase64a);
+ 
+});
 
+function updateLogo() {
+
+  // Set the landing image, just for now
+  let logoBase64 = localStorage.getItem(('savedImageBase64'));
+  console.log('TEST: ' + logoBase64);
+  
   // Set the image source
   $('#portalLogo').attr('src', logoBase64);
 
@@ -38,8 +44,7 @@ $(document).ready(function () {
 
   // Set the image source
   $('#imgLogo1').attr('src', abcLogoBase64);
-
-});
+};
 
 $('#but-updateB64').on('click',function() {
   let base64Text = localStorage.getItem('savedImageBase64');
