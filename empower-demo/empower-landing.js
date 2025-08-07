@@ -16,6 +16,8 @@ $(document).ready(function () {
     localStorage.setItem('savedImageBase64', data);
     logoBase64 = data;
     console.log('Base64 logo stored.');
+  console.log('INSIDE: ' + logoBase64);
+  
   }).fail(function() {
     console.log('No Base64 logo found.');
   });
