@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+  $.getScript("sub-logoupdate.js")
+    .done(function() {
+      console.log('sub-logoupdate loaded');
+    });
+
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
 
@@ -16,6 +21,7 @@ $(document).ready(function () {
 
   // Set the image source
   $('#portalLogo').attr('src', logoBase64);
+
 
 
 });
