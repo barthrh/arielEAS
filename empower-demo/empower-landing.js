@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $.getScript("sub-logoupdate.js")
+  $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
     .done(function() {
       console.log('sub-logoupdate loaded');
     });
