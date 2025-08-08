@@ -23,8 +23,9 @@ $('#but-opendemo').on('click',function() {
         let targetURL = response.destinationURL;
 
         console.log('Type: ' + dcPlanType + '; model: ' + serviceModel);
+        console.log('Target: ' + targetURL);
 
-        window.location.href = targetURL;
+        // window.location.href = targetURL;
       },
       error: function(xhr, status, error) {
         console.error('Upload failed:', error);
