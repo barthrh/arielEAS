@@ -10,12 +10,15 @@ $('#but-opendemo').on('click',function() {
     let base64ImageString = $('#' + radioValue).text();
     console.log('base64 val' + base64ImageString);
 
+    // Post the logo to the Node server
     $.ajax({
       url: 'https://empower-manager-514504a17a0e.herokuapp.com/save-image',
       type: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({ dcPlanType: 'TRAD4', serviceModel: 'PREMIUM4', base64Image: base64ImageString }),
       success: function(response) {
+
+        // Use the URL in the JSON response to redirect to the proper page
         console.log('Upload successful:', response);
 
         let dcPlanType = response.dcPlanType;
@@ -26,6 +29,8 @@ $('#but-opendemo').on('click',function() {
         console.log('Target: ' + targetURL);
 
         // window.location.href = targetURL;
+        window.open(targetURL,'_blank');
+        
       },
       error: function(xhr, status, error) {
         console.error('Upload failed:', error);
