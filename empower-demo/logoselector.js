@@ -20,6 +20,7 @@ $('#but-opendemo').on('click',function() {
 
         let redirectUrl = xhr.getResponseHeader('Location');
         if (redirectUrl) {
+          console.log('URL:' + redirectUrl);
           window.location.href = redirectUrl; // manually redirect
         }
 
