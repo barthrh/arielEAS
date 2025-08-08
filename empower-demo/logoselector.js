@@ -2,16 +2,14 @@ $('#but-opendemo').on('click',function() {
 
   // Get selected radio button value
   let radioValue = $('input[name="radio-logoSelect"]:checked').val();
-  console.log('radio val' + radioValue);
+  if (radioValue != null) {
+    console.log('radio val' + radioValue);
+  } else {
+    console.log('no radio selected');
+  }
 
-const selectedRadio = document.querySelector('input[name="radio-logoSelect"]:checked');
-    if (selectedRadio) {
-        const value = selectedRadio.value;
-        // Use the 'value' as needed (e.g., display it, send it to a hidden field)
-        console.log("Selected radio button value:", value);
-    }
 
-  let base64ImageString = $(radioValue).text();
+  let base64ImageString = $('#' + radioValue).text();
   console.log('base64 val' + base64ImageString);
 
   $.ajax({
