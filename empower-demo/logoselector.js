@@ -1,7 +1,7 @@
 $('#but-opendemo').on('click',function() {
 
   // Get selected radio button value
-  let radioValue = $('#radio-logoSelect').val();
+  let radioValue = $('input[name="radio-logoSelect"]:checked').val();
   console.log('radio val' + radioValue);
 
   let base64ImageString = $(radioValue).text();
