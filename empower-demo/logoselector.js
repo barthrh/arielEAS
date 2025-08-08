@@ -18,13 +18,13 @@ $('#but-opendemo').on('click',function() {
       success: function(response) {
         console.log('Upload successful:', response);
 
-        let redirectUrl = xhr.getResponseHeader('Location');
-        if (redirectUrl) {
-          console.log('URL:' + redirectUrl);
-          window.location.href = redirectUrl; // manually redirect
-        }
+        let dcPlanType = response.dcPlanType;
+        let serviceModel = response.serviceModel;
+        let targetURL = destinationURL;
 
-        // window.location.href = "https://empower-dbdemo1.webflow.io/empower-demo-launch";
+        console.log('Type: ' + dcPlanType + '; model: ' + serviceModel);
+
+        window.location.href = targetURL;
       },
       error: function(xhr, status, error) {
         console.error('Upload failed:', error);

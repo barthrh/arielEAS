@@ -31,6 +31,28 @@ $(document).ready(function () {
     console.log('No Base64 logo found.');
   });
 
+  // Process the URL parameters for plan type and service model
+  let dcPlanType = getURLParameter('dcPlanType');
+  let serviceModel = getURLParameter('serviceModel');
  
+  if (dcPlanType) {
+    console.log('Plan Type:' + dcPlanType);
+  } else {
+    console.log('No Plan Type');
+  }
+
+  if (serviceModel) {
+    console.log('Service Model:' + serviceModel);
+  } else {
+    console.log('No Service Model');
+  }
+
+
 });
 
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(window.location.search);
+    return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
+}
