@@ -9,6 +9,7 @@ const selectedRadio = document.querySelector('input[name="radio-logoSelect"]:che
         const value = selectedRadio.value;
         // Use the 'value' as needed (e.g., display it, send it to a hidden field)
         console.log("Selected radio button value:", value);
+    }
 
   let base64ImageString = $(radioValue).text();
   console.log('base64 val' + base64ImageString);
