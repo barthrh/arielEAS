@@ -20,7 +20,7 @@ $('#but-opendemo').on('click',function() {
 
         let dcPlanType = response.dcPlanType;
         let serviceModel = response.serviceModel;
-        let targetURL = destinationURL;
+        let targetURL = response.destinationURL;
 
         console.log('Type: ' + dcPlanType + '; model: ' + serviceModel);
 
