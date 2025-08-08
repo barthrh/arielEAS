@@ -32,8 +32,8 @@ $(document).ready(function () {
   });
 
   // Process the URL parameters for plan type and service model
-  let dcPlanType = getURLParameter('dcPlanType');
-  let serviceModel = getURLParameter('serviceModel');
+  let dcPlanType = getUrlParameter('dcPlanType');
+  let serviceModel = getUrlParameter('serviceModel');
  
   if (dcPlanType) {
     console.log('Plan Type:' + dcPlanType);
@@ -55,4 +55,4 @@ function getUrlParameter(name) {
     var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
     var results = regex.exec(window.location.search);
     return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
+};
