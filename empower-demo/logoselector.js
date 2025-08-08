@@ -14,7 +14,7 @@ $('#but-opendemo').on('click',function() {
       url: 'https://empower-manager-514504a17a0e.herokuapp.com/save-image',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify({ base64Image: base64ImageString }),
+      data: JSON.stringify({ dcPlanType: 'TRAD4', serviceModel: 'PREMIUM4', base64Image: base64ImageString }),
       success: function(response) {
         console.log('Upload successful:', response);
 
