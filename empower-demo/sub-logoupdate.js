@@ -35,3 +35,7 @@ function updateLogo() {
   }
 
 };
+
+function saveLogoLocal() {
+  
+}

@@ -19,7 +19,7 @@ $('#but-opendemo').on('click',function() {
     data: JSON.stringify({ base64Image: base64ImageString }),
     success: function(response) {
       console.log('Upload successful:', response);
-      window.location.href = "https://empower-dbdemo1.webflow.io/memberportal-test";
+      window.location.href = "https://empower-dbdemo1.webflow.io/empower-demo-launch";
     },
     error: function(xhr, status, error) {
       console.error('Upload failed:', error);
