@@ -74,8 +74,8 @@ $( document ).ready(function() {
     }
 
     // DC Pension tile
-    if ( showTileDcpension!= null ) {
-        if (showTileDcpension == 'hide') {
+    if ( showTileDcPension!= null ) {
+        if (showTileDcPension == 'hide') {
             $('#tile-dcpension').hide();
         } else {
             $('#tile-dcpension').show(); 
