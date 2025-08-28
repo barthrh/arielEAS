@@ -1,3 +1,19 @@
+/*
+Test endpoint: https://empower-manager-514504a17a0e.herokuapp.com/save-image
+Method is POST
+Content-Type should be appplication/json
+
+This is the current JSON structure that should be in the body of the POST:
+
+{"dbPlanType": "TRAD","serviceModel": "PREMIUM","base64Image": "data:image/png;base64,iVBORw0KGg..."}
+
+for dbPlanType I’m anticipating: TRAD, CASH, HYBRID
+
+for serviceModel, I'm anticipating: PREMIUM, STANDARD
+
+*/
+
+
 $('#but-opendemo').on('click',function() {
 
   $('#logoSelectError').hide();
@@ -10,22 +26,26 @@ $('#but-opendemo').on('click',function() {
     let base64ImageString = $('#' + radioValue).text();
     console.log('base64 val' + base64ImageString);
 
+    let choiceDbPlanType = $('#dbPlanType').val();
+    let choiceServiceModel = $('#serviceModel').val();
+
+
     // Post the logo to the Node server
     $.ajax({
       url: 'https://empower-manager-514504a17a0e.herokuapp.com/save-image',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify({ dcPlanType: 'TRAD4', serviceModel: 'PREMIUM4', base64Image: base64ImageString }),
+      data: JSON.stringify({ dbPlanType: choiceDbPlanType, serviceModel: choiceServiceModel, base64Image: base64ImageString }),
       success: function(response) {
 
         // Use the URL in the JSON response to redirect to the proper page
         console.log('Upload successful:', response);
 
-        let dcPlanType = response.dcPlanType;
+        let dbPlanType = response.dbPlanType;
         let serviceModel = response.serviceModel;
         let targetURL = response.destinationURL;
 
-        console.log('Type: ' + dcPlanType + '; model: ' + serviceModel);
+        console.log('Type: ' + dbPlanType + '; model: ' + serviceModel);
         console.log('Target: ' + targetURL);
 
         // window.location.href = targetURL;
