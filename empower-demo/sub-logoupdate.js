@@ -24,14 +24,15 @@ function updateLogo() {
   let logoBase64 = localStorage.getItem(('savedImageBase64'));
   
   // Set the image source, but ONLY if the loaded Base64 is longer than 100 chars (just a test)
-  if (logoBase64 != null) {
-    if (logoBase64.length > 100) {
-      $('#portalLogo').attr('src', logoBase64);
+  if ()
+    if (logoBase64 != null) {
+      if (logoBase64.length > 100) {
+        $('#portalLogo').attr('src', logoBase64);
+      } else {
+        console.log('Short <100 Logo');
+      } 
     } else {
-      console.log('Short <100 Logo');
-    } 
-  } else {
-    console.log('Null logo');
-  }
+      console.log('Null logo');
+    }
 
 };

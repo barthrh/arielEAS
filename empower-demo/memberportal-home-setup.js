@@ -43,7 +43,7 @@ $( document ).ready(function() {
         .done(function() {
         console.log('sub-logoupdate loaded');
         updateLogo();
-        // The default setup is a hidden default logo to avoid flash / flicker. This shows the chosen logo.
+        // The default setup is a hidden default logo to avoid flash / flicker.
         $('#portalLogo').show();
     });
 
