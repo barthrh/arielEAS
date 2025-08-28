@@ -118,6 +118,7 @@ $( document ).ready(function() {
     } 
     */
 
+    console.log('Setting content tiles');
     // ***********  CONTENT TILES  ***********
     // Tidy up the content tiles and render them cleanly.
     $('#tile-abouttheplan').animate({width: '250px'},0);
