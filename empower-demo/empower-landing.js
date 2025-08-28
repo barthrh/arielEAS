@@ -14,16 +14,10 @@ $(document).ready(function () {
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
 
-  let logoBase64 = 'start';
-
   // Grab a freshly posted logo
   $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', function(data) {
-    console.log('BEFORE: ' + logoBase64);
   
     localStorage.setItem('savedImageBase64', data);
-
-    logoBase64 = data;
-    console.log('Base64 logo stored.');
 
     updateLogo();
   
@@ -37,16 +31,19 @@ $(document).ready(function () {
  
   if (dcPlanType) {
     console.log('Plan Type:' + dcPlanType);
+    localStorage.setItem('dcPlanType', dcPlanType);
   } else {
     console.log('No Plan Type');
+    localStorage.removeItem('dcPlanType');
   }
 
   if (serviceModel) {
     console.log('Service Model:' + serviceModel);
+    localStorage.setItem('serviceModel', serviceModel);
   } else {
     console.log('No Service Model');
+    localStorage.removeItem('serviceModel');
   }
-
 
 });
 

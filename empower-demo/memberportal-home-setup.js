@@ -2,18 +2,49 @@
 // Set up the tiles and content
 $( document ).ready(function() {
 
+    // initialize tile variables
+    let showTileEstimate = false;
+    let showTileProfileTrad = false;
+    let showTileProfileCash = false;
+    let showTileProfileHybrid = false;
+    let showTileDcPension = false;
+    let showTileInitiate = false;
+
+    //Get the Demo parameters
+    let dcPlanType = localStorage.getItem('dcPlanType');
+    let serviceModel = localStorage.getItem('serviceModel');
+
+    if (dcPlanType) {
+        showTileEstimate = true;
+        showTileDcPension = true;
+
+        switch (dcPlanType) {
+            case 'TRAD':
+                showTileProfileTrad = true;
+            case 'CASH':
+                showTileProfileCash = true;
+            case 'HYBRID':
+                showTileProfileHybrid = true;
+            default:
+        }
+        if (dcPlanType == 'TRAD') {
+            showTileProfileTrad = true;
+        }
+    }
 
     // Queue up the default variables to enable or disable tiles on the home page.
-    var showTileEstimate = localStorage.getItem('tile-estimate');
+    // var showTileEstimate = localStorage.getItem('tile-estimate');
     var showTileProfile = localStorage.getItem('tile-profile');
-    var showTileDcpension = localStorage.getItem('tile-dcpension');
-    var showTileInitiate = localStorage.getItem('tile-initiate');
+    // var showTileDcPension = localStorage.getItem('tile-dcpension');
+    // var showTileInitiate = localStorage.getItem('tile-initiate');
 
     // Defines the updateLogo function
     $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
         .done(function() {
         console.log('sub-logoupdate loaded');
         updateLogo();
+        // The default setup is a hidden default logo to avoid flash / flicker. This shows the chosen logo.
+        $('#portalLogo').show();
     });
 
     
@@ -66,6 +97,7 @@ $( document ).ready(function() {
         $('#tile-initiate').hide(); 
     }
 
+    /* Not using now
     // ***********  DC PENSION VALUES  ***********
     // Sets the amounts displayed in the DC pension tile
     let dcpensionTotal = localStorage.getItem('planinfo-dcpension-total');
@@ -84,6 +116,7 @@ $( document ).ready(function() {
     if ( !(dcpensionReturn.isEmpty) ) {
         $('#dcpension-return').text(dcpensionReturn);
     } 
+    */
 
     // ***********  CONTENT TILES  ***********
     // Tidy up the content tiles and render them cleanly.
