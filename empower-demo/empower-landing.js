@@ -26,15 +26,15 @@ $(document).ready(function () {
   });
 
   // Process the URL parameters for plan type and service model
-  let dcPlanType = getUrlParameter('dcPlanType');
+  let dbPlanType = getUrlParameter('dbPlanType');
   let serviceModel = getUrlParameter('serviceModel');
  
-  if (dcPlanType) {
-    console.log('Plan Type:' + dcPlanType);
-    localStorage.setItem('dcPlanType', dcPlanType);
+  if (dbPlanType) {
+    console.log('Plan Type:' + dbPlanType);
+    localStorage.setItem('dbPlanType', dbPlanType);
   } else {
     console.log('No Plan Type');
-    localStorage.removeItem('dcPlanType');
+    localStorage.removeItem('dbPlanType');
   }
 
   if (serviceModel) {

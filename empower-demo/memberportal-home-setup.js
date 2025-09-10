@@ -3,22 +3,23 @@
 $( document ).ready(function() {
 
     // initialize tile variables
-    let showTileEstimate = false;
+    let showTileEstimate = true;
     let showTileProfileTrad = false;
     let showTileProfileCash = false;
     let showTileProfileHybrid = false;
-    let showTileDcPension = false;
+    let showTileDcPension = true;
     let showTileInitiate = false;
+    
 
     //Get the Demo parameters
-    let dcPlanType = localStorage.getItem('dcPlanType');
+    let dbPlanType = localStorage.getItem('dbPlanType');
     let serviceModel = localStorage.getItem('serviceModel');
 
-    if (dcPlanType) {
+    if (dbPlanType) {
         showTileEstimate = true;
         showTileDcPension = true;
 
-        switch (dcPlanType) {
+        switch (dbPlanType) {
             case 'TRAD':
                 showTileProfileTrad = true;
             case 'CASH':
@@ -27,7 +28,7 @@ $( document ).ready(function() {
                 showTileProfileHybrid = true;
             default:
         }
-        if (dcPlanType == 'TRAD') {
+        if (dbPlanType == 'TRAD') {
             showTileProfileTrad = true;
         }
     }
@@ -38,7 +39,7 @@ $( document ).ready(function() {
     // var showTileDcPension = localStorage.getItem('tile-dcpension');
     // var showTileInitiate = localStorage.getItem('tile-initiate');
 
-    // Defines the updateLogo function
+    // Defines and executes the updateLogo function
     $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
         .done(function() {
         console.log('sub-logoupdate loaded');
@@ -50,52 +51,46 @@ $( document ).ready(function() {
     
     // If these variables were empty, initialize them. The default is to show.
     // Estimator tile
-    if ( showTileEstimate != null ) {
-        if (showTileEstimate == 'hide') {
-            $('#tile-estimate').hide();
-        } else {
-            $('#tile-estimate').show(); 
-        } 
-    }
-    else {
+    if (showTileEstimate == false) {
+        $('#tile-estimate').hide();
+    } else {
         $('#tile-estimate').show(); 
+    } 
+    
+    // Profile tiles
+    if (showTileProfileTrad == false) {
+        $('#tile-profile-trad').hide();
+    } else {
+        $('#tile-profile-trad').show(); 
+    } 
+
+    if (showTileProfileCash == false) {
+        $('#tile-profile-cash').hide();
+    } else {
+        $('#tile-profile-cash').show(); 
     }
     
-    // Profile tile
-    if ( showTileProfile != null ) {
-        if (showTileProfile == 'hide') {
-            $('#tile-profile').hide();
-        } else {
-            $('#tile-profile').show(); 
-        } 
-    }
-    else {
-        $('#tile-profile').show(); 
-    }
+    if (showTileProfileHybrid == false) {
+        $('#tile-profile-hybrid').hide();
+    } else {
+        $('#tile-profile-hybrid').show(); 
+    } 
+
 
     // DC Pension tile
-    if ( showTileDcPension!= null ) {
-        if (showTileDcPension == 'hide') {
-            $('#tile-dcpension').hide();
-        } else {
-            $('#tile-dcpension').show(); 
-        } 
-    }
-    else {
+    if (showTileDcPension == 'hide') {
+        $('#tile-dcpension').hide();
+    } else {
         $('#tile-dcpension').show(); 
-    }
+    } 
 
     // Initiate Retirement tile
-    if ( showTileInitiate != null ) {
-        if (showTileInitiate == 'show') {
-            $('#tile-initiate').show();
-        } else {
-            $('#tile-initiate').hide(); 
-        } 
-    }
-    else {
+    if (showTileInitiate == 'show') {
+        $('#tile-initiate').show();
+    } else {
         $('#tile-initiate').hide(); 
-    }
+    } 
+
 
     /* Not using now
     // ***********  DC PENSION VALUES  ***********
