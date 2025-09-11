@@ -51,7 +51,17 @@ $( document ).ready(function() {
  });
 
 
+// Used on Step 6
+const submitDate = new Date(); // Sets to current
 
+$('#submit-date').text(formatDate(submitDate));
+
+// This is only for the OUTPUTS page sets the date to recent
+function formatDate(date) {
+  const options = { year: 'numeric', month: 'long', day: '2-digit' };
+  
+  return date.toLocaleDateString('en-US', options);
+};
 
 
 
