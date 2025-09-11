@@ -6,7 +6,12 @@ $( document ).ready(function() {
 
   $('#legalrep-details').hide();
 
-  
+  // Used on Step 4
+  setSplitButtonStyle('splitbutton-spouse-alive','inactive');
+  setSplitButtonStyle('splitbutton-spouse-dead','inactive');
+
+  $('#div-spouse-death').hide();
+
 
 });
 
@@ -26,6 +31,27 @@ $( document ).ready(function() {
 
     $('#legalrep-details').animate({height: 'show'}, 500);
  });
+
+
+  // Used on Step 4
+ $('#splitbutton-spouse-alive').on('click', function() {
+    // Set the color
+    setSplitButtonStyle('splitbutton-spouse-alive','selected');
+    setSplitButtonStyle('splitbutton-spouse-dead','inactive');
+
+    $('#div-spouse-death').animate({height: 'hide'}, 500);
+ });
+
+ $('#splitbutton-spouse-dead').on('click', function() {
+    // Set the color
+    setSplitButtonStyle('splitbutton-spouse-dead','selected');
+    setSplitButtonStyle('splitbutton-spouse-alive','inactive');
+
+    $('#div-spouse-death').animate({height: 'show'}, 500);
+ });
+
+
+
 
 
 
