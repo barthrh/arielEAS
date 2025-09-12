@@ -12,6 +12,16 @@ $( document ).ready(function() {
 
   $('#div-spouse-death').hide();
 
+  // Set up the spouse update form
+  $('#spouse-fullname').val('Sarah Thompson');
+  $('#spouse-priorname').val('Smitherman');
+  $('#spouse-sin').val('XXX XX 679');
+  $('#spouce-gender').val('F');
+  $('#spouse-dob').val('1973-09-22');
+  $('#spouse-uniondate').val('2015-07-15');
+  $('#spouse-uniontype').val('marriage');
+  $('#spouse-email').val('sthompson@telusdemo.com');
+  $('#spouse-mobile').val('330-555-2844');
 
 });
 
