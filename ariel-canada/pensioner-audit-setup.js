@@ -60,9 +60,11 @@ $( document ).ready(function() {
     $('#div-spouse-death').animate({height: 'show'}, 500);
  });
 
-// Used on Step 4
 $('#button-update-spouse').on('click',function(){
+  $('#modal-spouse-update').css('display', 'flex');
+});
 
+$('#button-update-spousecontact').on('click',function(){
   $('#modal-spouse-update').css('display', 'flex');
 });
 
