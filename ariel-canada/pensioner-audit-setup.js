@@ -50,6 +50,12 @@ $( document ).ready(function() {
     $('#div-spouse-death').animate({height: 'show'}, 500);
  });
 
+// Used on Step 4
+$('#button-update-spouse').on('click',function(){
+
+  $('#modal-spouse-update').show();
+});
+
 
 // Used on Step 6
 const submitDate = new Date(); // Sets to current
