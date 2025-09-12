@@ -53,7 +53,7 @@ $( document ).ready(function() {
 // Used on Step 4
 $('#button-update-spouse').on('click',function(){
 
-  $('#modal-spouse-update').show();
+  $('#modal-spouse-update').css('display', 'flex');
 });
 
 
