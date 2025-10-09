@@ -72,23 +72,24 @@ function setTileVisibility() {
         switch (dbPlanType) {
             case 'TRAD':
                 showTileProfileTrad = true;
+                showTileProfileCash = false;
+                showTileProfileHybrid = false;
             case 'CASH':
+                showTileProfileTrad = false;
                 showTileProfileCash = true;
+                showTileProfileHybrid = false;
             case 'HYBRID':
+                showTileProfileTrad = false;
+                showTileProfileCash = false;
                 showTileProfileHybrid = true;
             default:
-        }
-        if (dbPlanType == 'TRAD') {
-            showTileProfileTrad = true;
         }
     }
 
     if (serviceModel == 'PREMIUM') {
-        showTileEstimate = true;
         showTileInitiate = true;
     }
     else {
-        showTileEstimate = true;
         showTileInitiate = false;
     }
 
