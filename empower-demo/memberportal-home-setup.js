@@ -62,6 +62,9 @@ function setTileVisibility() {
     let dbPlanType = localStorage.getItem('dbPlanType');
     let serviceModel = localStorage.getItem('serviceModel');
 
+    console.log('Param Type: ' + dbPlanType);
+    console.log('Param Model: ' + serviceModel);
+
     if (dbPlanType) {
         showTileEstimate = true;
         showTileDcPension = true;
