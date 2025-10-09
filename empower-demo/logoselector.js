@@ -14,7 +14,24 @@ for serviceModel, I'm anticipating: PREMIUM, STANDARD
 */
 
 
-$('#but-opendemo').on('click',function() {
+$('#but-openmember').on('click',function() {
+
+  let targetURL = selectLogo();
+
+  // window.location.href = targetURL;
+  window.open(targetURL,'_blank');
+});
+
+$('#but-opensponsor').on('click',function() {
+
+  let targetURL = selectLogo();
+
+  // window.location.href = targetURL;
+  window.open(targetURL,'_blank');
+});
+
+
+function selectLogo() {
 
   $('#logoSelectError').hide();
 
@@ -48,20 +65,18 @@ $('#but-opendemo').on('click',function() {
         console.log('Type: ' + dbPlanType + '; model: ' + serviceModel);
         console.log('Target: ' + targetURL);
 
-        // window.location.href = targetURL;
-        window.open(targetURL,'_blank');
+        return targetURL;
         
       },
       error: function(xhr, status, error) {
         console.error('Upload failed:', error);
+        return '';
       }
     });
 
   } else {
     console.log('no radio selected');
     $('#logoSelectError').show();
+    return '';
   }
-
-
-
-});
+};
