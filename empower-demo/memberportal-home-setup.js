@@ -2,12 +2,6 @@
 // Set up the tiles and content
 $( document ).ready(function() {
 
-    // Queue up the default variables to enable or disable tiles on the home page.
-    // var showTileEstimate = localStorage.getItem('tile-estimate');
-    // var showTileProfile = localStorage.getItem('tile-profile');
-    // var showTileDcPension = localStorage.getItem('tile-dcpension');
-    // var showTileInitiate = localStorage.getItem('tile-initiate');
-
     // Defines and executes the updateLogo function
     $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
         .done(function() {
@@ -74,15 +68,21 @@ function setTileVisibility() {
                 showTileProfileTrad = true;
                 showTileProfileCash = false;
                 showTileProfileHybrid = false;
+                break;
             case 'CASH':
                 showTileProfileTrad = false;
                 showTileProfileCash = true;
                 showTileProfileHybrid = false;
+                break;
             case 'HYBRID':
                 showTileProfileTrad = false;
                 showTileProfileCash = false;
                 showTileProfileHybrid = true;
+                break;
             default:
+                showTileProfileTrad = true;
+                showTileProfileCash = false;
+                showTileProfileHybrid = false;
         }
     }
 
