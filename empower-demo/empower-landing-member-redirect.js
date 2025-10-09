@@ -3,7 +3,7 @@
 // content-type & Body should be json {"base64Image": "data:image/png;base64,[the base64]}"
 
 
-$(document).ready(function () {
+$(document).ready(async function () {
 
   // Defines the updateLogo function
   $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
@@ -14,18 +14,7 @@ $(document).ready(function () {
   // Start fresh to clear the cache
   localStorage.removeItem('savedImageBase64');
 
-  // Grab a freshly posted logo
-  $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', function(data) {
-  
-    localStorage.setItem('savedImageBase64', data);
-
-    console.log('Received Logo: ' + localStorage.getItem('savedImageBase64'));
-
-    updateLogo();
-  
-  }).fail(function() {
-    console.log('No Base64 logo found.');
-  });
+  await getSavedLogo();
 
   // Process the URL parameters for plan type and service model
   let dbPlanType = getUrlParameter('dbPlanType');
@@ -52,6 +41,31 @@ $(document).ready(function () {
   // Finally REDIRECT to the Member Portal Home
   // window.location.href = "/memberportal-home";
 });
+
+function getSavedLogo() {
+
+  return new Promise((resolve, reject) => {
+
+    // Grab a freshly posted logo
+    $.get('https://empower-manager-514504a17a0e.herokuapp.com/getLogoBase64', function(data) {
+    
+      localStorage.setItem('savedImageBase64', data);
+
+      console.log('Received Logo: ' + localStorage.getItem('savedImageBase64'));
+
+      updateLogo();
+
+      resolve(true);
+    
+    }).fail(function() {
+      console.log('No Base64 logo found.');
+
+      reject(false);
+    });
+
+  });
+};
+
 
 function getUrlParameter(name) {
     name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
