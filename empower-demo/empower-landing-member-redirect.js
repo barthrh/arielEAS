@@ -39,7 +39,7 @@ $(document).ready(async function () {
   console.log('Redirecting to Member Home');
 
   // Finally REDIRECT to the Member Portal Home
-  // window.location.href = "/memberportal-home";
+  window.location.href = "/memberportal-home";
 });
 
 function getSavedLogo() {

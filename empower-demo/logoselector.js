@@ -21,7 +21,10 @@ $('#but-openmember').on('click', async function() {
   console.log('Received member target:' + targetURL);
 
   // window.location.href = targetURL;
-  window.open(targetURL,'_blank');
+  if (targetURL != '') {
+    window.open(targetURL,'_blank');
+  }
+
 });
 
 $('#but-opensponsor').on('click', async function() {
@@ -31,7 +34,9 @@ $('#but-opensponsor').on('click', async function() {
   console.log('Received sponsor target:' + targetURL);
 
   // window.location.href = targetURL;
-  window.open(targetURL,'_blank');
+  if (targetURL != '') {
+    window.open(targetURL,'_blank');
+  }
 });
 
 
