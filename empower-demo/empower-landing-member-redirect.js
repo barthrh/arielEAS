@@ -45,8 +45,10 @@ $(document).ready(function () {
     localStorage.removeItem('serviceModel');
   }
 
+  console.log('Redirecting...');
+  
   // Finally REDIRECT to the Member Portal Home
-  window.location.href = "/member-portal-home";
+  window.location.href = "/memberportal-home";
 });
 
 function getUrlParameter(name) {
