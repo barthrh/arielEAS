@@ -44,7 +44,7 @@ function selectLogo() {
     // Get selected radio button value
     let radioValue = $('input[name="radio-logoSelect"]:checked').val();
     if (radioValue != null) {
-      console.log('radio val' + radioValue);
+      console.log('radio val: ' + radioValue);
 
       let base64ImageString = $('#' + radioValue).text();
       console.log('base64 val: ' + base64ImageString);
@@ -71,19 +71,19 @@ function selectLogo() {
           console.log('Type: ' + dbPlanType + '; model: ' + serviceModel);
           console.log('Target: ' + targetURL);
 
-          return targetURL;
+          resolve(targetURL);
           
         },
         error: function(xhr, status, error) {
           console.error('Upload failed:', error);
-          return '';
+          reject(error);
         }
       });
 
     } else {
       console.log('no radio selected');
       $('#logoSelectError').show();
-      return '';
+      resolve('');
     }
   });
 };
