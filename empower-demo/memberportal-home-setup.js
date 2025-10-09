@@ -57,13 +57,15 @@ $( document ).ready(function() {
         $('#portalLogo').show();
     });
 
-    
+    console.log('Setting Tiles');
+
     // If these variables were empty, initialize them. The default is to show.
     // Estimator tile
     if (showTileEstimate == false) {
         $('#tile-estimate').hide();
     } else {
-        $('#tile-estimate').show(); 
+        $('#tile-estimate').show();
+        console.log('Show Estimate');
     } 
     
     // Profile tiles
@@ -71,18 +73,21 @@ $( document ).ready(function() {
         $('#tile-profile-trad').hide();
     } else {
         $('#tile-profile-trad').show(); 
+        console.log('Show Profile Trad');
     } 
 
-    if (showTileProfileCash == false) {
-        $('#tile-profile-cash').hide();
+    if (showTileProfileCash == true) {
+        $('#tile-profile-cash').show();
+        console.log('Show Profile Cash');
     } else {
-        $('#tile-profile-cash').show(); 
+        $('#tile-profile-cash').hide(); 
     }
     
-    if (showTileProfileHybrid == false) {
-        $('#tile-profile-hybrid').hide();
+    if (showTileProfileHybrid == true) {
+        $('#tile-profile-hybrid').show();
+        console.log('Show Profile Hybrid');
     } else {
-        $('#tile-profile-hybrid').show(); 
+        $('#tile-profile-hybrid').hide(); 
     } 
 
 
@@ -91,11 +96,13 @@ $( document ).ready(function() {
         $('#tile-dcpension').hide();
     } else {
         $('#tile-dcpension').show(); 
+        console.log('Show DC');
     } 
 
     // Initiate Retirement tile
     if (showTileInitiate == 'show') {
         $('#tile-initiate').show();
+        console.log('Show Initiate');
     } else {
         $('#tile-initiate').hide(); 
     } 
