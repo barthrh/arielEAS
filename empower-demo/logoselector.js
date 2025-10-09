@@ -18,6 +18,8 @@ $('#but-openmember').on('click',function() {
 
   let targetURL = selectLogo();
 
+  console.log('Received member target:' + targetURL);
+
   // window.location.href = targetURL;
   window.open(targetURL,'_blank');
 });
@@ -25,6 +27,8 @@ $('#but-openmember').on('click',function() {
 $('#but-opensponsor').on('click',function() {
 
   let targetURL = selectLogo();
+
+  console.log('Received sponsor target:' + targetURL);
 
   // window.location.href = targetURL;
   window.open(targetURL,'_blank');
@@ -41,7 +45,7 @@ function selectLogo() {
     console.log('radio val' + radioValue);
 
     let base64ImageString = $('#' + radioValue).text();
-    console.log('base64 val' + base64ImageString);
+    console.log('base64 val: ' + base64ImageString);
 
     let choiceDbPlanType = $('#dbPlanType').val();
     let choiceServiceModel = $('#serviceModel').val();
