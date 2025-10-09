@@ -33,6 +33,15 @@ $( document ).ready(function() {
         }
     }
 
+    if (serviceModel == 'PREMIUM') {
+        showTileEstimate = true;
+        showTileInitiate = true;
+    }
+    else {
+        showTileEstimate = true;
+        showTileInitiate = false;
+    }
+
     // Queue up the default variables to enable or disable tiles on the home page.
     // var showTileEstimate = localStorage.getItem('tile-estimate');
     var showTileProfile = localStorage.getItem('tile-profile');
