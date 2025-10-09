@@ -128,7 +128,7 @@ function setTileVisibility() {
 
 
     // DC Pension tile
-    if (showTileDcPension == 'hide') {
+    if (showTileDcPension == true) {
         $('#tile-dcpension').hide();
     } else {
         $('#tile-dcpension').show(); 
@@ -136,7 +136,7 @@ function setTileVisibility() {
     } 
 
     // Initiate Retirement tile
-    if (showTileInitiate == 'show') {
+    if (showTileInitiate == true) {
         $('#tile-initiate').show();
         console.log('Show Initiate');
     } else {
