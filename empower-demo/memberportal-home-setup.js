@@ -2,46 +2,6 @@
 // Set up the tiles and content
 $( document ).ready(function() {
 
-    // initialize tile variables
-    let showTileEstimate = true;
-    let showTileProfileTrad = false;
-    let showTileProfileCash = false;
-    let showTileProfileHybrid = false;
-    let showTileDcPension = true;
-    let showTileInitiate = false;
-    
-
-    //Get the Demo parameters
-    let dbPlanType = localStorage.getItem('dbPlanType');
-    let serviceModel = localStorage.getItem('serviceModel');
-
-    if (dbPlanType) {
-        showTileEstimate = true;
-        showTileDcPension = true;
-
-        switch (dbPlanType) {
-            case 'TRAD':
-                showTileProfileTrad = true;
-            case 'CASH':
-                showTileProfileCash = true;
-            case 'HYBRID':
-                showTileProfileHybrid = true;
-            default:
-        }
-        if (dbPlanType == 'TRAD') {
-            showTileProfileTrad = true;
-        }
-    }
-
-    if (serviceModel == 'PREMIUM') {
-        showTileEstimate = true;
-        showTileInitiate = true;
-    }
-    else {
-        showTileEstimate = true;
-        showTileInitiate = false;
-    }
-
     // Queue up the default variables to enable or disable tiles on the home page.
     // var showTileEstimate = localStorage.getItem('tile-estimate');
     // var showTileProfile = localStorage.getItem('tile-profile');
@@ -88,6 +48,46 @@ $( document ).ready(function() {
 
 
 function setTileVisibility() {
+
+    // initialize tile variables
+    let showTileEstimate = true;
+    let showTileProfileTrad = false;
+    let showTileProfileCash = false;
+    let showTileProfileHybrid = false;
+    let showTileDcPension = true;
+    let showTileInitiate = false;
+    
+
+    //Get the Demo parameters
+    let dbPlanType = localStorage.getItem('dbPlanType');
+    let serviceModel = localStorage.getItem('serviceModel');
+
+    if (dbPlanType) {
+        showTileEstimate = true;
+        showTileDcPension = true;
+
+        switch (dbPlanType) {
+            case 'TRAD':
+                showTileProfileTrad = true;
+            case 'CASH':
+                showTileProfileCash = true;
+            case 'HYBRID':
+                showTileProfileHybrid = true;
+            default:
+        }
+        if (dbPlanType == 'TRAD') {
+            showTileProfileTrad = true;
+        }
+    }
+
+    if (serviceModel == 'PREMIUM') {
+        showTileEstimate = true;
+        showTileInitiate = true;
+    }
+    else {
+        showTileEstimate = true;
+        showTileInitiate = false;
+    }
 
     console.log('Setting Tiles');
 
