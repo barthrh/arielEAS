@@ -19,6 +19,8 @@ $(document).ready(function () {
   
     localStorage.setItem('savedImageBase64', data);
 
+    console.log('Received Logo: ' + localStorage.getItem('savedImageBase64'));
+
     updateLogo();
   
   }).fail(function() {
