@@ -29,7 +29,7 @@ $('#but-openmember').on('click', async function() {
 
 $('#but-opensponsor').on('click', async function() {
 
-  let targetURL = '/plan-sponsor/ps-dashboard-test';
+  let targetURL = '/empower-demo-sponsor-launch-redirect';
 
   console.log('Received sponsor target:' + targetURL);
 
