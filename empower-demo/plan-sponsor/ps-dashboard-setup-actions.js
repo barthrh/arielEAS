@@ -7,14 +7,14 @@ $( document ).ready(function() {
             console.log('sub-logoupdate loaded');
             var preVal = $('#portalLogo').attr('src');
             console.log('preVal: ' + preVal);
-            
+
             updateLogo();
 
             var testVal = $('#portalLogo').attr('src');
             console.log('TestVal: ' + testVal);
             // The default setup is a hidden default logo to avoid flash / flicker.
-            $('#portalLogo').show();
             $('#portalLogo').hide();
+            $('#portalLogo').show();
     });
 
     $('#contentgroup-retirement').hide();
