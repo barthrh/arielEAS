@@ -11,7 +11,7 @@ $(document).ready(async function () {
       console.log('sub-logoupdate loaded');
   });
 
-  // Start fresh to clear the cache
+// Start fresh to clear the cache
 //  localStorage.removeItem('savedImageBase64');
 
 //  await getSavedLogo();
