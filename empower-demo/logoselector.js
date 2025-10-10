@@ -29,7 +29,7 @@ $('#but-openmember').on('click', async function() {
 
 $('#but-opensponsor').on('click', async function() {
 
-  let targetURL = await selectLogo();
+  let targetURL = '/plan-sponsor/ps-dashboard-test';
 
   console.log('Received sponsor target:' + targetURL);
 

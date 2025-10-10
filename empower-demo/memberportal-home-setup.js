@@ -14,30 +14,6 @@ $( document ).ready(function() {
             setContentSizes();
     });
 
-
-
-    /* Not using now
-    // ***********  DC PENSION VALUES  ***********
-    // Sets the amounts displayed in the DC pension tile
-    let dcpensionTotal = localStorage.getItem('planinfo-dcpension-total');
-    let dcpensionVested = localStorage.getItem('planinfo-dcpension-vested');
-    let dcpensionReturn = localStorage.getItem('planinfo-dcpension-return');
-
-    // Leave all values at the static defaul if nothing saved.
-    if ( !(dcpensionTotal.isEmpty) ) {
-        $('#dcpension-total').text(dcpensionTotal);
-    } 
-    
-    if ( !(dcpensionVested.isEmpty) ) {
-        $('#dcpension-vested').text(dcpensionVested);
-    } 
-    
-    if ( !(dcpensionReturn.isEmpty) ) {
-        $('#dcpension-return').text(dcpensionReturn);
-    } 
-    */
-
-
 });
 
 
