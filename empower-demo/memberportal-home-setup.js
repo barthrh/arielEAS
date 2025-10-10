@@ -45,7 +45,7 @@ function setTileVisibility() {
 
     // initialize tile variables
     let showTileEstimate = true;
-    let showTileProfileTrad = false;
+    let showTileProfileTrad = true;
     let showTileProfileCash = false;
     let showTileProfileHybrid = false;
     let showTileDcPension = true;
