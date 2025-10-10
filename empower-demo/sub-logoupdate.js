@@ -27,6 +27,7 @@ function updateLogo() {
   if (logoBase64 && logoBase64 !== '') {
     if (logoBase64.length > 100) {
       $('#portalLogo').attr('src', logoBase64);
+      $('#portalLogo').removeAttr('srcset');
       console.log('Logo updated');
     } else {
       console.log('Short <100 Logo');
