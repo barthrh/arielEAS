@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+    /* No Logo Swap in PS. Leaving in in case they change their mind. It requires that the member portal has run.
+
     // Defines and executes the updateLogo function
     $.getScript("https://ariel-demo.herokuapp.com/empower-demo/sub-logoupdate.js")
         .done(function() {
@@ -9,6 +11,8 @@ $( document ).ready(function() {
             // The default setup is a hidden default logo to avoid flash / flicker.
             $('#portalLogo').show();
     });
+    */
+
 
     $('#param-select-month').hide();
     $('#param-select-year').hide();
