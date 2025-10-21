@@ -1,5 +1,32 @@
 // Code to hide or show the menus and content panes
 
+$( document ).ready(function() {
+
+       // Get the Empower Demo parameters
+    let dbPlanType = localStorage.getItem('dbPlanType');
+    let serviceModel = localStorage.getItem('serviceModel');
+
+    if (dbPlanType) {
+        if (dbPlanType == 'CASH' || dbPlanType == 'HYBRID') {
+            $('#div-membership-cash').show();
+            $('#div-membership-trad').hide();
+        } else {
+            $('#div-membership-cash').hide();
+            $('#div-membership-trad').show();
+        }
+    } else {
+        $('#div-membership-cash').hide();
+        $('#div-membership-trad').show();
+    }
+
+    $('#add-benef-frame').animate({height: 'hide'}, 0);
+    $('#update-benef-frame').animate({height: 'show'}, 0);
+    $('#enter-beneficiary-frame').animate({height: 'hide'}, 100);
+    $('#button-add-cancel').animate({height: 'hide'}, 0);
+
+    console.log( "ready!" );
+});
+
 $('#nav-basic-tab').on('click', function(){
     setBasic('show');
     setSurvivor('hide');
@@ -59,3 +86,51 @@ function setAuthrep(theAction) {
     $('#nav-authrep-content').animate({height: showHide}, 300);
 }
 // nav-authrep-tab.
+
+
+// Beneficiary Form support
+
+$('#button-add-cancel').on('click',function() {
+    console.log('cancel the add');
+    $('#enter-beneficiary-frame').animate({height: 'hide'}, 100);
+    $('#button-add-cancel').animate({height: 'hide'}, 0);
+    $('#button-add-done').text('Done');
+})
+
+$('#link-addbenny-pri').on('click',function() {
+    console.log('primary');
+    $('#add-benef-frame').animate({height: 'show'}, 0);
+    $('#update-benef-frame').animate({height: 'hide'}, 0);
+    $('#button-add-cancel').animate({height: 'hide'}, 0);
+    $('#button-add-done').text('Done');
+})
+
+$('#link-addbenny-sec').on('click',function() {
+    console.log('secondary');
+    $('#add-benef-frame').animate({height: 'show'}, 0);
+    $('#update-benef-frame').animate({height: 'hide'}, 0);
+    $('#button-add-cancel').animate({height: 'hide'}, 0);
+    $('#button-add-done').text('Done');
+})
+
+$('#link-addnew-beneficiary').on('click',function(){
+    console.log('summon the add');
+    $('#enter-beneficiary-frame').animate({height: 'show'}, 100);
+    $('#button-add-cancel').animate({height: 'show'}, 0);
+    $('#button-add-done').text('Add');
+})
+
+$('#close-addbenny').on('click',function(){
+    console.log('Close add');
+    $('#add-benef-frame').animate({height: 'hide'}, 0);
+    $('#update-benef-frame').animate({height: 'show'}, 0);
+})
+
+$('#button-add-done').on('click',function() {
+    console.log('Done event');
+    if ($('#button-add-done').text = 'Done') {
+        console.log('Done pressed');
+        $('#add-benef-frame').animate({height: 'hide'}, 0);
+        $('#update-benef-frame').animate({height: 'show'}, 0);
+    }
+})
