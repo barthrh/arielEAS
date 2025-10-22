@@ -9,22 +9,22 @@ $( document ).ready(function() {
 
     let today = formatDate(date);
     let defaultRetireDate = calcRetireDate(today);
-    let defaultEndDate = retireDate - 1;
+    let defaultEndDate = defaultRetireDate - 1;
 
-    console.log('calcEndDate: ' + calcEndDate);
+    console.log('defaultEndDate: ' + defaultEndDate);
 
     if ( localStorage.getItem('initretire-enddate') != null ) {
-    $("#endemploy-date").val(endDate);
+        $("#endemploy-date").val(endDate);
     } else {
     // $("#endemploy-date").val("09-30-2023");  
-    $('#endemploy-date').val(formatDate(date));
+        $('#endemploy-date').val(formatDate(date));
     }
 
     if ( localStorage.getItem('initretire-retiredate') != null ) {
-    $("#retirement-date").text(retireDate);  
+        $("#retirement-date").text(retireDate);  
     console.log("Point3");
     } else {
-    $("#retirement-date").text("October 1, 2023")  
+        $("#retirement-date").text("October 1, 2023")  
     console.log("Point4");
     }
 });
