@@ -6,8 +6,8 @@ var retireDate = localStorage.getItem('initretire-retiredate');
 const date = new Date(); // Sets to current
 
 let today = formatDate(date);
-let calcRetireDate = calcRetireDate(today);
-let calcEndDate = retireDate - 1;
+let defaultRetireDate = calcRetireDate(today);
+let defaultEndDate = retireDate - 1;
 
 console.log('calcEndDate: ' + calcEndDate);
 
