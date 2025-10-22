@@ -1,42 +1,40 @@
 // Set up the dates and default them if not pre-loaded and stored.
 $( document ).ready(function() {
 
-
     var endDate = localStorage.getItem('initretire-enddate');
     var retireDate = localStorage.getItem('initretire-retiredate');
 
-    const date = new Date(); // Sets to current
+    const today = new Date(); // Sets to current
 
-    let today = formatDate(date);
-    let defaultRetireDate = calcRetireDate(today);
-    let defaultEndDate = defaultRetireDate - 1;
-
-    console.log('defaultEndDate: ' + defaultEndDate);
+    let defaultEndDate = formatLastDayOfMonth(today);
+    let defaultRetireDate = calcRetireDate(defaultEndDate);
 
     if ( localStorage.getItem('initretire-enddate') != null ) {
         $("#endemploy-date").val(endDate);
     } else {
     // $("#endemploy-date").val("09-30-2023");  
-        $('#endemploy-date').val(formatDate(date));
+        $('#endemploy-date').val(defaultEndDate);
     }
 
     if ( localStorage.getItem('initretire-retiredate') != null ) {
         $("#retirement-date").text(retireDate);  
-    console.log("Point3");
     } else {
-        $("#retirement-date").text("October 1, 2023")  
-    console.log("Point4");
+        $("#retirement-date").text(defaultRetireDate);  
     }
 });
 
-// This is only for the OUTPUTS page sets the date to recent
-function formatDate(date) {
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  const year = date.getFullYear();
+
+function formatLastDayOfMonth(today) {
+
+    // Create a date for the first day of next month, then subtract one day
+    const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
   
-  return `${month}-${day}-${year}`;
-};
+    const month = String(lastDay.getMonth() + 1).padStart(2, '0');
+    const day = String(lastDay.getDate()).padStart(2, '0');
+    const year = lastDay.getFullYear();
+  
+    return `${month}-${day}-${year}`;
+}
 
 
 function calcRetireDate(endDate) {
