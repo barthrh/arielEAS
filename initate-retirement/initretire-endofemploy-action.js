@@ -12,14 +12,15 @@ $( document ).ready(function() {
     if ( localStorage.getItem('initretire-enddate') != null ) {
         $("#endemploy-date").val(endDate);
     } else {
-    // $("#endemploy-date").val("09-30-2023");  
         $('#endemploy-date').val(defaultEndDate);
+        localStorage.setItem('initretire-enddate', defaultEndDate);
     }
 
     if ( localStorage.getItem('initretire-retiredate') != null ) {
         $("#retirement-date").text(retireDate);  
     } else {
         $("#retirement-date").text(defaultRetireDate);  
+        localStorage.setItem('initretire-retiredate', defaultRetireDate);
     }
 });
 
@@ -34,7 +35,7 @@ function formatLastDayOfMonth(today) {
     const year = lastDay.getFullYear();
   
     return `${month}-${day}-${year}`;
-}
+};
 
 
 function calcRetireDate(endDate) {
@@ -64,7 +65,7 @@ function calcRetireDate(endDate) {
     console.log(retireDate);
 
     return retireDate;
-}
+};
 
 $('#endemploy-date').on('change', function(){
     endDate = $('#endemploy-date').val();
