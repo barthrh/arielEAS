@@ -1,3 +1,4 @@
+/*
 // Set up the dates and default them if not pre-loaded and stored.
 
 var endDate = localStorage.getItem('initretire-enddate');
@@ -36,3 +37,4 @@ function formatDate(date) {
   return `${month}-${day}-${year}`;
 };
 
+*/
