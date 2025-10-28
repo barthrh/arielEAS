@@ -218,9 +218,9 @@ $('#button-display-yearly').on('click', function() {
 function updateBasePension(newBasePension,pensionFrequecy) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
-   let dollarFormat = new Intl.NumberFormat('en-US', {
+   let dollarFormat = new Intl.NumberFormat('fr-CA', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'CAD',
       maximumSignificantDigits: 4,
    });
 
