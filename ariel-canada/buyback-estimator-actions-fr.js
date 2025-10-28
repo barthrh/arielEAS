@@ -237,9 +237,9 @@ function updateBasePension(newBasePension,pensionFrequecy) {
  function updateBuybackPension(newBuybackPension,pensionFrequecy) {
    // Updates all of the fields that depend on a recalc of the base pension.
 
-   let dollarFormat = new Intl.NumberFormat('en-US', {
+   let dollarFormat = new Intl.NumberFormat('fr-CA', {
       style: 'currency',
-      currency: 'USD',
+      currency: 'CAD',
       maximumSignificantDigits: 4,
    });
 
@@ -262,14 +262,19 @@ function updateValueLabels(retirementAge,buybackYears,buybackDollars,buybackIncr
       maximumSignificantDigits: 4,
    });
 
-   let ageText = "Age " + retirementAge;
+   let yearsFormat = new Intl.NumberFormat('fr-CA', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+   })
+
+   let ageText = retirementAge + " ans";
 
    $('#pill-pensiondetails-retireage-without').text(ageText);
    $('#pill-pensiondetails-retireage-with').text(ageText);
    $('#pill-pensiondetails-age').text(ageText);
    $('#pill-buybacksummary-age').text(ageText);
 
-   let buybackYearsText = buybackYears.toFixed(2) + ' years';
+   let buybackYearsText = yearsFormat.format(buybackYears) + ' années';
    $('#buybacksummary-years').text(buybackYearsText);
 
    let buybackDollarsText = dollarFormat.format(buybackDollars);
