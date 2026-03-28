@@ -5,9 +5,9 @@ $('#form-ava').submit(function() {
 
 // Setup
 $( document ).ready(function() {
-    $('#billingtab-billing').css('display', 'flex');
-    $('#billingtab-payments').hide();
-    $('#billingtab-profile').hide();
+    $('#billingcontent-billing').css('display', 'flex');
+    $('#billingcontent-payments').hide();
+    $('#billingcontent-profile').hide();
 
     $('#billingpay-automsg-on').hide();
     $('#billingpay-automsg-off').show();
@@ -20,20 +20,31 @@ $('#billingtab-billing').on('click', function() {
     setTabStyle('billingtab-payments','inactive');
     setTabStyle('billingtab-profile','inactive');
 
-    $('#')
+    $('#billingcontent-billing').css('display','flex');
+    $('#billingcontent-payment').hide();
+    $('#billingcontent-profile').hide();
+
 });
 
 $('#billingtab-payments').on('click', function() {
     setTabStyle('billingtab-billing','inactive');
     setTabStyle('billingtab-payments','active');
     setTabStyle('billingtab-profile','inactive');
+
+    $('#billingcontent-billing').hide();
+    $('#billingcontent-payment').css('display','flex');
+    $('#billingcontent-profile').hide();
 });
 
 $('#billingtab-profile').on('click', function() {
     setTabStyle('billingtab-billing','inactive');
     setTabStyle('billingtab-payments','inactive');
     setTabStyle('billingtab-profile','active');
-});
+
+    $('#billingcontent-billing').hide();
+    $('#billingcontent-payment').hide();
+    $('#billingcontent-profile').css('display','flex');;
+  });
 
 
 function setTabStyle(tabName,newStatus) {
