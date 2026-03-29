@@ -22,7 +22,7 @@ $( document ).ready(function() {
   $('#makepay-field-acctno').val("******456");
 
   $('#makepay-pane').hide();
-  $('#makepay-pane').animate({ right: '350px' }, 0);
+  $('#makepay-pane').animate({ right: '-350px' }, 0);
 
     console.log( "ready!" );
 });
@@ -77,6 +77,10 @@ $('#button-makepay').on('click', function(){
 
 });
 
+$('#button-makepay-cancel').on('click', function(){
+  $('#makepay-pane').animate({ right: '-350px' }, 300);
+  $('#makepay-pane').hide();
+});
 
 function setTabStyle(tabName,newStatus) {
     var jqID = "#" + tabName;
