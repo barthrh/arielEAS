@@ -78,8 +78,9 @@ $('#button-makepay').on('click', function(){
 });
 
 $('#button-makepay-cancel').on('click', function(){
-  $('#makepay-pane').animate({ right: '-350px' }, 300);
-  $('#makepay-pane').hide();
+  $('#makepay-pane').animate({ right: '-350px' }, 300, function(){
+    $('#makepay-pane').hide();
+  });
 });
 
 function setTabStyle(tabName,newStatus) {
