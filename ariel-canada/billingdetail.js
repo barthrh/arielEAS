@@ -11,15 +11,19 @@ $('#form-makepay').submit(function() {
 
 // Setup
 $( document ).ready(function() {
-    $('#billingcontent-billing').css('display', 'flex');
-    $('#billingcontent-payments').hide();
-    $('#billingcontent-profile').hide();
+  $('#billingcontent-billing').css('display', 'flex');
+  $('#billingcontent-payments').hide();
+  $('#billingcontent-profile').hide();
 
-    $('#billingpay-automsg-on').hide();
-    $('#billingpay-automsg-off').show();
+  $('#billingpay-automsg-on').hide();
+  $('#billingpay-automsg-off').show();
 
-    $('#makepay-field-acctname').val("Mark's Checking");
-    $('#makepay-field-acctno').val("******456");
+  $('#makepay-field-acctname').val("Mark's Checking");
+  $('#makepay-field-acctno').val("******456");
+
+  $('#makepay-pane').hide();
+  $('#makepay-pane').animate({ right: '350px' }, 0);
+
     console.log( "ready!" );
 });
 
@@ -31,7 +35,6 @@ $('#billingtab-billing').on('click', function() {
     $('#billingcontent-billing').css('display','flex');
     $('#billingcontent-payment').hide();
     $('#billingcontent-profile').hide();
-
 });
 
 $('#billingtab-payments').on('click', function() {
@@ -52,7 +55,7 @@ $('#billingtab-profile').on('click', function() {
     $('#billingcontent-billing').hide();
     $('#billingcontent-payment').hide();
     $('#billingcontent-profile').css('display','flex');;
-  });
+});
 
 $('#check-autopay').on('change', function() {
   if ($('#check-autopay').prop("checked") == true) {
@@ -66,6 +69,12 @@ $('#check-autopay').on('change', function() {
       $('#billingpay-automsg-on').hide();
       $('#billingpay-automsg-off').show();
   }
+});
+
+$('#button-makepay').on('click', function(){
+  $('#makepay-pane').show();
+  $('#makepay-pane').animate({ right: '0px' }, 300);
+
 });
 
 
