@@ -84,14 +84,14 @@ $('#button-makepay-cancel').on('click', function(){
 });
 
 $('input[name="payType"]:checked').on('change', function() {
-  if ($('input[name="amount"]:checked').val() == 'onetime') {
+  console.log('change payType');
+  if ($('input[name="payType"]:checked').val() == 'onetime') {
     $('#form-makepay-onetime').show();
   } else {
     $('#form-makepay-onetime').hide();
 
   }
-
-})
+});
 
 
 
