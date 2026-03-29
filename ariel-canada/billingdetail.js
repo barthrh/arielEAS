@@ -49,10 +49,12 @@ $('#billingtab-profile').on('click', function() {
 $('#check-autopay').on('change', function() {
   if ($('#check-autopay').prop("checked") == true) {
       $('#billingsum-autopay-msg').text('Automatic payments are ON');
+      $('#billingdetail-autopay-msg').text('Turn OFF automatic payments');
       $('#billingpay-automsg-on').show();
       $('#billingpay-automsg-off').hide();
   } else {
       $('#billingsum-autopay-msg').text('Automatic payments are OFF');
+      $('#billingdetail-autopay-msg').text('Turn ON automatic payments');
       $('#billingpay-automsg-on').hide();
       $('#billingpay-automsg-off').show();
   }
