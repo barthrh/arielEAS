@@ -1,7 +1,13 @@
 // Start by disabling form submissions
-$('#form-ava').submit(function() {
+$('#form-autopay').submit(function() {
   return false;
 });
+
+$('#form-makepay').submit(function() {
+  return false;
+});
+
+
 
 // Setup
 $( document ).ready(function() {
@@ -12,6 +18,8 @@ $( document ).ready(function() {
     $('#billingpay-automsg-on').hide();
     $('#billingpay-automsg-off').show();
 
+    $('#makepay-field-acctname').val("Mark's Checking");
+    $('#makepay-field-acctno').val("******456");
     console.log( "ready!" );
 });
 
