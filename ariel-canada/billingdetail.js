@@ -50,7 +50,7 @@ $('#billingtab-profile').on('click', function() {
 function setTabStyle(tabName,newStatus) {
     var jqID = "#" + tabName;
     var tabClass = $(jqID).attr('class');
-    var statusClass = "billingDetailTab-" + newStatus;
+    var statusClass = "billingdetailtab-" + newStatus;
 
     $(jqID).removeClass(tabClass);
     $(jqID).addClass(statusClass);
