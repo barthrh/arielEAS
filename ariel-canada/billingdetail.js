@@ -46,6 +46,18 @@ $('#billingtab-profile').on('click', function() {
     $('#billingcontent-profile').css('display','flex');;
   });
 
+$('#check-autopay').on('change', function() {
+  if ($('#check-autopay').prop("checked") == true) {
+      $('#billingsum-autopay-msg').text('Automatic payments are ON');
+      $('#billingpay-automsg-on').show();
+      $('#billingpay-automsg-off').hide();
+  } else {
+      $('#billingsum-autopay-msg').text('Automatic payments are OFF');
+      $('#billingpay-automsg-on').hide();
+      $('#billingpay-automsg-off').show();
+  }
+});
+
 
 function setTabStyle(tabName,newStatus) {
     var jqID = "#" + tabName;
