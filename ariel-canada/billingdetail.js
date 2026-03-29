@@ -83,6 +83,18 @@ $('#button-makepay-cancel').on('click', function(){
   });
 });
 
+$('input[name="payType"]:checked').on('change', function() {
+  if ($('input[name="amount"]:checked').val() == 'onetime') {
+    $('#form-makepay-onetime').show();
+  } else {
+    $('#form-makepay-onetime').hide();
+
+  }
+
+})
+
+
+
 function setTabStyle(tabName,newStatus) {
     var jqID = "#" + tabName;
     var tabClass = $(jqID).attr('class');
