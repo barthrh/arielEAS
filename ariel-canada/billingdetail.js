@@ -84,17 +84,14 @@ $('#button-makepay-cancel').on('click', function(){
 });
 
 $('input[name="payType"]').on('change', function() {
-  console.log('change payType');
   if ($('input[name="payType"]:checked').val() == 'onetime') {
     $('#form-makepay-onetime').show();
-    console.log('onetime');
     $('#form-makepay-autopay').hide();
-    $('#form-makepay-submit').show();
+    $('#form-makepay-submit').css('display','flex');
   } else {
     $('#form-makepay-onetime').hide();
-    console.log('autopay');
     $('#form-makepay-autopay').show();
-    $('#form-makepay-submit').show();
+    $('#form-makepay-submit').css('display','flex');
   }
 });
 
