@@ -87,9 +87,12 @@ $('input[name="payType"]').on('change', function() {
   console.log('change payType');
   if ($('input[name="payType"]:checked').val() == 'onetime') {
     $('#form-makepay-onetime').show();
+    $('#form-makepay-autopay').show();
+    $('#form-makepay-submit').show();
   } else {
     $('#form-makepay-onetime').hide();
-
+    $('#form-makepay-autopay').show();
+    $('#form-makepay-submit').show();
   }
 });
 
