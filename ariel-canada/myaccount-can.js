@@ -37,7 +37,7 @@ $('#nav-security-tab').on('click', function(){
 function setTabStyle(tabName,newStatus) {
     var jqID = "#" + tabName;
     var tabClass = $(jqID).attr('class');
-    var statusClass = "DemoSideTab-" + newStatus;
+    var statusClass = "demosidetab-" + newStatus;
 
     $(jqID).removeClass(tabClass);
     $(jqID).addClass(statusClass);
