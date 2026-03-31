@@ -22,6 +22,8 @@ $('#nav-profile-tab').on('click', function(){
 
   setTabStyle('nav-profile-tab', 'active');
   setTabStyle('nav-security-tab', 'inactive');
+  $('#nav-profile-content').show();
+  $('#nav-security-content').hide();
 });
 
 $('#nav-security-tab').on('click', function(){
@@ -31,6 +33,8 @@ $('#nav-security-tab').on('click', function(){
 
   setTabStyle('nav-profile-tab', 'inactive');
   setTabStyle('nav-security-tab', 'active');
+  $('#nav-profile-content').hide();
+  $('#nav-security-content').show();
 });
 
 
