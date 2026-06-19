@@ -3,6 +3,10 @@ $( document ).ready(function() {
   $('#menuitem-dental').removeClass('active');
   $('#menuitem-vision').removeClass('active');
 
+  $('#menupill-medical').addClass('active');
+  $('#menupill-dental').removeClass('active');
+  $('#menupill-vision').removeClass('active');
+
   $('#menucontent-medical').removeClass('hide');
   $('#menucontent-dental').addClass('hide');
   $('#menucontent-vision').addClass('hide');
