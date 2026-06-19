@@ -34,7 +34,7 @@ $('#menuitem-dental').on('click', function() {
   $('#menupill-vision').removeClass('active');
 
   $('#menucontent-medical').addClass('hide');
-  $('#menucontent-dental').removeClassClass('hide');
+  $('#menucontent-dental').removeClass('hide');
   $('#menucontent-vision').addClass('hide');
 });
 
