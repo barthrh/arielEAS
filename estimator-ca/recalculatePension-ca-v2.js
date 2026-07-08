@@ -35,14 +35,20 @@ function recalculatePension() {
     
     if (scenOneAge < 65) {
         var govPenYearsOne = 0;
+    } else {
+        var govPenYearsOne = 4; 
     }
 
     if (scenTwoAge < 65) {
         var govPenYearsTwo = 0;
+    } else {
+        var govPenYearsTwo = 4;
     }
 
     if (scenThreeAge < 65) {
         var govPenYearsThree = 0;
+    } else {
+        var govPenYearsThree = 4;
     }
 
    
@@ -83,6 +89,9 @@ function recalculatePension() {
     
     var purchHeight = purchaseYears * 5;
     var govpenHeight = govpenYears * 5;
+    var govpenHeightOne = govpenYearsOne * 5;
+    var govpenHeightTwo = govpenYearsTwo * 5;
+    var govpenHeightThree = govpenYearsThree * 5;
     
     var scenOneAttr = new String(scenOneSize);
     scenOneAttr = scenOneAttr.concat("px");
@@ -100,19 +109,6 @@ function recalculatePension() {
     $('#scen-one-bar').animate({height: scenOneAttr}, 500);
     $('#scen-two-bar').animate({height: scenTwoAttr}, 500);
     $('#scen-three-bar').animate({height: scenThreeAttr}, 500);
-
-    if (scenOneAge < 65) {
-        var govPenHeightOne = 0;
-    }
-
-    if (scenTwoAge < 65) {
-        var govPenHeightTwo = 0;
-    }
-
-    if (scenThreeAge < 65) {
-        var govPenHeightThree = 0;
-    }
-
 
     $('#scen-one-purch-bar').animate({height: purchHeight}, 500);
     $('#scen-one-govpen-bar').animate({height: govpenHeightOne}, 500);
