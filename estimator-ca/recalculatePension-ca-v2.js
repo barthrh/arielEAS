@@ -34,21 +34,21 @@ function recalculatePension() {
     govpenYears = 4;
     
     if (scenOneAge < 65) {
-        var govPenYearsOne = 0;
+        var govpenYearsOne = 0;
     } else {
-        var govPenYearsOne = 4; 
+        var govpenYearsOne = 4; 
     }
 
     if (scenTwoAge < 65) {
-        var govPenYearsTwo = 0;
+        var govpenYearsTwo = 0;
     } else {
-        var govPenYearsTwo = 4;
+        var govpenYearsTwo = 4;
     }
 
     if (scenThreeAge < 65) {
-        var govPenYearsThree = 0;
+        var govpenYearsThree = 0;
     } else {
-        var govPenYearsThree = 4;
+        var govpenYearsThree = 4;
     }
 
    
