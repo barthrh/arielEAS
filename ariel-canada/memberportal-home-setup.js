@@ -317,16 +317,16 @@ $('#election-continue-link').on('click', function() {
 
     switch (electionStatus) {
         case 'step3': 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-documents","_self");
+            window.open("/canada/retireelect-ca/retire-choices-documents","_self");
             break;
         case 'step2': 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-insurance","_self");
+            window.open("/canada/retireelect-ca/retire-choices-insurance","_self");
             break;
         case 'step1': 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-election","_self");
+            window.open("/canada/retireelect-ca/retire-choices-election","_self");
             break;
         default: 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-election","_self");
+            window.open("/canada/retireelect-ca/retire-choices-election","_self");
     }
 });
 
@@ -336,13 +336,13 @@ $('#review-continue-link').on('click', function() {
 
     switch (reviewStatus) {
         case 'step2': 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-reviewwaivers","_self");
+            window.open("/canada/retireelect-ca/retire-choices-reviewwaivers","_self");
             break;
         case 'step1': 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-review","_self");
+            window.open("/canada/retireelect-ca/retire-choices-review","_self");
             break;
         default: 
-            window.open("/canada/retireelect-ca/retire-choices-election/retire-choices-review","_self");
+            window.open("/canada/retireelect-ca/retire-choices-review","_self");
     }
 });
 
