@@ -291,7 +291,7 @@ $('#initiate-continue-link').on('click', function() {
 
     switch (retireStatus) {
         case 'step5': 
-            window.open("/canada/retireinitca/retire-choices-review","_self");
+            window.open("/canada/retireinitca/retireonline-step-review","_self");
             break;
         case 'step4': 
             window.open("/canada/retireinitca/retireonline-step-taxwithholding","_self");
