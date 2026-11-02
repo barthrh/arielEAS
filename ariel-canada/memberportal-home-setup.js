@@ -148,12 +148,12 @@ function updateInitiateStatusBars() {
         $('#retire-initiate-bars').animate({height: 'hide'}, 0);
         $('#retire-initiate-pill').animate({height: 'show'}, 0);
         $('#initiate-continue-link').animate({height: 'hide'}, 0);
-        $('#initiate-continue-link-fr').animate({height: 'hide'}, 0);
+        $('#initiate-continue-link-FR').animate({height: 'hide'}, 0);
     } else{
         $('#retire-initiate-bars').animate({height: 'show'}, 0);
         $('#retire-initiate-pill').animate({height: 'hide'}, 0);
         $('#initiate-continue-link').animate({height: 'show'}, 0);
-        $('#initiate-continue-link-fr').animate({height: 'show'}, 0);
+        $('#initiate-continue-link-FR').animate({height: 'show'}, 0);
         localStorage.setItem('retire-elections-status','notstarted');
         localStorage.setItem('retire-review-status','notstarted');
 
@@ -218,17 +218,17 @@ function updateElectionStatusBars() {
         $('#retire-election-bars').animate({height: 'hide'}, 0);
         $('#retire-election-pill').animate({height: 'show'}, 0);
         $('#election-continue-link').animate({height: 'hide'}, 0);
-        $('#election-continue-link-fr').animate({height: 'hide'}, 0);
+        $('#election-continue-link-FR').animate({height: 'hide'}, 0);
     } else {
         $('#retire-election-bars').animate({height: 'show'}, 0);
         $('#retire-election-pill').animate({height: 'hide'}, 0);
         localStorage.setItem('retire-review-status','notstarted');
         if (retireStatus == 'done') {
             $('#election-continue-link').animate({height: 'show'}, 0);
-            $('#election-continue-link-fr').animate({height: 'show'}, 0);
+            $('#election-continue-link-FR').animate({height: 'show'}, 0);
         } else {        
             $('#election-continue-link').animate({height: 'hide'}, 0);
-            $('#election-continue-link-fr').animate({height: 'hide'}, 0);
+            $('#election-continue-link-FR').animate({height: 'hide'}, 0);
         }
     }
 }
@@ -278,16 +278,16 @@ function updateReviewStatusBars() {
         $('#retire-review-bars').animate({height: 'hide'}, 0);
         $('#retire-review-pill').animate({height: 'show'}, 0);
         $('#review-continue-link').animate({height: 'hide'}, 0);
-        $('#review-continue-link-fr').animate({height: 'hide'}, 0);
+        $('#review-continue-link-FR').animate({height: 'hide'}, 0);
     } else{
         $('#retire-review-bars').animate({height: 'show'}, 0);
         $('#retire-review-pill').animate({height: 'hide'}, 0);
         if (electionStatus == 'done') {
             $('#review-continue-link').animate({height: 'show'}, 0);
-            $('#review-continue-link-fr').animate({height: 'show'}, 0);
+            $('#review-continue-link-FR').animate({height: 'show'}, 0);
         } else {        
             $('#review-continue-link').animate({height: 'hide'}, 0);
-            $('#review-continue-link-fr').animate({height: 'hide'}, 0);
+            $('#review-continue-link-FR').animate({height: 'hide'}, 0);
         }
     }
 
