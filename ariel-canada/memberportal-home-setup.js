@@ -316,22 +316,22 @@ $('#initiate-continue-link-FR').on('click', function() {
 
     switch (retireStatus) {
         case 'step5': 
-            window.open("/canada/fr/retireinitca/retireonline-step-review","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-review","_self");
             break;
         case 'step4': 
-            window.open("/canada/fr/retireinitca/retireonline-step-taxwithholding","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-taxwithholding","_self");
             break;
         case 'step3': 
-            window.open("/canada/fr/retireinitca/retireonline-step-banking","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-banking","_self");
             break;
         case 'step2': 
-            window.open("/canada/fr/retireinitca/retireonline-step-keydates","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-keydates","_self");
             break;
         case 'step1': 
-            window.open("/canada/fr/retireinitca/retireonline-step-myinfo","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-myinfo","_self");
             break;
         default: 
-            window.open("/canada/fr/retireinitca/retireonline-step-myinfo","_self");
+            window.open("/canada/fr/retireinitfr/retireonline-step-myinfo","_self");
     }
 });
 
@@ -360,16 +360,16 @@ $('#election-continue-link-FR').on('click', function() {
 
     switch (electionStatus) {
         case 'step3': 
-            window.open("/canada/fr/retireelect-ca/retire-choices-documents","_self");
+            window.open("/canada/fr/retireelect-fr/retire-choices-documents","_self");
             break;
         case 'step2': 
-            window.open("/canada/fr/retireelect-ca/retire-choices-insurance","_self");
+            window.open("/canada/fr/retireelect-fr/retire-choices-insurance","_self");
             break;
         case 'step1': 
-            window.open("/canada/fr/retireelect-ca/retire-choices-election","_self");
+            window.open("/canada/fr/retireelect-fr/retire-choices-election","_self");
             break;
         default: 
-            window.open("/canada/fr/retireelect-ca/retire-choices-election","_self");
+            window.open("/canada/fr/retireelect-fr/retire-choices-election","_self");
     }
 });
 
