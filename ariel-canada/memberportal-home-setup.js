@@ -310,6 +310,30 @@ $('#initiate-continue-link').on('click', function() {
     }
 });
 
+$('#initiate-continue-link-FR').on('click', function() {
+    console.log('Continue Election');
+    var retireStatus = localStorage.getItem('retire-initiate-status');
+
+    switch (retireStatus) {
+        case 'step5': 
+            window.open("/canada/fr/retireinitca/retireonline-step-review","_self");
+            break;
+        case 'step4': 
+            window.open("/canada/fr/retireinitca/retireonline-step-taxwithholding","_self");
+            break;
+        case 'step3': 
+            window.open("/canada/fr/retireinitca/retireonline-step-banking","_self");
+            break;
+        case 'step2': 
+            window.open("/canada/fr/retireinitca/retireonline-step-keydates","_self");
+            break;
+        case 'step1': 
+            window.open("/canada/fr/retireinitca/retireonline-step-myinfo","_self");
+            break;
+        default: 
+            window.open("/canada/fr/retireinitca/retireonline-step-myinfo","_self");
+    }
+});
 
 $('#election-continue-link').on('click', function() {
     console.log('Continue Election');
@@ -330,6 +354,25 @@ $('#election-continue-link').on('click', function() {
     }
 });
 
+$('#election-continue-link-FR').on('click', function() {
+    console.log('Continue Election');
+    var electionStatus = localStorage.getItem('retire-elections-status');
+
+    switch (electionStatus) {
+        case 'step3': 
+            window.open("/canada/fr/retireelect-ca/retire-choices-documents","_self");
+            break;
+        case 'step2': 
+            window.open("/canada/fr/retireelect-ca/retire-choices-insurance","_self");
+            break;
+        case 'step1': 
+            window.open("/canada/fr/retireelect-ca/retire-choices-election","_self");
+            break;
+        default: 
+            window.open("/canada/fr/retireelect-ca/retire-choices-election","_self");
+    }
+});
+
 $('#review-continue-link').on('click', function() {
     console.log('Continue Election');
     var reviewStatus = localStorage.getItem('retire-review-status');
@@ -343,6 +386,22 @@ $('#review-continue-link').on('click', function() {
             break;
         default: 
             window.open("/canada/retireelect-ca/retire-choices-review","_self");
+    }
+});
+
+$('#review-continue-link-FR').on('click', function() {
+    console.log('Continue Election');
+    var reviewStatus = localStorage.getItem('retire-review-status');
+
+    switch (reviewStatus) {
+        case 'step2': 
+            window.open("/canada/fr/retireelect-ca/retire-choices-reviewwaivers","_self");
+            break;
+        case 'step1': 
+            window.open("/canada/fr/retireelect-ca/retire-choices-review","_self");
+            break;
+        default: 
+            window.open("/canada/fr/retireelect-ca/retire-choices-review","_self");
     }
 });
 
